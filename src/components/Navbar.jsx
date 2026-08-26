@@ -1,7 +1,8 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import {
   FaBars,
   FaBookOpen,
+  FaChevronDown,
   FaEnvelope,
   FaFacebookF,
   FaHospital,
@@ -15,6 +16,7 @@ import {
 
 const navItems = [
   { label: 'Home', href: '/' },
+
   {
     label: 'About Us',
     href: '/about',
@@ -24,6 +26,7 @@ const navItems = [
       { label: 'Statutory Disclosures', href: '/about/disclosures' },
     ],
   },
+
   {
     label: 'Academics',
     href: '/academics',
@@ -33,6 +36,7 @@ const navItems = [
       { label: 'Examination', href: '/academics/examination' },
     ],
   },
+
   {
     label: 'Courses',
     href: '/courses',
@@ -42,6 +46,7 @@ const navItems = [
       { label: 'Eligibility', href: '/admission/eligibility' },
     ],
   },
+
   {
     label: 'Departments',
     href: '/departments',
@@ -51,6 +56,7 @@ const navItems = [
       { label: 'Rachana Sharir', href: '/departments/rachana-sharir' },
     ],
   },
+
   {
     label: 'Hospital',
     href: '/hospital',
@@ -60,7 +66,9 @@ const navItems = [
       { label: 'Panchakarma', href: '/hospital/panchakarma' },
     ],
   },
+
   { label: 'Facility', href: '/facility' },
+
   {
     label: 'NCISM Mandates',
     href: '/ncism-mandates',
@@ -70,7 +78,9 @@ const navItems = [
       { label: 'Reports', href: '/ncism-mandates/reports' },
     ],
   },
+
   { label: 'Attendance', href: '/attendance' },
+
   {
     label: 'Gallery',
     href: '/gallery',
@@ -80,178 +90,329 @@ const navItems = [
       { label: 'Hospital', href: '/gallery/hospital' },
     ],
   },
+
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
 const socialLinks = [
-  { label: 'Facebook', href: 'https://facebook.com', icon: FaFacebookF },
-  { label: 'Instagram', href: 'https://instagram.com', icon: FaInstagram },
-  { label: 'Twitter', href: 'https://twitter.com', icon: FaTwitter },
-  { label: 'YouTube', href: 'https://youtube.com', icon: FaYoutube },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: FaLinkedinIn },
+  {
+    label: 'Facebook',
+    href: 'https://facebook.com',
+    icon: FaFacebookF,
+    bg: 'bg-[#3b5fa3]',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com',
+    icon: FaInstagram,
+    bg: 'bg-[#e83f61]',
+  },
+  {
+    label: 'Twitter',
+    href: 'https://twitter.com',
+    icon: FaTwitter,
+    bg: 'bg-[#25a7e8]',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://youtube.com',
+    icon: FaYoutube,
+    bg: 'bg-[#ff1111]',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com',
+    icon: FaLinkedinIn,
+    bg: 'bg-[#0b83b5]',
+  },
 ]
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState('')
-  const headerRef = useRef(null)
-
-  useLayoutEffect(() => {
-    const updateHeaderOffset = () => {
-      if (!headerRef.current) return
-      document.documentElement.style.setProperty(
-        '--site-header-offset',
-        `${headerRef.current.offsetHeight}px`,
-      )
-    }
-
-    updateHeaderOffset()
-    window.addEventListener('resize', updateHeaderOffset)
-
-    return () => window.removeEventListener('resize', updateHeaderOffset)
-  }, [isMenuOpen])
 
   const closeMenu = () => {
     setIsMenuOpen(false)
     setOpenSubmenu('')
   }
 
+  const toggleSubmenu = (label) => {
+    setOpenSubmenu((current) =>
+      current === label ? '' : label
+    )
+  }
+
   return (
-    <header ref={headerRef} className="site-header w-full flex flex-col relative z-50">
-      <div className="top-strip hidden lg:flex flex-wrap justify-between items-center w-full px-4 py-2">
-        <div className="top-strip__contacts flex flex-wrap items-center gap-4">
-          <a href="tel:+919031081170" className="flex items-center gap-2">
-            <FaPhoneAlt aria-hidden="true" />
-            +91-90310 81170
-          </a>
-          <a href="tel:+917209776617" className="flex items-center gap-2">
-            <FaPhoneAlt aria-hidden="true" />
-            +91-72097 76617
-          </a>
-          <a href="mailto:info@krishnacollegebhopal.com" className="flex items-center gap-2">
-            <FaEnvelope aria-hidden="true" />
-            info@krishnacollegebhopal.com
-          </a>
-        </div>
+    <header className="relative z-50 w-full bg-white">
 
-        <div className="top-strip__badges flex flex-wrap items-center gap-4" aria-label="Important links">
-          <a href="/admission">BAMS(UG) Admission 2026</a>
-          <a href="/approvals">Govt. Approval</a>
-          <a href="/career">Career</a>
-          <a href="/notification">Notification</a>
-        </div>
-      </div>
+      {/* TOP BAR */}
+      <div className="hidden h-[44px] bg-[#168486] lg:block">
+        <div className="mx-auto flex h-full max-w-[1720px] items-center justify-between px-8">
 
-      {/* Changed to flex-row for both mobile & desktop so hamburger and logo stay side-by-side */}
-      <div className="brand-band flex flex-row justify-between items-center w-full p-4 gap-2 lg:gap-4">
-        <a className="brand-lockup flex flex-row items-center text-left gap-2 lg:gap-3" href="/" aria-label="Krishna College Bhopal home">
-          <img src="/logoayu.png" alt="" className="max-w-[50px] lg:max-w-[80px] h-auto object-contain" />
-          <span className="flex flex-col">
-            <strong className="text-sm sm:text-base lg:text-lg leading-tight">Krishna College Bhopal</strong>
-            <small className="text-[10px] sm:text-xs lg:text-sm leading-tight text-gray-600 lg:text-inherit">Ayurvedic Medical College and Hospital</small>
-          </span>
-        </a>
+          {/* LEFT */}
+          <div className="flex items-center gap-7 text-[14px] font-bold text-white">
 
-        {/* Hamburger Menu button moved up into the branding row */}
-        <button
-          className="mobile-menu-button flex-shrink-0 flex lg:hidden items-center justify-center gap-2 p-2 cursor-pointer"
-          type="button"
-          aria-controls="primary-navigation"
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen((current) => !current)}
-        >
-          {isMenuOpen ? <FaTimes aria-hidden="true" className="text-xl" /> : <FaBars aria-hidden="true" className="text-xl" />}
-          <span className="hidden sm:inline">Menu</span>
-        </button>
+            <a
+              href="tel:+919031081170"
+              className="flex items-center gap-2"
+            >
+              <FaPhoneAlt className="text-[#f1a028]" />
+              +91-90310 81170
+            </a>
 
-        <div className="approval-row hidden xl:flex flex-wrap items-center gap-4" aria-label="Affiliations and approvals">
-          <span>NCISM</span>
-          <span>University Affiliated</span>
-          <span>Health Department</span>
-          <span>Ministry of Ayush</span>
-        </div>
+            <a
+              href="tel:+917209776617"
+              className="flex items-center gap-2"
+            >
+              <FaPhoneAlt className="text-[#f1a028]" />
+              +91-72097 76617
+            </a>
 
-        <div className="quick-actions hidden lg:flex items-center gap-6">
-          <a className="quick-card flex items-center gap-2" href="tel:+919031081170">
-            <span className="quick-card__icon text-xl">
-              <FaBookOpen aria-hidden="true" />
-            </span>
-            <span className="flex flex-col">
-              <small>For Admissions</small>
-              <strong>+91-9031081170</strong>
-            </span>
-          </a>
+            <a
+              href="mailto:info@krishnacollegebhopal.com"
+              className="flex items-center gap-2"
+            >
+              <FaEnvelope className="text-[#f1a028]" />
+              info@krishnacollegebhopal.com
+            </a>
 
-          <a className="quick-card flex items-center gap-2" href="tel:+917209776617">
-            <span className="quick-card__icon text-xl">
-              <FaHospital aria-hidden="true" />
-            </span>
-            <span className="flex flex-col">
-              <small>Hospital Helpline</small>
-              <strong>+91-7209776617</strong>
-            </span>
-          </a>
+          </div>
 
-          <div className="social-links flex items-center gap-3" aria-label="Social links">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
-              <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer" className="flex items-center justify-center p-1">
-                <Icon aria-hidden="true" />
+          {/* RIGHT */}
+          <div className="flex items-center gap-3">
+
+            {[
+              ['BAMS(UG) Admission 2026', '/admission'],
+              ['Govt. Approval', '/approvals'],
+              ['Career', '/career'],
+              ['Notification', '/notification'],
+            ].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="rounded-full bg-[#e99a20] px-4 py-[5px] text-[13px] font-bold text-white"
+              >
+                {label}
               </a>
             ))}
+
           </div>
         </div>
       </div>
 
-      <div className="nav-shell w-full relative">
-        <nav
-          id="primary-navigation"
-          className={`primary-nav w-full flex-col lg:flex lg:flex-row lg:items-center lg:justify-center ${isMenuOpen ? 'flex primary-nav--open' : 'hidden'}`}
-          aria-label="Primary navigation"
-        >
-          {navItems.map((item) => (
-            <div
-              className={`nav-item relative group w-full lg:w-auto ${openSubmenu === item.label ? 'nav-item--open' : ''}`}
-              key={item.label}
-            >
-              <div className="nav-link-row flex justify-between items-center w-full px-4 py-2 lg:p-0">
-                <a href={item.href} onClick={closeMenu} className="w-full lg:w-auto block py-2 lg:px-4">
-                  {item.label}
-                </a>
+      {/* MIDDLE HEADER */}
+      <div className="bg-white">
+        <div className="mx-auto flex h-[112px] max-w-[1720px] items-center justify-between gap-8 px-8">
 
-                {item.items ? (
-                  <button
-                    type="button"
-                    className="submenu-toggle flex lg:hidden items-center justify-center p-2 cursor-pointer"
-                    aria-label={`Toggle ${item.label} menu`}
-                    aria-expanded={openSubmenu === item.label}
-                    onClick={() =>
-                      setOpenSubmenu((current) => (current === item.label ? '' : item.label))
-                    }
-                  >
-                    v
-                  </button>
-                ) : null}
-              </div>
+          {/* LOGO */}
+          <a
+            href="/"
+            onClick={closeMenu}
+            className="flex shrink-0 items-center gap-3"
+          >
+            <img
+              src="/logoayu.png"
+              alt="Krishna College Bhopal"
+              className="h-[76px] w-[92px] object-contain"
+            />
 
-              {item.items ? (
-                <div className={`dropdown-menu w-full lg:absolute lg:top-full lg:left-0 flex-col z-50 ${openSubmenu === item.label ? 'flex' : 'hidden lg:group-hover:flex'}`}>
-                  {item.items.map((child) => (
-                    <a key={child.label} href={child.href} onClick={closeMenu} className="block px-8 py-3 lg:px-4 lg:py-2 whitespace-nowrap">
-                      {child.label}
-                    </a>
-                  ))}
-                </div>
-              ) : null}
+            <div className="hidden sm:block">
+              <div className="whitespace-nowrap text-[25px] font-extrabold uppercase leading-none text-[#09676b]">
+  Krishna College Bhopal
+</div>
+
+              <p className="mt-1.5 text-[10px] font-extrabold uppercase leading-[1.2] text-[#af680d]">
+                Ayurvedic Medical College and Hospital
+              </p>
             </div>
-          ))}
-
-          <a className="admission-button flex items-center justify-center gap-2 w-full lg:w-auto px-6 py-4 lg:py-2 mt-2 lg:mt-0" href="/admission" onClick={closeMenu}>
-            Admission
-            <span aria-hidden="true">v</span>
           </a>
+
+          {/* RIGHT CONTENT */}
+          <div className="hidden items-center lg:flex">
+
+            {/* ADMISSION */}
+            <a
+              href="tel:+919031081170"
+              className="flex items-center gap-3 border-r border-gray-200 px-6"
+            >
+              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
+                <FaBookOpen />
+              </span>
+
+              <span>
+                <small className="block text-[14px] text-gray-500">
+                  For Admissions
+                </small>
+
+                <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
+                  +91-9031081170
+                </strong>
+              </span>
+            </a>
+
+            {/* HOSPITAL */}
+            <a
+              href="tel:+917209776617"
+              className="flex items-center gap-3 border-r border-gray-200 px-6"
+            >
+              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
+                <FaHospital />
+              </span>
+
+              <span>
+                <small className="block text-[14px] text-gray-500">
+                  For Hospital Helpline:
+                </small>
+
+                <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
+                  +91-7209776617
+                </strong>
+              </span>
+            </a>
+
+            {/* SOCIAL */}
+            <div className="ml-5 flex items-center gap-2.5">
+
+              {socialLinks.map(
+                ({ label, href, icon: Icon, bg }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className={`flex h-[52px] w-[52px] items-center justify-center rounded-lg text-white transition hover:-translate-y-1 ${bg}`}
+                  >
+                    <Icon />
+                  </a>
+                ),
+              )}
+
+            </div>
+          </div>
+
+          {/* MOBILE */}
+          <button
+            type="button"
+            onClick={() =>
+              setIsMenuOpen((current) => !current)
+            }
+            className="flex h-11 w-11 items-center justify-center rounded-md bg-[#08666b] text-white lg:hidden"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+        </div>
+      </div>
+
+      {/* NAV */}
+      <div className="bg-[#07634c]">
+
+        <nav
+          className={`
+            mx-auto
+            max-w-[1720px]
+            px-6
+            lg:flex
+            lg:h-[58px]
+            lg:items-center
+            lg:justify-between
+            ${isMenuOpen ? 'block' : 'hidden lg:flex'}
+          `}
+        >
+
+          <div className="flex flex-col lg:flex-row lg:items-center">
+
+            {navItems.map((item) => (
+              <div
+                key={item.label}
+                className="group relative border-b border-white/10 lg:border-0"
+              >
+
+                <div className="flex items-center">
+
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="whitespace-nowrap px-[14px] py-[19px] text-[14px] font-bold !text-white transition hover:bg-black/10 xl:px-[17px]"
+                  >
+                    {item.label}
+                  </a>
+
+                  {item.items && (
+                    <>
+                      <FaChevronDown className="-ml-1 mr-1 hidden text-[9px] !text-white lg:block" />
+
+                      <button
+                        onClick={() =>
+                          toggleSubmenu(item.label)
+                        }
+                        className="ml-auto flex h-11 w-11 items-center justify-center !text-white lg:hidden"
+                      >
+                        <FaChevronDown
+                          className={`text-xs ${
+                            openSubmenu === item.label
+                              ? 'rotate-180'
+                              : ''
+                          }`}
+                        />
+                      </button>
+                    </>
+                  )}
+
+                </div>
+
+                {/* DROPDOWN */}
+                {item.items && (
+                  <div
+                    className={`
+                      bg-white
+                      shadow-xl
+                      lg:absolute
+                      lg:left-0
+                      lg:top-full
+                      lg:z-50
+                      lg:min-w-[230px]
+                      ${
+                        openSubmenu === item.label
+                          ? 'block'
+                          : 'hidden lg:group-hover:block'
+                      }
+                    `}
+                  >
+
+                    {item.items.map((child) => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        onClick={closeMenu}
+                        className="block border-b border-gray-100 px-5 py-3 text-sm font-semibold !text-[#08666b] hover:bg-[#eef8f6] hover:!text-[#e99a20]"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+
+                  </div>
+                )}
+
+              </div>
+            ))}
+
+          </div>
+
+          {/* ADMISSION */}
+          <a
+            href="/admission"
+            className="my-2 flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#e99a20] px-8 py-[11px] text-[15px] font-bold !text-white"
+          >
+            Admission
+            <FaChevronDown className="text-[10px]" />
+          </a>
+
         </nav>
       </div>
+
     </header>
   )
 }
