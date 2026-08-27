@@ -39,7 +39,7 @@ const AboutSection = () => {
             {/* TOP IMAGE */}
             <div className="min-h-[245px] flex-1 overflow-hidden bg-gray-100 lg:min-h-0">
               <img
-                src="/hero/about-1.png"
+                src="/hero/krishnaclg.png"
                 alt="Krishna College"
                 className="h-full w-full object-cover"
               />
@@ -49,7 +49,7 @@ const AboutSection = () => {
             {/* BOTTOM IMAGE */}
             <div className="min-h-[245px] flex-1 overflow-hidden bg-gray-100 lg:min-h-0">
               <img
-                src="/hero/about-2.png"
+                src="/hero/BAMS.png"
                 alt="BAMS Admission"
                 className="h-full w-full object-cover"
               />

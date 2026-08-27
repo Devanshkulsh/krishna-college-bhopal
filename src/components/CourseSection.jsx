@@ -5,17 +5,17 @@ const BAMSSection = () => {
   const topCards = [
     {
       title: "HOSPITAL DETAILS",
-      image: "/home/hospital.jpg",
+      image: "/hero/HOSPITAL1.png",
       link: "/hospital",
     },
     {
       title: "PHARMACY DETAILS",
-      image: "/home/pharmacy.jpg",
+      image: "/hero/PHARMACY.png",
       link: "/pharmacy",
     },
     {
       title: "COLLEGE DETAILS",
-      image: "/home/college.jpg",
+      image: "/hero/campus.png",
       link: "/about",
     },
   ];
