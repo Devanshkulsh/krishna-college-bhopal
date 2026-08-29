@@ -23,7 +23,7 @@ const HeroSlider = () => {
     <section className="relative w-full overflow-hidden">
 
       {/* HERO */}
-      <div className="relative min-h-[620px] lg:min-h-[670px]">
+      <div className="relative min-h-[480px] md:min-h-[560px] lg:min-h-[670px]">
 
         {/* SINGLE BACKGROUND IMAGE */}
         <img
@@ -36,36 +36,36 @@ const HeroSlider = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d35]/95 via-[#0b2742]/75 to-black/10" />
 
         {/* MAIN CONTENT */}
-        <div className="relative z-10 mx-auto grid min-h-[620px] max-w-[1600px] items-center gap-10 px-5 py-12 md:px-8 lg:min-h-[670px] lg:grid-cols-[1fr_420px] lg:px-14 xl:px-20">
+        <div className="relative z-10 translate-y-12 mx-auto grid min-h-[480px] max-w-[1600px] items-start gap-8 px-4 py-8 md:min-h-[560px] md:gap-10 md:px-8 md:py-12 lg:min-h-[670px] lg:grid-cols-[1fr_420px] lg:px-14 lg:py-0 xl:px-20">
 
           {/* LEFT CONTENT */}
           <div className="max-w-[800px] text-white">
 
-            <p className="mb-7 text-base font-medium uppercase tracking-wide md:text-xl">
+            <p className="mb-4 text-xs font-medium uppercase tracking-wide md:mb-7 md:text-base lg:text-xl">
               KRISHNA COLLEGE GROUP OF INSTITUTIONS
             </p>
 
-            <h1 className="max-w-[820px] text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-[54px]">
+            <h1 className="max-w-[820px] text-2xl font-bold leading-[1.15] sm:text-3xl md:text-4xl lg:text-[54px]">
               Welcome To Krishna College Bhopal
 
-              <span className="mt-1 block">
+              <span className="mt-1 block text-xl sm:text-2xl md:text-3xl lg:text-[54px]">
                 Ayurvedic Medical College & Hospital
               </span>
             </h1>
 
             {/* BUTTONS */}
-            <div className="mt-9 flex flex-wrap gap-5">
+            <div className="mt-6 flex flex-wrap gap-3 md:mt-9 md:gap-5">
 
               <a
                 href="/gallery"
-                className="rounded-xl bg-[#e98608] px-7 py-4 text-base font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#c96f00]"
+                className="rounded-xl  border-white bg-[#e98608] px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#c96f00] md:px-7 md:py-4 md:text-base"
               >
                 Take A College Tour
               </a>
 
               <a
                 href="/departments"
-                className="rounded-xl border-2 border-white bg-[#e98608]/90 px-7 py-4 text-base font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#086b64]"
+                className="rounded-xl border-2 border-white bg-[#e98608]/90 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1  hover:text-[#086b64] md:px-7 md:py-4 md:text-base"
               >
                 Our Departments
               </a>
@@ -74,12 +74,12 @@ const HeroSlider = () => {
           </div>
 
           {/* ADMISSION FORM */}
-          <div className="w-full rounded-[24px] bg-white p-6 shadow-2xl lg:p-7">
+          <div className="w-full rounded-[24px] bg-white p-4 shadow-2xl md:p-6 lg:p-7">
 
-            <div className="mb-7 flex items-center gap-3">
-              <FaGraduationCap className="text-2xl text-[#086b64]" />
+            <div className="mb-5 flex items-center gap-3 md:mb-7">
+              <FaGraduationCap className="text-xl text-[#086b64] md:text-2xl" />
 
-              <h2 className="text-xl font-bold text-[#086b64] md:text-2xl">
+              <h2 className="text-lg font-bold text-[#086b64] md:text-xl lg:text-2xl">
                 Apply For Admission 2026
               </h2>
             </div>
@@ -94,10 +94,10 @@ const HeroSlider = () => {
                 <input
                   type="text"
                   placeholder="Student Name"
-                  className="h-[55px] w-full rounded-md border border-gray-400 bg-white px-5 pr-12 text-base text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608]"
+                  className="h-[48px] w-full rounded-md border border-gray-400 bg-white px-4 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608] md:h-[55px] md:px-5 md:pr-12 md:text-base"
                 />
 
-                <FaUser className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <FaUser className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 md:right-4" />
               </div>
 
               {/* MOBILE NUMBER */}
@@ -105,10 +105,10 @@ const HeroSlider = () => {
                 <input
                   type="tel"
                   placeholder="Mobile Number"
-                  className="h-[55px] w-full rounded-md border border-gray-400 bg-white px-5 pr-12 text-base text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608]"
+                  className="h-[48px] w-full rounded-md border border-gray-400 bg-white px-4 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608] md:h-[55px] md:px-5 md:pr-12 md:text-base"
                 />
 
-                <FaPhoneAlt className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <FaPhoneAlt className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 md:right-4" />
               </div>
 
               {/* EMAIL */}
@@ -116,10 +116,10 @@ const HeroSlider = () => {
                 <input
                   type="email"
                   placeholder="Valid Email ID"
-                  className="h-[55px] w-full rounded-md border border-gray-400 bg-white px-5 pr-12 text-base text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608]"
+                  className="h-[48px] w-full rounded-md border border-gray-400 bg-white px-4 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608] md:h-[55px] md:px-5 md:pr-12 md:text-base"
                 />
 
-                <FaEnvelope className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <FaEnvelope className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 md:right-4" />
               </div>
 
               {/* NEET SCORE */}
@@ -127,10 +127,10 @@ const HeroSlider = () => {
                 <input
                   type="number"
                   placeholder="NEET Score"
-                  className="h-[55px] w-full rounded-md border border-gray-400 bg-white px-5 pr-12 text-base text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608]"
+                  className="h-[48px] w-full rounded-md border border-gray-400 bg-white px-4 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608] md:h-[55px] md:px-5 md:pr-12 md:text-base"
                 />
 
-                <FaTrophy className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <FaTrophy className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 md:right-4" />
               </div>
 
               {/* CITY */}
@@ -138,16 +138,16 @@ const HeroSlider = () => {
                 <input
                   type="text"
                   placeholder="Your City"
-                  className="h-[55px] w-full rounded-md border border-gray-400 bg-white px-5 pr-12 text-base text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608]"
+                  className="h-[48px] w-full rounded-md border border-gray-400 bg-white px-4 pr-10 text-sm text-gray-700 outline-none transition focus:border-[#e98608] focus:ring-1 focus:ring-[#e98608] md:h-[55px] md:px-5 md:pr-12 md:text-base"
                 />
 
-                <FaMapMarkerAlt className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                <FaMapMarkerAlt className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 md:right-4" />
               </div>
 
               {/* SUBMIT BUTTON */}
               <button
                 type="submit"
-                className="mt-4 flex h-[54px] w-full items-center justify-center gap-5 rounded-lg bg-[#e98608] text-lg font-bold text-white transition hover:bg-[#c96f00]"
+                className="mt-2 flex h-[48px] w-full items-center justify-center gap-3 rounded-lg bg-[#e98608] text-base font-bold text-white transition hover:bg-[#c96f00] md:mt-4 md:h-[54px] md:gap-5 md:text-lg"
               >
                 Send Message
                 <FaArrowRight />
@@ -164,7 +164,7 @@ const HeroSlider = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="WhatsApp"
-          className="absolute bottom-8 left-5 z-30 flex h-[82px] w-[82px] items-center justify-center rounded-full border-[7px] border-[#096b50] bg-[#24d366] text-[34px] text-white shadow-xl transition hover:scale-105"
+          className="absolute bottom-4 left-3 z-30 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#096b50] bg-[#24d366] text-2xl text-white shadow-xl transition hover:scale-105 md:bottom-8 md:left-5 md:h-[82px] md:w-[82px] md:border-[7px] md:text-[34px]"
         >
           <FaWhatsapp />
         </a>
@@ -206,7 +206,7 @@ const HeroSlider = () => {
 
           <button
             type="button"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#ef3d91] text-xl text-white hover:opacity-90"
+            className="flex h-[58px] w-[58px] items-center justify-center bg-[#ef3d91] text-xl text-white "
             aria-label="Share"
           >
             <FaShareAlt />
@@ -217,9 +217,9 @@ const HeroSlider = () => {
       </div>
 
       {/* BOTTOM NOTICE BAR */}
-      <div className="overflow-hidden bg-[#1e2f69] py-3 text-white">
+      <div className="overflow-hidden bg-[#1e2f69] py-2 md:py-3 text-white">
 
-        <div className="flex min-w-max animate-[marquee_24s_linear_infinite] items-center gap-12 whitespace-nowrap text-base font-semibold">
+        <div className="flex min-w-max animate-[marquee_24s_linear_infinite] items-center gap-8 whitespace-nowrap text-xs font-semibold md:gap-12 md:text-base">
 
           <span>
             📢 BAMS Admission 2026–27 Open

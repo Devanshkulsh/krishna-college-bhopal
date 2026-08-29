@@ -154,19 +154,19 @@ const Navbar = () => {
           <div className="flex items-center gap-7 text-[14px] font-bold text-white">
 
             <a
-              href="tel:+919031081170"
+              href="tel:+91"
               className="flex items-center gap-2"
             >
               <FaPhoneAlt className="text-[#f1a028]" />
-              +91-90310 81170
+              +91-
             </a>
 
             <a
-              href="tel:+917209776617"
+              href="tel:+91"
               className="flex items-center gap-2"
             >
               <FaPhoneAlt className="text-[#f1a028]" />
-              +91-72097 76617
+              +91-
             </a>
 
             <a
@@ -233,7 +233,7 @@ const Navbar = () => {
 
             {/* ADMISSION */}
             <a
-              href="tel:+919031081170"
+              href="tel:+91-"
               className="flex items-center gap-3 border-r border-gray-200 px-6"
             >
               <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
@@ -246,14 +246,14 @@ const Navbar = () => {
                 </small>
 
                 <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                  +91-9031081170
+                  +91-
                 </strong>
               </span>
             </a>
 
             {/* HOSPITAL */}
             <a
-              href="tel:+917209776617"
+              href="tel:+91"
               className="flex items-center gap-3 border-r border-gray-200 px-6"
             >
               <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
@@ -266,7 +266,7 @@ const Navbar = () => {
                 </small>
 
                 <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                  +91-7209776617
+                  +91-
                 </strong>
               </span>
             </a>

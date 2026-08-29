@@ -40,46 +40,48 @@ const exploreLinks = [
 
 const AdmissionOverview = () => {
   return (
-    <section className="w-full bg-[#fffafa] py-16 lg:py-20">
+    <section className="w-full bg-[#fffafa] py-10 md:py-14 lg:py-20">
 
-      <div className="mx-auto max-w-[1500px] px-5 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 md:px-8 lg:px-12">
 
         {/* SECTION HEADING */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center md:mb-10 lg:mb-12">
 
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[2px] text-[#0b3b74]">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[1.5px] text-[#0b3b74] md:mb-3 md:text-sm md:tracking-[2px]">
             Enrollment Details
           </p>
 
-          <h2 className="text-3xl font-bold text-[#0b3b74] md:text-4xl lg:text-[46px]">
+          <h2 className="text-2xl font-bold text-[#0b3b74] sm:text-3xl md:text-4xl lg:text-[46px]">
             Admission Overview
           </h2>
 
         </div>
 
         {/* CARDS */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
 
           {/* LEFT CARD */}
           <div
             className="
               rounded-[26px]
               bg-white
-              p-7
+              p-5
               shadow-[0_14px_35px_rgba(0,0,0,0.06)]
-              md:p-10
+              sm:p-7
+              md:p-8
+              lg:p-10
             "
           >
 
-            <h3 className="text-2xl font-semibold text-[#101828] md:text-[31px]">
+            <h3 className="text-xl font-semibold text-[#101828] sm:text-2xl md:text-[28px] lg:text-[31px]">
               BAMS(UG) Admissions 2026-27
             </h3>
 
-            <p className="mt-3 text-base text-gray-500 md:text-lg">
+            <p className="mt-2 text-sm text-gray-500 sm:mt-3 sm:text-base md:text-lg">
               Find Essential resources for UG medical admissions.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
 
               {admissionLinks.map((item) => (
                 <a
@@ -87,22 +89,27 @@ const AdmissionOverview = () => {
                   href={item.href}
                   className="
                     flex
-                    min-h-[62px]
+                    min-h-[54px]
+                    w-full
                     items-center
                     justify-center
                     rounded-xl
                     bg-[#db1038]
-                    px-5
+                    px-4
+                    py-2
                     text-center
-                    text-[15px]
+                    text-sm
                     font-bold
                     text-white
                     transition
                     duration-300
-
                     hover:-translate-y-1
                     hover:bg-[#b90c2f]
                     hover:shadow-lg
+                    sm:min-h-[58px]
+                    sm:text-[15px]
+                    md:min-h-[62px]
+                    md:px-5
                   "
                 >
                   {item.label}
@@ -118,21 +125,23 @@ const AdmissionOverview = () => {
             className="
               rounded-[26px]
               bg-white
-              p-7
+              p-5
               shadow-[0_14px_35px_rgba(0,0,0,0.06)]
-              md:p-10
+              sm:p-7
+              md:p-8
+              lg:p-10
             "
           >
 
-            <h3 className="text-2xl font-semibold text-[#101828] md:text-[31px]">
+            <h3 className="text-xl font-semibold text-[#101828] sm:text-2xl md:text-[28px] lg:text-[31px]">
               Explore & Learn
             </h3>
 
-            <p className="mt-3 text-base text-gray-500 md:text-lg">
+            <p className="mt-2 text-sm text-gray-500 sm:mt-3 sm:text-base md:text-lg">
               Encourages curiosity and continuous learning by discovering new ideas
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
 
               {exploreLinks.map((item) => (
                 <a
@@ -140,22 +149,27 @@ const AdmissionOverview = () => {
                   href={item.href}
                   className="
                     flex
-                    min-h-[62px]
+                    min-h-[54px]
+                    w-full
                     items-center
                     justify-center
                     rounded-xl
                     bg-[#db1038]
-                    px-5
+                    px-4
+                    py-2
                     text-center
-                    text-[15px]
+                    text-sm
                     font-bold
                     text-white
                     transition
                     duration-300
-
                     hover:-translate-y-1
                     hover:bg-[#b90c2f]
                     hover:shadow-lg
+                    sm:min-h-[58px]
+                    sm:text-[15px]
+                    md:min-h-[62px]
+                    md:px-5
                   "
                 >
                   {item.label}

@@ -6,11 +6,11 @@ import {
 
 const ExcellenceSection = () => {
   return (
-    <section className="w-full bg-white py-10 lg:py-14">
+    <section className="w-full bg-white py-6 md:py-10 lg:py-14">
 
-      <div className="mx-auto max-w-[1900px] px-4">
+      <div className="mx-auto max-w-[1900px] px-3 sm:px-4">
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden rounded-lg">
 
           {/* BACKGROUND IMAGE */}
           <img
@@ -32,29 +32,38 @@ const ExcellenceSection = () => {
               z-10
               mx-auto
               flex
-              min-h-[540px]
+              min-h-[400px]
               max-w-[1450px]
               flex-col
               items-center
               justify-center
-              px-5
-              py-16
+              px-4
+              py-10
               text-center
               text-white
-              md:px-10
-              lg:min-h-[560px]
+              sm:px-5
+              sm:py-12
+              md:min-h-[480px]
+              md:px-8
+              md:py-14
+              lg:min-h-[540px]
+              lg:px-10
+              lg:py-16
             "
           >
 
             {/* SMALL HEADING */}
             <p
               className="
-                mb-5
-                text-base
+                mb-3
+                text-xs
                 font-medium
                 uppercase
                 tracking-[1px]
-                md:text-xl
+                sm:text-sm
+                md:mb-5
+                md:text-base
+                lg:text-xl
               "
             >
               Empowering Students, Nurturing Wellness
@@ -64,9 +73,10 @@ const ExcellenceSection = () => {
             <h2
               className="
                 max-w-[1100px]
-                text-3xl
+                text-2xl
                 font-bold
                 leading-tight
+                sm:text-3xl
                 md:text-4xl
                 lg:text-[42px]
               "
@@ -77,11 +87,14 @@ const ExcellenceSection = () => {
             {/* DESCRIPTION */}
             <p
               className="
-                mt-6
+                mt-4
                 max-w-[1250px]
-                text-base
-                leading-8
+                text-sm
+                leading-7
                 text-white/95
+                sm:text-base
+                sm:leading-8
+                md:mt-6
                 md:text-lg
                 lg:text-[20px]
                 lg:leading-9
@@ -99,24 +112,27 @@ const ExcellenceSection = () => {
             <a
               href="tel:+919031081170"
               className="
-                mt-9
+                mt-6
                 flex
                 items-center
                 justify-center
-                gap-4
+                gap-3
                 text-white
                 transition
                 hover:text-[#e99a20]
+                sm:gap-4
+                md:mt-9
               "
             >
 
-              <FaHeadset className="text-[38px] text-[#ff6565] md:text-[46px]" />
+              <FaHeadset className="text-3xl text-[#ff6565] sm:text-[34px] md:text-[38px] lg:text-[46px]" />
 
               <span
                 className="
-                  text-3xl
+                  text-2xl
                   font-medium
                   tracking-[1px]
+                  sm:text-3xl
                   md:text-4xl
                   lg:text-[48px]
                 "
@@ -130,15 +146,15 @@ const ExcellenceSection = () => {
             <a
               href="/about"
               className="
-                mt-7
+                mt-6
                 inline-flex
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 bg-[#e98608]
-                px-7
-                py-4
-                text-base
+                px-5
+                py-3
+                text-sm
                 font-bold
                 text-white
                 shadow-lg
@@ -146,11 +162,18 @@ const ExcellenceSection = () => {
                 duration-300
                 hover:-translate-y-1
                 hover:bg-[#c96f00]
+                sm:mt-7
+                sm:px-6
+                sm:py-3.5
+                sm:text-base
+                md:gap-4
+                md:px-7
+                md:py-4
               "
             >
               Explore Our College & Hospital
 
-              <FaArrowRight />
+              <FaArrowRight className="text-sm sm:text-base" />
             </a>
 
           </div>

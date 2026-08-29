@@ -44,24 +44,25 @@ const ProgrammesCourses = () => {
     )
   }
 
-  return (
-    <section className="w-full bg-white py-16 lg:py-20">
+  // For pagination dots (only if more than 1 programme)
+  const hasMultiple = programmes.length > 1
 
-      <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
+  return (
+    <section className="w-full bg-white py-10 md:py-16 lg:py-20">
+
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12">
 
         {/* ================= TOP HEADING ================= */}
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between">
 
           <div>
-
-            <p className="mb-3 text-base font-medium uppercase tracking-[1.5px] text-[#00a93f]">
+            <p className="mb-2 text-sm font-medium uppercase tracking-[1.5px] text-[#00a93f] md:mb-3 md:text-base">
               What We Offer
             </p>
 
-            <h2 className="text-3xl font-bold text-[#1f2768] md:text-4xl lg:text-[42px]">
+            <h2 className="text-2xl font-bold text-[#1f2768] md:text-3xl lg:text-[42px]">
               Programmes and Courses
             </h2>
-
           </div>
 
           {/* BROWSE BUTTON */}
@@ -69,26 +70,29 @@ const ProgrammesCourses = () => {
             href="/courses"
             className="
               inline-flex
-              w-fit
+              w-full
               items-center
+              justify-center
               gap-4
               rounded-xl
               bg-[#e97800]
-              px-7
-              py-3.5
-              text-base
+              px-5
+              py-3
+              text-sm
               font-bold
               text-white
               transition
               duration-300
-
               hover:-translate-y-1
               hover:bg-[#c96300]
+              sm:w-auto
+              sm:px-7
+              sm:py-3.5
+              sm:text-base
             "
           >
             Browse All Programmes
-
-            <FaArrowRight />
+            <FaArrowRight className="text-sm sm:text-base" />
           </a>
 
         </div>
@@ -99,51 +103,41 @@ const ProgrammesCourses = () => {
           {/* COURSE CARD */}
           <div
             className="
+              w-full
               max-w-[780px]
               rounded-[20px]
               border
               border-[#1f2768]
               bg-white
-              px-6
-              py-7
+              px-5
+              py-6
               shadow-[0_3px_8px_rgba(31,39,104,0.25)]
-
               md:px-8
               md:py-8
             "
           >
 
             {/* TITLE */}
-            <h3 className="max-w-[700px] text-2xl font-bold leading-[1.4] text-[#1f2768] md:text-[28px]">
+            <h3 className="max-w-[700px] text-xl font-bold leading-[1.4] text-[#1f2768] md:text-2xl lg:text-[28px]">
               {currentProgramme.title}
             </h3>
 
             {/* DURATION */}
-            <p className="mt-3 text-base text-gray-900 md:text-[18px]">
-
-              <strong>
-                Duration :
-              </strong>{' '}
-
+            <p className="mt-3 text-sm text-gray-900 md:text-base lg:text-[18px]">
+              <strong>Duration :</strong>{' '}
               <span className="text-[#f04455]">
                 {currentProgramme.duration}
               </span>
-
             </p>
 
             {/* ELIGIBILITY */}
-            <p className="mt-3 text-base leading-7 text-gray-900 md:text-[18px]">
-
-              <strong>
-                Eligibility :
-              </strong>{' '}
-
+            <p className="mt-3 text-sm leading-7 text-gray-900 md:text-base lg:text-[18px]">
+              <strong>Eligibility :</strong>{' '}
               {currentProgramme.eligibility}
-
             </p>
 
             {/* LINKS */}
-            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
 
               <a
                 href={currentProgramme.readMore}
@@ -170,68 +164,85 @@ const ProgrammesCourses = () => {
 
           </div>
 
-          {/* ================= LEFT ARROW ================= */}
-          <button
-            type="button"
-            onClick={previousProgramme}
-            aria-label="Previous programme"
-            className="
-              absolute
-              left-[-18px]
-              top-1/2
-              hidden
-              h-[70px]
-              w-[70px]
-              -translate-x-1/2
-              -translate-y-1/2
-              items-center
-              justify-center
-              rounded-full
-              bg-[#1f2768]
-              text-xl
-              text-white
-              shadow-lg
-              transition
+          {/* ================= ARROWS (hidden on mobile) ================= */}
+          {hasMultiple && (
+            <>
+              <button
+                type="button"
+                onClick={previousProgramme}
+                aria-label="Previous programme"
+                className="
+                  absolute
+                  left-[-18px]
+                  top-1/2
+                  hidden
+                  h-[70px]
+                  w-[70px]
+                  -translate-x-1/2
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#1f2768]
+                  text-xl
+                  text-white
+                  shadow-lg
+                  transition
+                  hover:bg-[#e97800]
+                  lg:flex
+                "
+              >
+                <FaArrowLeft />
+              </button>
 
-              hover:bg-[#e97800]
-
-              lg:flex
-            "
-          >
-            <FaArrowLeft />
-          </button>
-
-          {/* ================= RIGHT ARROW ================= */}
-          <button
-            type="button"
-            onClick={nextProgramme}
-            aria-label="Next programme"
-            className="
-              absolute
-              right-0
-              top-1/2
-              hidden
-              h-[70px]
-              w-[70px]
-              -translate-y-1/2
-              items-center
-              justify-center
-              rounded-full
-              bg-[#1f2768]
-              text-xl
-              text-white
-              shadow-lg
-              transition
-
-              hover:bg-[#e97800]
-
-              lg:flex
-            "
-          >
-            <FaArrowRight />
-          </button>
+              <button
+                type="button"
+                onClick={nextProgramme}
+                aria-label="Next programme"
+                className="
+                  absolute
+                  right-0
+                  top-1/2
+                  hidden
+                  h-[70px]
+                  w-[70px]
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#1f2768]
+                  text-xl
+                  text-white
+                  shadow-lg
+                  transition
+                  hover:bg-[#e97800]
+                  lg:flex
+                "
+              >
+                <FaArrowRight />
+              </button>
+            </>
+          )}
 
         </div>
+
+        {/* ================= MOBILE PAGINATION DOTS ================= */}
+        {hasMultiple && (
+          <div className="mt-6 flex justify-center gap-3 lg:hidden">
+            {programmes.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2.5 rounded-full transition-all ${
+                  index === activeIndex
+                    ? 'w-8 bg-[#1f2768]'
+                    : 'w-2.5 bg-gray-300'
+                }`}
+                aria-label={`Go to programme ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
       </div>
 

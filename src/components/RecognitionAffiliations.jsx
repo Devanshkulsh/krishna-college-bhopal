@@ -32,19 +32,19 @@ const features = [
 
 const RecognitionAffiliations = () => {
   return (
-    <section className="w-full bg-white py-16 lg:py-20">
-      <div className="mx-auto max-w-[1750px] px-5 md:px-8 lg:px-10">
+    <section className="w-full bg-white py-10 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-[1750px] px-4 md:px-8 lg:px-10">
 
-        <div className="grid items-stretch gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-stretch gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
 
           {/* LEFT CONTENT */}
-          <div className="py-4 lg:py-8">
+          <div className="py-2 lg:py-8">
 
-            <h2 className="text-4xl font-bold leading-tight text-[#1f2768] md:text-5xl">
+            <h2 className="text-3xl font-bold leading-tight text-[#1f2768] md:text-4xl lg:text-5xl">
               Our Recognition & Affiliations
             </h2>
 
-            <p className="mt-7 max-w-[860px] text-base leading-8 text-gray-800 md:text-lg">
+            <p className="mt-5 max-w-[860px] text-sm leading-7 text-gray-800 md:mt-7 md:text-base md:leading-8 lg:text-lg">
               Krishna College Bhopal Ayurvedic Medical College & Hospital is
               committed to providing quality Ayurvedic education through
               recognized academic standards, practical learning, and modern
@@ -52,7 +52,7 @@ const RecognitionAffiliations = () => {
             </p>
 
             {/* BULLETS */}
-            <ul className="mt-7 space-y-2.5 text-base leading-7 text-gray-900 md:text-[17px]">
+            <ul className="mt-5 space-y-2 text-sm leading-7 text-gray-900 md:mt-7 md:text-[17px]">
 
               <li className="list-disc">
                 Approved by the{' '}
@@ -92,27 +92,32 @@ const RecognitionAffiliations = () => {
             </ul>
 
             {/* BUTTONS */}
-            <div className="mt-10 flex flex-wrap gap-5">
+            <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-5">
 
               <a
                 href="/admission"
                 className="
                   inline-flex
                   items-center
+                  justify-center
                   gap-3
                   rounded-full
                   bg-[#e98608]
-                  px-7
-                  py-3.5
+                  px-5
+                  py-3
+                  text-sm
                   font-bold
                   text-white
                   transition
                   hover:-translate-y-1
                   hover:bg-[#c96f00]
+                  md:px-7
+                  md:py-3.5
+                  md:text-base
                 "
               >
                 Admission Now
-                <FaArrowRight />
+                <FaArrowRight className="text-sm md:text-base" />
               </a>
 
               <a
@@ -120,20 +125,25 @@ const RecognitionAffiliations = () => {
                 className="
                   inline-flex
                   items-center
+                  justify-center
                   gap-3
                   rounded-full
                   bg-[#e98608]
-                  px-7
-                  py-3.5
+                  px-5
+                  py-3
+                  text-sm
                   font-bold
                   text-white
                   transition
                   hover:-translate-y-1
                   hover:bg-[#c96f00]
+                  md:px-7
+                  md:py-3.5
+                  md:text-base
                 "
               >
                 Contact Us
-                <FaArrowRight />
+                <FaArrowRight className="text-sm md:text-base" />
               </a>
 
             </div>
@@ -141,7 +151,7 @@ const RecognitionAffiliations = () => {
           </div>
 
           {/* RIGHT VISUAL AREA */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden rounded-lg lg:rounded-none">
 
             {/* BACKGROUND IMAGE */}
             <img
@@ -154,42 +164,45 @@ const RecognitionAffiliations = () => {
             <div className="absolute inset-0 bg-gradient-to-l from-[#8eb4f0]/55 via-white/40 to-white/80" />
 
             {/* CARDS */}
-            <div className="relative z-10 grid min-h-[650px] grid-cols-1 gap-6 p-5 sm:grid-cols-2 lg:p-7">
+            <div className="relative z-10 grid min-h-[500px] grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:min-h-[600px] md:gap-6 md:p-5 lg:min-h-[650px] lg:p-7">
 
               {features.map(({ title, description, icon: Icon }) => (
                 <div
                   key={title}
                   className="
                     flex
-                    min-h-[250px]
+                    min-h-[200px]
                     flex-col
                     items-center
                     justify-center
                     rounded-[20px]
                     border
                     border-[#cfd5e3]
-                    bg-white
-                    px-6
-                    py-8
+                    bg-white/95
+                    px-4
+                    py-6
                     text-center
                     shadow-[0_3px_12px_rgba(31,39,104,0.18)]
                     transition
                     duration-300
                     hover:-translate-y-1
                     hover:shadow-[0_10px_25px_rgba(31,39,104,0.22)]
+                    sm:min-h-[220px]
+                    md:px-6
+                    md:py-8
                   "
                 >
 
                   {/* ICON CIRCLE */}
-                  <div className="mb-6 flex h-[92px] w-[92px] items-center justify-center rounded-full bg-[#fff0f0]">
-                    <Icon className="text-[34px] text-[#ff6464]" />
+                  <div className="mb-4 flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#fff0f0] md:mb-6 md:h-[92px] md:w-[92px]">
+                    <Icon className="text-2xl text-[#ff6464] md:text-[34px]" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#1f2768]">
+                  <h3 className="text-xl font-bold text-[#1f2768] md:text-2xl">
                     {title}
                   </h3>
 
-                  <p className="mt-3 text-base leading-7 text-gray-800">
+                  <p className="mt-2 text-sm leading-6 text-gray-800 md:mt-3 md:text-base md:leading-7">
                     {description}
                   </p>
 

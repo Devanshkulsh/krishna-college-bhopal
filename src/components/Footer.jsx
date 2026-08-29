@@ -174,19 +174,19 @@ const Footer = () => {
 
                 <div className="flex flex-wrap items-center gap-2 text-[16px]">
                   <a
-                    href="tel:+919031081170"
+                    href="tel:+91"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-90310 81170
+                    +91-
                   </a>
 
                   <span>|</span>
 
                   <a
-                    href="tel:+917209776617"
+                    href="tel:+91"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-72097 76617
+                    +91-
                   </a>
                 </div>
 
@@ -304,7 +304,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/919031081170"
+                  href="https://wa.me/91"
                   target="_blank"
                   rel="noreferrer"
                   className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#21b56d] text-[20px] transition hover:-translate-y-1"

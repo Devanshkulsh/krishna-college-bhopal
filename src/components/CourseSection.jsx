@@ -93,20 +93,20 @@ const BAMSSection = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-16 lg:py-20">
-      <div className="mx-auto max-w-[1750px] px-5 md:px-8 lg:px-12">
+    <section className="w-full bg-white py-10 md:py-14 lg:py-20">
+      <div className="mx-auto max-w-[1750px] px-4 sm:px-6 md:px-8 lg:px-12">
 
         {/* TOP HEADING */}
-        <div className="mx-auto mb-14 max-w-[1200px] text-center">
-          <p className="mb-4 text-[17px] font-medium uppercase tracking-[1px] text-[#00ad3b]">
+        <div className="mx-auto mb-10 max-w-[1200px] text-center md:mb-14">
+          <p className="mb-2 text-sm font-medium uppercase tracking-[1px] text-[#00ad3b] md:mb-4 md:text-[17px]">
             Ayurveda & Medical
           </p>
 
-          <h2 className="text-3xl font-bold leading-tight text-[#162364] md:text-4xl lg:text-[42px]">
+          <h2 className="text-2xl font-bold leading-tight text-[#162364] sm:text-3xl md:text-4xl lg:text-[42px]">
             Krishna College Bhopal Ayurvedic Medical College & Hospital
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[1050px] text-[16px] leading-8 text-black md:text-[18px]">
+          <p className="mx-auto mt-4 max-w-[1050px] text-sm leading-7 text-black sm:text-[15px] md:mt-5 md:text-[16px] md:leading-8 lg:text-[18px]">
             Krishna College Bhopal Ayurvedic Medical College & Hospital is
             committed to providing quality Ayurvedic education with a strong
             foundation in traditional knowledge, practical learning and
@@ -117,28 +117,28 @@ const BAMSSection = () => {
         </div>
 
         {/* TOP 3 CARDS */}
-        <div className="grid gap-7 md:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-3 md:gap-7">
           {topCards.map((card, index) => (
             <div key={index}>
               <div className="overflow-hidden rounded-[18px]">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="h-[310px] w-full object-cover transition duration-500 hover:scale-[1.02] lg:h-[330px]"
+                  className="h-[220px] w-full object-cover transition duration-500 hover:scale-[1.02] sm:h-[260px] md:h-[280px] lg:h-[310px] xl:h-[330px]"
                 />
               </div>
 
-              <div className="px-7 pt-5">
-                <h3 className="text-[24px] font-bold uppercase tracking-[0.5px] text-[#17225f]">
+              <div className="px-4 pt-4 sm:px-5 md:px-7 md:pt-5">
+                <h3 className="text-xl font-bold uppercase tracking-[0.5px] text-[#17225f] sm:text-[22px] md:text-[24px]">
                   {card.title}
                 </h3>
 
                 <a
                   href={card.link}
-                  className="mt-6 inline-flex min-w-[210px] items-center justify-center gap-3 rounded-[10px] bg-[#ec7600] px-7 py-4 text-[17px] font-semibold text-white transition hover:bg-[#17225f]"
+                  className="mt-4 inline-flex min-w-[160px] items-center justify-center gap-3 rounded-[10px] bg-[#ec7600] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:min-w-[180px] sm:px-6 sm:py-3.5 sm:text-[15px] md:mt-6 md:min-w-[210px] md:px-7 md:py-4 md:text-[17px]"
                 >
                   View More
-                  <ArrowRight size={19} />
+                  <ArrowRight size={16} className="md:size-[19px]" />
                 </a>
               </div>
             </div>
@@ -146,11 +146,11 @@ const BAMSSection = () => {
         </div>
 
         {/* PROMO CARDS */}
-        <div className="mt-16 grid gap-7 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:mt-16 md:grid-cols-3 md:gap-7">
           {promoCards.map((card, index) => (
             <div
               key={index}
-              className="relative min-h-[345px] overflow-hidden rounded-[8px] bg-cover bg-center"
+              className="relative min-h-[280px] overflow-hidden rounded-[8px] bg-cover bg-center sm:min-h-[300px] md:min-h-[345px]"
               style={{
                 backgroundImage: `url(${card.image})`,
               }}
@@ -162,18 +162,18 @@ const BAMSSection = () => {
                 }}
               />
 
-              <div className="relative z-10 flex h-full max-w-[68%] flex-col justify-center p-7 text-white lg:p-9">
-                <h3 className="text-[22px] font-bold leading-[1.35] lg:text-[25px]">
+              <div className="relative z-10 flex h-full max-w-[85%] flex-col justify-center p-5 text-white sm:max-w-[75%] sm:p-6 md:max-w-[68%] md:p-7 lg:p-9">
+                <h3 className="text-lg font-bold leading-[1.3] sm:text-xl md:text-[22px] lg:text-[25px]">
                   {card.title}
                 </h3>
 
-                <p className="mt-4 text-[15px] leading-7 lg:text-[17px]">
+                <p className="mt-3 text-sm leading-6 sm:text-[14px] sm:leading-7 md:mt-4 md:text-[15px] lg:text-[17px]">
                   {card.description}
                 </p>
 
                 <a
                   href="/admission"
-                  className="mt-6 inline-flex w-fit items-center justify-center rounded-full border border-white bg-[#e87500] px-7 py-3 text-[15px] font-semibold text-white transition hover:bg-[#17225f]"
+                  className="mt-4 inline-flex w-fit items-center justify-center rounded-full border border-white bg-[#e87500] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:mt-5 sm:px-6 sm:py-2.5 sm:text-[14px] md:mt-6 md:px-7 md:py-3 md:text-[15px]"
                 >
                   {card.button}
                 </a>
@@ -183,29 +183,29 @@ const BAMSSection = () => {
         </div>
 
         {/* BOTTOM INFO CARDS */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 md:mt-14 md:gap-6 xl:grid-cols-4">
           {infoCards.map((card, index) => (
             <div
               key={index}
-              className="flex min-h-[300px] flex-col rounded-[18px] border border-[#7f85ac] p-8"
+              className="flex min-h-[260px] flex-col rounded-[18px] border border-[#7f85ac] p-5 sm:p-6 md:p-7 lg:p-8"
               style={{
                 backgroundColor: card.bg,
               }}
             >
-              <h3 className="text-[24px] font-bold leading-tight text-[#17225f]">
+              <h3 className="text-xl font-bold leading-tight text-[#17225f] sm:text-[22px] md:text-[24px]">
                 {card.title}
               </h3>
 
-              <p className="mt-4 text-[16px] leading-8 text-[#24305f]">
+              <p className="mt-3 text-sm leading-7 text-[#24305f] sm:text-[15px] md:mt-4 md:text-[16px] md:leading-8">
                 {card.description}
               </p>
 
               {card.tags.length > 0 && (
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2 md:mt-6">
                   {card.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="bg-[#e87500] px-3 py-2 text-[12px] font-semibold text-white"
+                      className="bg-[#e87500] px-3 py-1.5 text-[11px] font-semibold text-white sm:text-[12px]"
                     >
                       {tag}
                     </span>
@@ -213,13 +213,13 @@ const BAMSSection = () => {
                 </div>
               )}
 
-              <div className="mt-auto pt-7">
+              <div className="mt-auto pt-4 md:pt-7">
                 <a
                   href="/about"
-                  className="inline-flex items-center gap-3 rounded-[9px] bg-[#e87500] px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-[#17225f]"
+                  className="inline-flex items-center gap-3 rounded-[9px] bg-[#e87500] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:px-6 sm:py-3 sm:text-[14px] md:px-7 md:py-3.5 md:text-[15px]"
                 >
                   {index === 2 ? "Explore Now" : "Know More"}
-                  <ArrowRight size={16} />
+                  <ArrowRight size={14} className="sm:size-[16px]" />
                 </a>
               </div>
             </div>
