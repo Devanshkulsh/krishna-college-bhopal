@@ -78,7 +78,7 @@ const importantLinks = [
 const FooterLinkColumn = ({ title, links }) => {
   return (
     <div>
-      <h3 className="mb-6 text-[25px] font-bold leading-none text-white">
+      <h3 className="mb-5 text-[22px] font-bold leading-none text-white sm:mb-6 sm:text-[25px]">
         {title}
       </h3>
 
@@ -108,7 +108,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#168486] text-white">
 
-      <div className="mx-auto max-w-[1750px] px-6 py-12 lg:px-10 xl:px-14">
+      <div className="mx-auto max-w-[1750px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 xl:px-14">
 
         {/* =====================================
             TOP AREA
@@ -141,12 +141,12 @@ const Footer = () => {
               <img
                 src="/logoayu.png"
                 alt="Krishna College Bhopal"
-                className="h-[74px] w-auto object-contain"
+                className="h-[74px] w-auto max-w-full object-contain"
               />
             </div>
 
             {/* FIND US */}
-            <h3 className="mt-6 text-[24px] font-bold">
+            <h3 className="mt-6 text-[22px] font-bold sm:text-[24px]">
               Find Us Here
             </h3>
 
@@ -158,8 +158,8 @@ const Footer = () => {
                 <div
                   className="
                     flex
-                    h-[50px]
-                    w-[50px]
+                    h-11
+                    w-11
                     shrink-0
                     items-center
                     justify-center
@@ -167,12 +167,14 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
+                    sm:h-[50px]
+                    sm:w-[50px]
                   "
                 >
                   <FaPhoneAlt />
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2 text-[16px]">
+                <div className="min-w-0 flex flex-wrap items-center gap-2 text-[14px] sm:text-[16px]">
                   <a
                     href="tel:+91"
                     className="hover:text-[#e7a51d]"
@@ -198,8 +200,8 @@ const Footer = () => {
                 <div
                   className="
                     flex
-                    h-[50px]
-                    w-[50px]
+                    h-11
+                    w-11
                     shrink-0
                     items-center
                     justify-center
@@ -207,6 +209,8 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
+                    sm:h-[50px]
+                    sm:w-[50px]
                   "
                 >
                   <FaEnvelope />
@@ -214,7 +218,7 @@ const Footer = () => {
 
                 <a
                   href="mailto:info@krishnacollegebhopal.com"
-                  className="text-[16px] hover:text-[#e7a51d]"
+                  className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[16px]"
                 >
                   info@krishnacollegebhopal.com
                 </a>
@@ -228,8 +232,8 @@ const Footer = () => {
                   className="
                     mt-1
                     flex
-                    h-[50px]
-                    w-[50px]
+                    h-11
+                    w-11
                     shrink-0
                     items-center
                     justify-center
@@ -237,12 +241,14 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
+                    sm:h-[50px]
+                    sm:w-[50px]
                   "
                 >
                   <FaMapMarkerAlt />
                 </div>
 
-                <div className="pt-1 text-[16px] leading-8">
+                <div className="min-w-0 pt-1 text-[14px] leading-7 sm:text-[16px] sm:leading-8">
                   <p>
                     <strong>Main Campus:</strong>{' '}
                     Krishna College Bhopal
@@ -261,7 +267,7 @@ const Footer = () => {
             {/* SOCIAL */}
             <div className="mt-10">
 
-              <h4 className="mb-5 text-[22px] font-bold">
+              <h4 className="mb-5 text-[20px] font-bold sm:text-[22px]">
                 Follow Us:
               </h4>
 
@@ -271,7 +277,7 @@ const Footer = () => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#247bf1] text-[20px] transition hover:-translate-y-1"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#247bf1] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
                 >
                   <FaFacebookF />
                 </a>
@@ -280,7 +286,7 @@ const Footer = () => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#e33872] text-[20px] transition hover:-translate-y-1"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e33872] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
                 >
                   <FaInstagram />
                 </a>
@@ -289,7 +295,7 @@ const Footer = () => {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#ff0808] text-[20px] transition hover:-translate-y-1"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ff0808] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
                 >
                   <FaYoutube />
                 </a>
@@ -298,7 +304,7 @@ const Footer = () => {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#096fab] text-[20px] transition hover:-translate-y-1"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#096fab] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -307,7 +313,7 @@ const Footer = () => {
                   href="https://wa.me/91"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#21b56d] text-[20px] transition hover:-translate-y-1"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#21b56d] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
                 >
                   <FaWhatsapp />
                 </a>
@@ -359,22 +365,23 @@ const Footer = () => {
 
           <div>
 
-            <h3 className="mb-6 text-[34px] font-bold leading-none">
+            <h3 className="mb-5 text-[28px] font-bold leading-none sm:mb-6 sm:text-[34px]">
               Important Links
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
 
               {importantLinks.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   className="
+                    max-w-full
                     rounded-full
                     bg-[#b77a0e]
-                    px-4
-                    py-[9px]
-                    text-[15px]
+                    px-3
+                    py-2
+                    text-[14px]
                     font-medium
                     leading-none
                     text-white
@@ -383,6 +390,9 @@ const Footer = () => {
                     duration-300
                     hover:-translate-y-0.5
                     hover:bg-[#df930e]
+                    sm:px-4
+                    sm:py-[9px]
+                    sm:text-[15px]
                   "
                 >
                   {item.label}
@@ -415,16 +425,26 @@ const Footer = () => {
           "
         >
 
-          <p>
-            © 2026 Krishna College Bhopal. All Rights Reserved.
-            <span className="mx-2">|</span>
-            Designed by
-            <strong className="text-white">
+          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center lg:justify-start lg:text-left">
+            <span>
+              © 2026 Krishna College Bhopal. All Rights Reserved.
+            </span>
+
+            <span className="text-white/40">|</span>
+
+            <span>Designed by</span>
+
+            <a
+              href="https://ntechzy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white"
+            >
               Ntechzy
-            </strong>
+            </a>
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center lg:justify-start lg:text-left">
 
             <a href="/terms" className="hover:text-white">
               Terms of service

@@ -1,5 +1,4 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import CourseSection from '../components/CourseSection'
 import DepartmentsSection from '../components/DepartmentsSection'
@@ -18,7 +17,6 @@ import Footer from '../components/Footer'
 const HomePage = () => {
   return (
     <>
-      <HeroSection/>
       <AboutSection/>
       <CourseSection/>  
       <DepartmentsSection/>
