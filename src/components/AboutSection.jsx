@@ -105,7 +105,7 @@ const AboutSection = () => {
               knowledge, practical learning and clinical exposure. Our
               institution focuses on developing skilled healthcare
               professionals through academic excellence, clinical experience
-              and a student-centred learning environment.
+              and a student-centred learning environment
             </p>
 
 
