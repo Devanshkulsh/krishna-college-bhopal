@@ -3,35 +3,35 @@ import React from 'react'
 const departments = [
   {
     title: 'Swasthavritta and Yoga',
-    image: '/hero/yoga.png',
+    image: '/hero/Swasthavritta and Yoga.png',
   },
   {
     title: 'Kayachikitsa',
-    image: '/hero/kaya.png',
+    image: '/hero/Kayachikitsa.png',
   },
   {
     title: 'Rognidan evam Vikruti Vigyan',
-    image: '/hero/rognidan.png',
+    image: '/hero/Vikruti.png',
   },
   {
     title: 'Agadtantra evam Vidhi Vaidyaka',
-    image: '/departments/agadtantra.jpg',
+    image: '/hero/vidhi.png',
   },
   {
     title: 'Kaumarbhritya',
-    image: '/departments/kaumarbhritya.jpg',
+    image: '/hero/Kaumarbhritya.png',
   },
   {
     title: 'Prasuti Tantra evam Striroga',
-    image: '/departments/prasuti-striroga.jpg',
+    image: '/hero/Prasuti.png',
   },
   {
     title: 'Shalakya Tantra',
-    image: '/departments/shalakya-tantra.jpg',
+    image: '/hero/Shalakya.png',
   },
   {
     title: 'Shalya Tantra',
-    image: '/departments/shalya-tantra.jpg',
+    image: '/hero/salya.png',
   },
 ]
 

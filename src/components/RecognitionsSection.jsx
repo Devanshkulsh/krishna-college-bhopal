@@ -3,19 +3,19 @@ import React from 'react'
 const recognitions = [
   {
     name: 'NCISM',
-    image: '/recognitions/ncism.png',
+    image: '/hero/ncism.png',
   },
   {
     name: 'Health Department',
-    image: '/recognitions/health-department.png',
+    image: '/hero/health.png',
   },
   {
     name: 'University Affiliation',
-    image: '/recognitions/university.png',
+    image: '/hero/university.png',
   },
   {
     name: 'Ministry of AYUSH',
-    image: '/recognitions/ayush.png',
+    image: '/hero/ministry.png',
   },
 ]
 

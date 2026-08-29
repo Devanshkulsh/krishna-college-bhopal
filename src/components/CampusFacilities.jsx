@@ -4,62 +4,62 @@ const facilities = [
   {
     title: 'General & Laparoscopic Surgery',
     description: 'Precision-driven minimally invasive surgical care.',
-    image: '/facilities/surgery.jpg',
+    image: '/hero/Laparoscopic.png',
   },
   {
     title: 'Obstetrics & Gynecology',
     description: "Women's Health & Maternity.",
-    image: '/facilities/gynecology.jpg',
+    image: '/hero/Obstetrics.png',
   },
   {
     title: '24×7 Normal Delivery',
     description: 'Safe Normal Delivery Services.',
-    image: '/facilities/normal-delivery.jpg',
+    image: '/hero/24.png',
   },
   {
     title: 'Infertility Counseling',
     description: 'Fertility Evaluation and Counseling.',
-    image: '/facilities/infertility.jpg',
+    image: '/hero/Infertility.png',
   },
   {
     title: 'Panchakarma Therapy',
     description: 'Classical Panchakarma Therapy Care.',
-    image: '/facilities/panchakarma.jpg',
+    image: '/hero/Panchakarma.png',
   },
   {
     title: 'ICU / NICE',
     description: 'Critical & Neonatal Care.',
-    image: '/facilities/icu.jpg',
+    image: '/hero/ICU.png',
   },
   {
     title: 'Ultrasound',
     description: 'Advanced Ultrasound Diagnostic Services.',
-    image: '/facilities/ultrasound.jpg',
+    image: '/hero/Ultrasound.png',
   },
   {
     title: 'X-Ray',
     description: 'Digital X-Ray Imaging Services.',
-    image: '/facilities/xray.jpg',
+    image: '/hero/X-Ray.png',
   },
   {
     title: 'Pathology Laboratory',
     description: 'Advanced Diagnostic Pathology Services.',
-    image: '/facilities/pathology.jpg',
+    image: '/hero/Pathology.png',
   },
   {
     title: 'Ophthalmology (Eye)',
     description: 'Comprehensive Eye Care Services.',
-    image: '/facilities/eye.jpg',
+    image: '/hero/Ophthalmology.png',
   },
   {
     title: 'ENT Department',
     description: 'Comprehensive ENT Care Services.',
-    image: '/facilities/ent.jpg',
+    image: '/hero/ENT.png',
   },
   {
     title: 'ECG',
     description: 'Advanced ECG Diagnostic Services.',
-    image: '/facilities/ecg.jpg',
+    image: '/hero/ECG.png',
   },
 ]
 

@@ -145,7 +145,7 @@ const RecognitionAffiliations = () => {
 
             {/* BACKGROUND IMAGE */}
             <img
-              src="/home/recognition-bg.jpg"
+              src="/hero/campus.png"
               alt="Krishna College Campus"
               className="absolute inset-0 h-full w-full object-cover"
             />
