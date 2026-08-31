@@ -102,12 +102,12 @@ const RecognitionAffiliations = () => {
                   justify-center
                   gap-3
                   rounded-full
-                  bg-[#e98608]
+                  bg-[#A3621D]
                   px-5
                   py-3
                   text-sm
                   font-bold
-                  text-white
+                  !text-white
                   transition
                   hover:-translate-y-1
                   hover:bg-[#c96f00]
@@ -128,12 +128,12 @@ const RecognitionAffiliations = () => {
                   justify-center
                   gap-3
                   rounded-full
-                  bg-[#e98608]
+                  bg-[#A3621D]
                   px-5
                   py-3
                   text-sm
                   font-bold
-                  text-white
+                  !text-white
                   transition
                   hover:-translate-y-1
                   hover:bg-[#c96f00]

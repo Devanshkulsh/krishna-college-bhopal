@@ -41,17 +41,20 @@ const HeroSlider = () => {
           {/* LEFT CONTENT */}
           <div className="max-w-[800px] text-white">
 
-            <p className="mb-4 text-xs font-medium uppercase tracking-wide md:mb-7 md:text-base lg:text-xl">
-              KRISHNA COLLEGE GROUP OF INSTITUTIONS
-            </p>
+            
 
-            <h1 className="max-w-[820px] text-2xl font-bold leading-[1.15] sm:text-3xl md:text-4xl lg:text-[54px]">
-              Welcome To Krishna College Bhopal
 
-              <span className="mt-1 block text-xl sm:text-2xl md:text-3xl lg:text-[54px]">
-                Ayurvedic Medical College & Hospital
-              </span>
-            </h1>
+            <h1 className="mt-10 max-w-[820px] text-2xl font-bold leading-[1.15] sm:text-3xl md:text-4xl lg:text-[54px]">
+  WELCOME TO SHRI KRISHNA AYURVEDIC HOSPITAL
+
+  <span className="mt-3 block text-base sm:text-lg md:text-xl lg:text-[28px]">
+    SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+  </span>
+
+  <span className="mt-5 block text-xl font-bold text-[#A3621D] sm:text-2xl md:text-3xl lg:text-[38px]">
+    निःशुल्क स्वर्ण प्राशन शिविर
+  </span>
+</h1>
 
             {/* BUTTONS */}
             <div className="mt-6 flex flex-wrap gap-3 md:mt-9 md:gap-5">

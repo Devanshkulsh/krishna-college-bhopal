@@ -228,11 +228,11 @@ const Navbar = () => {
 
             <div className="hidden sm:block">
               <div className="whitespace-nowrap text-[25px] font-extrabold uppercase leading-none text-[#09676b]">
-  Krishna College Bhopal
+  SHRI KRISHNA AYURVEDIC HOSPITAL
 </div>
 
               <p className="mt-1.5 text-[10px] font-extrabold uppercase leading-[1.2] text-[#af680d]">
-                Ayurvedic Medical College and Hospital
+                SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
               </p>
             </div>
           </a>

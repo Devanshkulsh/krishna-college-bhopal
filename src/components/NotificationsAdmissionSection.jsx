@@ -129,14 +129,14 @@ const NotificationsAdmissionSection = () => {
 
                 <a
                   href="/admission"
-                  className="rounded-full bg-[#ff5057] px-5 py-2.5 text-[15px] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#e94349] md:px-7 md:py-3 md:text-[16px]"
+                  className="rounded-full bg-[#A3621D] px-5 py-2.5 text-[15px] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#e94349] md:px-7 md:py-3 md:text-[16px]"
                 >
                   Apply Today
                 </a>
 
                 <a
                   href="/contact"
-                  className="rounded-full bg-[#ff7900] px-5 py-2.5 text-[15px] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#df6800] md:px-7 md:py-3 md:text-[16px]"
+                  className="rounded-full bg-[#A3621D] px-5 py-2.5 text-[15px] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#df6800] md:px-7 md:py-3 md:text-[16px]"
                 >
                   Enquiry Now
                 </a>

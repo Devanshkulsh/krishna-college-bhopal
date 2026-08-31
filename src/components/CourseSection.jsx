@@ -135,7 +135,7 @@ const BAMSSection = () => {
 
                 <a
                   href={card.link}
-                  className="mt-4 inline-flex min-w-[160px] items-center justify-center gap-3 rounded-[10px] bg-[#ec7600] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:min-w-[180px] sm:px-6 sm:py-3.5 sm:text-[15px] md:mt-6 md:min-w-[210px] md:px-7 md:py-4 md:text-[17px]"
+                  className="mt-4 inline-flex min-w-[160px] items-center justify-center gap-3 rounded-[10px] bg-[#A3621D] px-5 py-3 text-sm font-semibold !text-white transition hover:bg-[#17225f] sm:min-w-[180px] sm:px-6 sm:py-3.5 sm:text-[15px] md:mt-6 md:min-w-[210px] md:px-7 md:py-4 md:text-[17px]"
                 >
                   View More
                   <ArrowRight size={16} className="md:size-[19px]" />
@@ -173,7 +173,7 @@ const BAMSSection = () => {
 
                 <a
                   href="/admission"
-                  className="mt-4 inline-flex w-fit items-center justify-center rounded-full border border-white bg-[#e87500] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:mt-5 sm:px-6 sm:py-2.5 sm:text-[14px] md:mt-6 md:px-7 md:py-3 md:text-[15px]"
+                  className="mt-4 inline-flex w-fit items-center justify-center rounded-full border border-white bg-[#A3621D] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:mt-5 sm:px-6 sm:py-2.5 sm:text-[14px] md:mt-6 md:px-7 md:py-3 md:text-[15px]"
                 >
                   {card.button}
                 </a>
@@ -205,7 +205,7 @@ const BAMSSection = () => {
                   {card.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="bg-[#e87500] px-3 py-1.5 text-[11px] font-semibold text-white sm:text-[12px]"
+                      className="bg-[#A3621D] px-3 py-1.5 text-[11px] font-semibold text-white sm:text-[12px]"
                     >
                       {tag}
                     </span>
@@ -216,7 +216,7 @@ const BAMSSection = () => {
               <div className="mt-auto pt-4 md:pt-7">
                 <a
                   href="/about"
-                  className="inline-flex items-center gap-3 rounded-[9px] bg-[#e87500] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#17225f] sm:px-6 sm:py-3 sm:text-[14px] md:px-7 md:py-3.5 md:text-[15px]"
+                  className="inline-flex items-center gap-3 rounded-[9px] bg-[#A3621D] px-5 py-2.5 text-sm font-semibold !text-white transition hover:bg-[#17225f] sm:px-6 sm:py-3 sm:text-[14px] md:px-7 md:py-3.5 md:text-[15px]"
                 >
                   {index === 2 ? "Explore Now" : "Know More"}
                   <ArrowRight size={14} className="sm:size-[16px]" />

@@ -75,12 +75,12 @@ const ProgrammesCourses = () => {
               justify-center
               gap-4
               rounded-xl
-              bg-[#e97800]
+              bg-[#A3621D]
               px-5
               py-3
               text-sm
               font-bold
-              text-white
+              !text-white
               transition
               duration-300
               hover:-translate-y-1
@@ -141,21 +141,21 @@ const ProgrammesCourses = () => {
 
               <a
                 href={currentProgramme.readMore}
-                className="font-semibold text-[#1f2768] underline underline-offset-2 transition hover:text-[#e97800]"
+                className="font-semibold !text-[white] underline underline-offset-2 transition hover:text-[#e97800]"
               >
                 Read More
               </a>
 
               <a
                 href={currentProgramme.syllabus}
-                className="font-semibold text-[#1f2768] underline underline-offset-2 transition hover:text-[#e97800] sm:text-center"
+                className="font-semibold !text-[white] underline underline-offset-2 transition hover:text-[#e97800] sm:text-center"
               >
                 Syllabus
               </a>
 
               <a
                 href={currentProgramme.fees}
-                className="font-semibold text-[#1f2768] underline underline-offset-2 transition hover:text-[#e97800] sm:text-right"
+                className="font-semibold !text-[white] underline underline-offset-2 transition hover:text-[#e97800] sm:text-right"
               >
                 Fee Structure
               </a>
