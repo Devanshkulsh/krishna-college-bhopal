@@ -154,50 +154,59 @@ const Navbar = () => {
           <div className="flex items-center gap-7 text-[14px] font-bold text-white">
 
             <a
-              href="tel:+91"
+              href="tel:+91 7611150888"
               className="flex items-center gap-2"
             >
               <FaPhoneAlt className="text-[#f1a028]" />
-              +91-
+              +91-7611150888
             </a>
 
             <a
-              href="tel:+91"
+              href="tel:+91 6262 180 303"
               className="flex items-center gap-2"
             >
               <FaPhoneAlt className="text-[#f1a028]" />
-              +91-
+              +91-6262 180 303
             </a>
 
             <a
-              href="mailto:info@krishnacollegebhopal.com"
+              href="mailto:shrikrishnayurvedic@.com"
               className="flex items-center gap-2"
             >
               <FaEnvelope className="text-[#f1a028]" />
-              info@krishnacollegebhopal.com
+              shrikrishnayurvedic@.com
             </a>
 
           </div>
 
           {/* RIGHT */}
           <div className="flex items-center gap-3">
-
-            {[
-              ['BAMS(UG) Admission 2026', '/admission'],
-              ['Govt. Approval', '/approvals'],
-              ['Career', '/career'],
-              ['Notification', '/notification'],
-            ].map(([label, href]) => (
-              <a
-                key={label}
-                href={href}
-                className="rounded-full bg-[#e99a20] px-4 py-[5px] text-[13px] font-bold text-white"
-              >
-                {label}
-              </a>
-            ))}
-
-          </div>
+  {[
+    ['BAMS(UG) Admission 2026', '/admission'],
+    ['Govt. Approval', '/approvals'],
+    ['Career', '/career'],
+    ['Notification', '/notification'],
+  ].map(([label, href]) => (
+    <a
+      key={label}
+      href={href}
+      style={{ color: '#ffffff' }}
+      className="
+        rounded-full
+        bg-[#A3621D]
+        px-4
+        py-[5px]
+        text-[13px]
+        font-bold
+        transition
+        text-white
+        hover:bg-[#8d5116]
+      "
+    >
+      {label}
+    </a>
+  ))}
+</div>
         </div>
       </div>
 
@@ -233,10 +242,10 @@ const Navbar = () => {
 
             {/* ADMISSION */}
             <a
-              href="tel:+91-"
+              href="tel:+91-7611150888"
               className="flex items-center gap-3 border-r border-gray-200 px-6"
             >
-              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
+              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#A3621D] text-xl text-white">
                 <FaBookOpen />
               </span>
 
@@ -246,17 +255,19 @@ const Navbar = () => {
                 </small>
 
                 <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                  +91-
+                  +91-7611150888
+                  
+
                 </strong>
               </span>
             </a>
 
             {/* HOSPITAL */}
             <a
-              href="tel:+91"
+              href="tel:+91 6262 180 303"
               className="flex items-center gap-3 border-r border-gray-200 px-6"
             >
-              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#e99a20] text-xl text-white">
+              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#A3621D] text-xl text-white">
                 <FaHospital />
               </span>
 
@@ -266,7 +277,7 @@ const Navbar = () => {
                 </small>
 
                 <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                  +91-
+                  +91-6262 180 303
                 </strong>
               </span>
             </a>
@@ -387,7 +398,7 @@ const Navbar = () => {
                         key={child.label}
                         href={child.href}
                         onClick={closeMenu}
-                        className="block border-b border-gray-100 px-5 py-3 text-sm font-semibold !text-[#08666b] hover:bg-[#eef8f6] hover:!text-[#e99a20]"
+                        className="block border-b border-gray-100 px-5 py-3 text-sm font-semibold !text-[#08666b] hover:bg-[#eef8f6] hover:!text-[#A3621D]"
                       >
                         {child.label}
                       </a>
@@ -404,7 +415,7 @@ const Navbar = () => {
           {/* ADMISSION */}
           <a
             href="/admission"
-            className="my-2 flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#e99a20] px-8 py-[11px] text-[15px] font-bold !text-white"
+            className="my-2 flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#A3621D] px-8 py-[11px] text-[15px] font-bold !text-white"
           >
             Admission
             <FaChevronDown className="text-[10px]" />
@@ -417,4 +428,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

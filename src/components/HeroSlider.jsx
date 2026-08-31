@@ -58,14 +58,14 @@ const HeroSlider = () => {
 
               <a
                 href="/gallery"
-                className="rounded-xl  border-white bg-[#e98608] px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#c96f00] md:px-7 md:py-4 md:text-base"
+                className="rounded-xl border-2 bg-[#A3621D] px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#c96f00] md:px-7 md:py-4 md:text-base"
               >
                 Take A College Tour
               </a>
 
               <a
                 href="/departments"
-                className="rounded-xl border-2 border-white bg-[#e98608]/90 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1  hover:text-[#086b64] md:px-7 md:py-4 md:text-base"
+                className="rounded-xl border-2  bg-[#A3621D] px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1  hover:text-[#086b64] md:px-7 md:py-4 md:text-base"
               >
                 Our Departments
               </a>
@@ -138,7 +138,7 @@ const HeroSlider = () => {
       </div>
 
       {/* BOTTOM NOTICE BAR */}
-      <div className="overflow-hidden bg-[#1e2f69] py-2 md:py-3 text-white">
+      <div className="overflow-hidden bg-[#07634C] py-2 md:py-3 text-white">
 
         <div className="flex min-w-max animate-[marquee_24s_linear_infinite] items-center gap-8 whitespace-nowrap text-xs font-semibold md:gap-12 md:text-base">
 

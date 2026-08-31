@@ -176,19 +176,19 @@ const Footer = () => {
 
                 <div className="min-w-0 flex flex-wrap items-center gap-2 text-[14px] sm:text-[16px]">
                   <a
-                    href="tel:+91"
+                    href="tel:+917611150888"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-
+                    +91-6262180303 
                   </a>
 
                   <span>|</span>
 
                   <a
-                    href="tel:+91"
+                    href="tel:+917611150888"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-
+                    +91-6262180303 
                   </a>
                 </div>
 
@@ -217,10 +217,10 @@ const Footer = () => {
                 </div>
 
                 <a
-                  href="mailto:info@krishnacollegebhopal.com"
+                  href="mailto:shrikrishnayurvedic@.com"
                   className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[16px]"
                 >
-                  info@krishnacollegebhopal.com
+                  shrikrishnayurvedic@.com
                 </a>
 
               </div>

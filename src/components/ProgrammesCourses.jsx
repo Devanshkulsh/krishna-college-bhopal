@@ -48,7 +48,7 @@ const ProgrammesCourses = () => {
   const hasMultiple = programmes.length > 1
 
   return (
-    <section className="w-full bg-white py-10 md:py-16 lg:py-20">
+    <section className="w-full bg-[white] py-10 md:py-16 lg:py-20">
 
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12">
 
@@ -108,7 +108,7 @@ const ProgrammesCourses = () => {
               rounded-[20px]
               border
               border-[#1f2768]
-              bg-white
+              bg-[#168486]
               px-5
               py-6
               shadow-[0_3px_8px_rgba(31,39,104,0.25)]
@@ -118,12 +118,12 @@ const ProgrammesCourses = () => {
           >
 
             {/* TITLE */}
-            <h3 className="max-w-[700px] text-xl font-bold leading-[1.4] text-[#1f2768] md:text-2xl lg:text-[28px]">
+            <h3 className="max-w-[700px] text-xl font-bold leading-[1.4] text-[white] md:text-2xl lg:text-[28px]">
               {currentProgramme.title}
             </h3>
 
             {/* DURATION */}
-            <p className="mt-3 text-sm text-gray-900 md:text-base lg:text-[18px]">
+            <p className="mt-3 text-sm text-[white] md:text-base lg:text-[18px]">
               <strong>Duration :</strong>{' '}
               <span className="text-[#f04455]">
                 {currentProgramme.duration}
@@ -131,7 +131,7 @@ const ProgrammesCourses = () => {
             </p>
 
             {/* ELIGIBILITY */}
-            <p className="mt-3 text-sm leading-7 text-gray-900 md:text-base lg:text-[18px]">
+            <p className="mt-3 text-sm leading-7 text-[white] md:text-base lg:text-[18px]">
               <strong>Eligibility :</strong>{' '}
               {currentProgramme.eligibility}
             </p>

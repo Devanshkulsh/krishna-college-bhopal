@@ -60,7 +60,7 @@ const NotificationsAdmissionSection = () => {
             <div className="flex h-auto flex-col overflow-hidden rounded-[17px] bg-white shadow-[0_8px_25px_rgba(0,0,0,0.10)] md:min-h-[380px]">
 
               {/* Header */}
-              <div className="flex h-[60px] items-center gap-3 bg-[#11457d] px-4 text-white md:h-[68px] md:px-6">
+              <div className="flex h-[60px] items-center gap-3 bg-[#168486] px-4 text-white md:h-[68px] md:px-6">
 
                 <FaBell className="text-[18px] text-[#ffc44d] md:text-[20px]" />
 
@@ -84,7 +84,7 @@ const NotificationsAdmissionSection = () => {
             <div className="flex h-auto flex-col overflow-hidden rounded-[17px] bg-white shadow-[0_8px_25px_rgba(0,0,0,0.10)] md:min-h-[380px]">
 
               {/* Header */}
-              <div className="flex h-[60px] items-center gap-3 bg-[#11457d] px-4 text-white md:h-[68px] md:px-6">
+              <div className="flex h-[60px] items-center gap-3 bg-[#168486] px-4 text-white md:h-[68px] md:px-6">
 
                 <FaBookOpen className="text-[18px] text-[#56d4b3] md:text-[20px]" />
 
@@ -105,7 +105,7 @@ const NotificationsAdmissionSection = () => {
             {/* ========================================
                 ADMISSION OPEN
             ======================================== */}
-            <div className="flex h-auto min-h-[320px] flex-col rounded-[17px] bg-[#14356b] px-5 py-6 text-white shadow-[0_8px_25px_rgba(0,0,0,0.10)] md:min-h-[380px] md:px-8 md:py-8">
+            <div className="flex h-auto min-h-[320px] flex-col rounded-[17px] bg-[#168486] px-5 py-6 text-white shadow-[0_8px_25px_rgba(0,0,0,0.10)] md:min-h-[380px] md:px-8 md:py-8">
 
               {/* Heading */}
               <div className="flex items-center gap-3">
@@ -149,19 +149,19 @@ const NotificationsAdmissionSection = () => {
                 <FaPhoneAlt className="mr-1 text-[#ec3f8c]" />
 
                 <a
-                  href="tel:+91"
+                  href="tel:+91 7611150888"
                   className="transition hover:text-[#ffc44d]"
                 >
-                  +91-
+                  +91-7611150888
                 </a>
 
                 <span>|</span>
 
                 <a
-                  href="tel:+91"
+                  href="tel:+91 6262 180 303"
                   className="transition hover:text-[#ffc44d]"
                 >
-                  +91-
+                  +91-6262 180 303
                 </a>
 
               </div>

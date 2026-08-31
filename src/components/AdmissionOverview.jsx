@@ -85,35 +85,36 @@ const AdmissionOverview = () => {
 
               {admissionLinks.map((item) => (
                 <a
-                  key={item.label}
-                  href={item.href}
-                  className="
-                    flex
-                    min-h-[54px]
-                    w-full
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-[#db1038]
-                    px-4
-                    py-2
-                    text-center
-                    text-sm
-                    font-bold
-                    text-white
-                    transition
-                    duration-300
-                    hover:-translate-y-1
-                    hover:bg-[#b90c2f]
-                    hover:shadow-lg
-                    sm:min-h-[58px]
-                    sm:text-[15px]
-                    md:min-h-[62px]
-                    md:px-5
-                  "
-                >
-                  {item.label}
-                </a>
+  key={item.label}
+  href={item.href}
+  className="
+    flex
+    min-h-[54px]
+    w-full
+    items-center
+    justify-center
+    rounded-xl
+    bg-[#A3621D]
+    px-4
+    py-2
+    text-center
+    text-sm
+    font-bold
+    !text-white
+    transition
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#07634C]
+    hover:!text-white
+    hover:shadow-lg
+    sm:min-h-[58px]
+    sm:text-[15px]
+    md:min-h-[62px]
+    md:px-5
+  "
+>
+  {item.label}
+</a>  
               ))}
 
             </div>
@@ -145,35 +146,36 @@ const AdmissionOverview = () => {
 
               {exploreLinks.map((item) => (
                 <a
-                  key={item.label}
-                  href={item.href}
-                  className="
-                    flex
-                    min-h-[54px]
-                    w-full
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-[#db1038]
-                    px-4
-                    py-2
-                    text-center
-                    text-sm
-                    font-bold
-                    text-white
-                    transition
-                    duration-300
-                    hover:-translate-y-1
-                    hover:bg-[#b90c2f]
-                    hover:shadow-lg
-                    sm:min-h-[58px]
-                    sm:text-[15px]
-                    md:min-h-[62px]
-                    md:px-5
-                  "
-                >
-                  {item.label}
-                </a>
+  key={item.label}
+  href={item.href}
+  className="
+    flex
+    min-h-[54px]
+    w-full
+    items-center
+    justify-center
+    rounded-xl
+    bg-[#A3621D]
+    px-4
+    py-2
+    text-center
+    text-sm
+    font-bold
+    !text-white
+    transition
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#07634C]
+    hover:!text-white
+    hover:shadow-lg
+    sm:min-h-[58px]
+    sm:text-[15px]
+    md:min-h-[62px]
+    md:px-5
+  "
+>
+  {item.label}
+</a>
               ))}
 
             </div>

@@ -28,7 +28,7 @@ const BAMSSection = () => {
       image: "/home/ayurveda-career.jpg",
       button: "Apply For Admission",
       overlay:
-        "linear-gradient(90deg, rgba(218,74,43,0.96) 0%, rgba(218,74,43,0.88) 45%, rgba(218,74,43,0.20) 100%)",
+        "linear-gradient(90deg, rgba(7,99,76,0.96) 0%, rgba(7,99,76,0.88) 45%, rgba(7,99,76,0.20) 100%)",
     },
     {
       title:
@@ -38,7 +38,7 @@ const BAMSSection = () => {
       image: "/home/faculty.jpg",
       button: "Explore Departments",
       overlay:
-        "linear-gradient(90deg, rgba(98,199,31,0.96) 0%, rgba(98,199,31,0.82) 48%, rgba(98,199,31,0.14) 100%)",
+        "linear-gradient(90deg, rgba(7,99,76,0.96) 0%, rgba(7,99,76,0.88) 45%, rgba(7,99,76,0.20) 100%)",
     },
     {
       title: "Advanced Laboratories for Practical Ayurvedic Learning",
@@ -47,7 +47,7 @@ const BAMSSection = () => {
       image: "/home/laboratory.jpg",
       button: "Explore Now",
       overlay:
-        "linear-gradient(90deg, rgba(222,182,18,0.95) 0%, rgba(222,182,18,0.78) 48%, rgba(222,182,18,0.12) 100%)",
+        "linear-gradient(90deg, rgba(7,99,76,0.96) 0%, rgba(7,99,76,0.88) 45%, rgba(7,99,76,0.20) 100%)",
     },
   ];
 
