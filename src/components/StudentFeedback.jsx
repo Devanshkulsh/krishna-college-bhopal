@@ -48,12 +48,12 @@ const StudentFeedback = () => {
               items-center
               gap-3
               rounded-xl
-              bg-[#df7500]
+              bg-[#A3621D]
               px-5
               py-2.5
               text-sm
               font-bold
-              text-white
+              !text-white
               transition
               hover:-translate-y-1
               hover:bg-[#bf6200]
