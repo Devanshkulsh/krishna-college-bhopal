@@ -129,7 +129,7 @@ const AboutSection = () => {
                 xl:text-[43px]
               "
             >
-              Welcome To Krishna College Bhopal
+              Welcome To SHRI KRISHNA AYURVEDIC HOSPITAL
             </h2>
 
 

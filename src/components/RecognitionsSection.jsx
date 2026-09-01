@@ -4,18 +4,22 @@ const recognitions = [
   {
     name: 'NCISM',
     image: '/hero/ncism.png',
+    scale: 1,
   },
   {
     name: 'Health Department',
     image: '/hero/health.png',
+    scale: 2.15, // second logo zoom
   },
   {
     name: 'University Affiliation',
     image: '/hero/university.png',
+    scale: 1,
   },
   {
     name: 'Ministry of AYUSH',
     image: '/hero/ministry.png',
+    scale: 1,
   },
 ]
 
@@ -39,25 +43,27 @@ const RecognitionsSection = () => {
               key={item.name}
               className="flex items-center justify-center"
             >
+              {/* SAME OUTER DESIGN FOR ALL */}
               <div
                 className="
+                  relative
                   flex
                   h-[120px]
                   w-[120px]
                   items-center
                   justify-center
+                  overflow-hidden
                   rounded-full
                   bg-white
-                  p-3
                   shadow-[0_0_28px_rgba(229,185,48,0.55)]
                   transition
                   duration-300
+
                   hover:-translate-y-1
                   hover:shadow-[0_0_35px_rgba(229,185,48,0.75)]
 
                   sm:h-[150px]
                   sm:w-[150px]
-                  sm:p-4
 
                   md:h-[190px]
                   md:w-[190px]
@@ -66,11 +72,23 @@ const RecognitionsSection = () => {
                   lg:w-[210px]
                 "
               >
+
+                {/* LOGO */}
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="h-full w-full object-contain"
+                  className="
+                    h-[88%]
+                    w-[88%]
+                    object-contain
+                    transition-transform
+                    duration-300
+                  "
+                  style={{
+                    transform: `scale(${item.scale})`,
+                  }}
                 />
+
               </div>
             </div>
           ))}
