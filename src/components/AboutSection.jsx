@@ -1,328 +1,230 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-white py-6 md:py-8 lg:py-12">
-      <div className="mx-auto max-w-[1700px] px-4 sm:px-6 lg:px-10 xl:px-14">
+    <section className="font-poppins w-full bg-[#FFFFFF] py-10 md:py-14 lg:py-20">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 xl:px-14">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 
-        <div
-          className="
-            grid
-            items-stretch
-            gap-4
-            lg:grid-cols-[1.05fr_0.78fr_1.35fr]
-            xl:gap-7
-          "
-        >
+          {/* =========================
+              LEFT IMAGE AREA
+          ========================== */}
+          <div className="relative flex min-h-[420px] items-center justify-center md:min-h-[520px] lg:min-h-[600px]">
 
-          {/* ==========================================
-              LEFT - LARGE CAMPUS IMAGE
-          ========================================== */}
-          <div className="h-full">
+            {/* BIG LIGHT CIRCLE */}
             <div
               className="
-                h-full
-                min-h-[280px]
-                overflow-hidden
-                border
-                border-gray-200
-                bg-gray-100
-                sm:min-h-[350px]
-                md:min-h-[400px]
-                lg:min-h-[650px]
-                xl:min-h-[700px]
+                absolute
+                left-1/2
+                top-1/2
+                h-[300px]
+                w-[300px]
+                -translate-x-1/2
+                -translate-y-1/2
+                rounded-full
+                border-[34px]
+                border-[#edf2ff]
+
+                sm:h-[380px]
+                sm:w-[380px]
+
+                md:h-[440px]
+                md:w-[440px]
+
+                lg:h-[500px]
+                lg:w-[500px]
+              "
+            />
+
+            {/* GREEN SHAPE */}
+            <div
+              className="
+                absolute
+                left-[3%]
+                top-[31%]
+                h-[230px]
+                w-[150px]
+                rotate-[8deg]
+                rounded-tl-[120px]
+                rounded-br-[120px]
+                bg-[#168486]
+
+                sm:h-[280px]
+                sm:w-[180px]
+
+                md:left-[5%]
+                md:h-[330px]
+                md:w-[210px]
+
+                lg:h-[360px]
+                lg:w-[230px]
+              "
+            />
+
+            {/* BROWN HALF CIRCLE */}
+            <div
+              className="
+                absolute
+                bottom-[6%]
+                left-[4%]
+                h-[68px]
+                w-[135px]
+                rounded-t-full
+                bg-[#A3621D]
+
+                sm:h-[80px]
+                sm:w-[160px]
+
+                md:left-[6%]
+                md:h-[92px]
+                md:w-[185px]
+              "
+            />
+
+            {/* GIRL IMAGE */}
+            <img
+              src="/hero/banner1.png"
+              alt="Shri Krishna Ayurvedic Hospital"
+              className="
+                relative
+                z-10
+                h-[390px]
+                w-auto
+                object-contain
+
+                sm:h-[470px]
+                md:h-[560px]
+                lg:h-[610px]
+              "
+            />
+
+            {/* FLOATING BADGE */}
+            <div
+              className="
+                absolute
+                bottom-[16%]
+                right-[1%]
+                z-20
+                flex
+                max-w-[270px]
+                items-center
+                gap-4
+                rounded-xl
+                border-2
+                border-white
+                bg-[#eef2ff]
+                px-4
+                py-4
+                shadow-[0_12px_35px_rgba(0,0,0,0.12)]
+
+                sm:right-[4%]
+                sm:px-5
+                sm:py-5
+
+                md:right-[2%]
               "
             >
-              <img
-                src="/hero/campus.png"
-                alt="Krishna College Bhopal Campus"
-                className="h-full w-full object-cover"
-              />
+              {/* BADGE ICON */}
+              <div
+                className="
+                  flex
+                  h-[58px]
+                  w-[58px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-md
+                  bg-[#168486]
+                  text-2xl
+                  text-white
+                "
+              >
+                ★
+              </div>
+
+              {/* BADGE TEXT */}
+              <p
+                className="
+                  text-[14px]
+                  font-semibold
+                  leading-6
+                  text-[#111111]
+
+                  sm:text-[16px]
+                "
+              >
+                Excellence in
+                <br />
+                Ayurvedic Education
+              </p>
             </div>
           </div>
 
-
-          {/* ==========================================
-              CENTER - TWO STACKED IMAGES
-          ========================================== */}
-          <div className="flex h-full flex-col gap-3 sm:gap-4">
-
-            {/* TOP IMAGE */}
-            <div
-              className="
-                min-h-[160px]
-                flex-1
-                overflow-hidden
-                bg-gray-100
-                sm:min-h-[200px]
-                md:min-h-[240px]
-                lg:min-h-0
-              "
-            >
-              <img
-                src="/hero/krishnaclg.png"
-                alt="Krishna College"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            {/* BOTTOM IMAGE */}
-            <div
-              className="
-                min-h-[160px]
-                flex-1
-                overflow-hidden
-                bg-gray-100
-                sm:min-h-[200px]
-                md:min-h-[240px]
-                lg:min-h-0
-              "
-            >
-              <img
-                src="/hero/BAMS.png"
-                alt="BAMS Admission"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-          </div>
-
-
-          {/* ==========================================
-              RIGHT - CONTENT
-          ========================================== */}
-          <div className="flex flex-col justify-center py-4 lg:pl-3 xl:pl-4">
-
-            {/* SMALL TITLE */}
-            <p
-              className="
-                mb-3
-                text-[13px]
-                font-medium
-                uppercase
-                tracking-[0.5px]
-                text-[#00a936]
-                sm:text-[14px]
-                md:mb-4
-                md:text-[16px]
-                lg:text-[18px]
-              "
-            >
-              Krishna College Group of Institutions
-            </p>
-
+          {/* =========================
+              RIGHT CONTENT
+          ========================== */}
+          <div className="lg:pr-4">
 
             {/* MAIN HEADING */}
             <h2
               className="
-                mb-4
-                break-words
-                text-[24px]
+                text-[32px]
                 font-bold
-                leading-[1.25]
-                text-[#101f62]
-                sm:text-[28px]
-                md:mb-6
-                md:text-[32px]
-                lg:text-[38px]
-                xl:text-[43px]
+                leading-[1.2]
+                tracking-[-0.5px]
+                text-[#162364]
+
+                sm:text-[38px]
+                md:text-[44px]
+                lg:text-[48px]
               "
             >
-              Welcome To SHRI KRISHNA AYURVEDIC HOSPITAL
+              Welcome To Shri Krishna
             </h2>
 
+            {/* BROWN LINE */}
+            <div className="mt-6 h-[2px] w-[155px] bg-[#A3621D]" />
 
             {/* DESCRIPTION */}
-            <p
+            <div
               className="
-                mb-6
+                mt-8
                 max-w-[760px]
-                text-[14px]
-                leading-[1.8]
-                text-black
-                sm:text-[15px]
-                md:mb-8
-                md:text-[16px]
+                space-y-7
+                text-[15px]
+                font-normal
+                leading-[1.85]
+                tracking-[-0.1px]
+                text-[#111111]
+
+                sm:text-[16px]
+                md:text-[17px]
                 lg:text-[17px]
-                xl:text-[18px]
               "
             >
-              Krishna College Bhopal is committed to providing quality
-              Ayurvedic education with a strong foundation in traditional
-              knowledge, practical learning and clinical exposure. Our
-              institution focuses on developing skilled healthcare
-              professionals through academic excellence, clinical experience
-              and a student-centred learning environment.
-            </p>
+              <p>
+                Welcome to Shri Krishna Ayurvedic Hospital and College,
+                Chhatarpur — an institution committed to excellence in
+                Ayurvedic education, healthcare and holistic wellness.
+              </p>
 
+              <p>
+                Our institution focuses on combining the traditional wisdom of
+                Ayurveda with modern academic learning and clinical exposure.
+                Students receive quality education, practical training and
+                guidance from experienced faculty members in a supportive
+                learning environment.
+              </p>
 
-            {/* ==========================================
-                MISSION + OBJECTIVES
-            ========================================== */}
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:gap-10">
-
-              {/* ========================================
-                  MISSION
-              ======================================== */}
-              <div>
-
-                <h3
-                  className="
-                    mb-2
-                    text-[18px]
-                    font-bold
-                    text-[#101f62]
-                    sm:text-[19px]
-                    md:mb-3
-                    md:text-[20px]
-                  "
-                >
-                  Our Mission
-                </h3>
-
-                <p
-                  className="
-                    text-[14px]
-                    leading-[1.7]
-                    text-black
-                    sm:text-[15px]
-                    md:text-[16px]
-                    md:leading-[1.8]
-                  "
-                >
-                  Our mission is to provide an academic environment that
-                  promotes and develops the ancient science of Ayurveda,
-                  combined with modern clinical learning.
-                </p>
-
-
-                {/* MISSION BUTTON */}
-                <a
-                  href="/about"
-                  style={{ color: "#ffffff" }}
-                  className="
-                    mt-5
-                    inline-flex
-                    items-center
-                    gap-4
-                    rounded-full
-                    bg-[#A3621D]
-                    px-5
-                    py-3
-                    text-[14px]
-                    font-semibold
-                    !text-white
-                    transition-all
-                    duration-300
-
-                    hover:bg-[#101f62]
-                    hover:!text-white
-                    hover:shadow-lg
-
-                    sm:px-6
-                    sm:py-3.5
-                    sm:text-[15px]
-
-                    md:mt-7
-                    md:gap-5
-                    md:px-7
-                    md:text-[16px]
-                  "
-                >
-                  <span className="!text-white">
-                    College Overview
-                  </span>
-
-                  <FaArrowRight className="text-xs !text-white sm:text-sm" />
-                </a>
-
-              </div>
-
-
-              {/* ========================================
-                  OBJECTIVES
-              ======================================== */}
-              <div>
-
-                <h3
-                  className="
-                    mb-2
-                    text-[18px]
-                    font-bold
-                    text-[#101f62]
-                    sm:text-[19px]
-                    md:mb-3
-                    md:text-[20px]
-                  "
-                >
-                  Our Objectives
-                </h3>
-
-                <p
-                  className="
-                    text-[14px]
-                    leading-[1.7]
-                    text-black
-                    sm:text-[15px]
-                    md:text-[16px]
-                    md:leading-[1.8]
-                  "
-                >
-                  We have developed an academic programme that is
-                  well-researched, practical and focused on preparing students
-                  for successful careers in Ayurvedic healthcare.
-                </p>
-
-
-                {/* OBJECTIVES BUTTON */}
-                <a
-                  href="/courses"
-                  style={{ color: "#ffffff" }}
-                  className="
-                    mt-5
-                    inline-flex
-                    items-center
-                    gap-4
-                    rounded-full
-                    bg-[#A3621D]
-                    px-5
-                    py-3
-                    text-[14px]
-                    font-semibold
-                    !text-white
-                    transition-all
-                    duration-300
-
-                    hover:bg-[#101f62]
-                    hover:!text-white
-                    hover:shadow-lg
-
-                    sm:px-6
-                    sm:py-3.5
-                    sm:text-[15px]
-
-                    md:mt-7
-                    md:gap-5
-                    md:px-7
-                    md:text-[16px]
-                  "
-                >
-                  <span className="!text-white">
-                    Explore Program
-                  </span>
-
-                  <FaArrowRight className="text-xs !text-white sm:text-sm" />
-                </a>
-
-              </div>
-
+              <p>
+                With well-equipped laboratories, clinical facilities and a
+                strong academic foundation, we aim to prepare skilled and
+                responsible Ayurvedic healthcare professionals for the future.
+              </p>
             </div>
 
           </div>
-
         </div>
-
       </div>
     </section>
   );
