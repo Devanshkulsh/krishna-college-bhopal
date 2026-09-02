@@ -92,7 +92,7 @@ const AboutSection = () => {
                 w-auto
                 object-contain
 
-                sm:h-[470px]
+                sm:h-[370px]
                 md:h-[560px]
                 lg:h-[610px]
               "

@@ -786,7 +786,9 @@ const HeroSlider = () => {
       <div
         className="
           relative
-          z-20
+          -z-40
+
+          md:z-20
 
           overflow-hidden
 

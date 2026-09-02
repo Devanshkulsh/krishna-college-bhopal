@@ -631,4 +631,101 @@ img {
     white-space: normal !important;
   }
 }
+/* ========================================
+   LMS MOBILE RESPONSIVE
+======================================== */
+
+#formsID7375 {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+#formsID7375 *,
+#formsID7375 *::before,
+#formsID7375 *::after {
+  box-sizing: border-box !important;
+}
+
+/* normal fields */
+
+#formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+#formsID7375 select,
+#formsID7375 textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* checkbox fix */
+
+#formsID7375 input[type="checkbox"],
+#formsID7375 input[type="radio"] {
+  width: 16px !important;
+  height: 16px !important;
+
+  min-width: 16px !important;
+  max-width: 16px !important;
+
+  flex: 0 0 16px !important;
+
+  padding: 0 !important;
+  margin-right: 8px !important;
+}
+
+/* text wrapping */
+
+#formsID7375 label,
+#formsID7375 span,
+#formsID7375 p,
+#formsID7375 small {
+  max-width: 100% !important;
+
+  white-space: normal !important;
+
+  overflow-wrap: break-word !important;
+
+  writing-mode: horizontal-tb !important;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 639px) {
+
+  #formsID7375 {
+    width: 100% !important;
+  }
+
+  /* LMS grid -> ONE COLUMN */
+
+  #formsID7375 .grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #formsID7375 [class*="grid-cols-2"],
+  #formsID7375 [class*="grid-cols-3"],
+  #formsID7375 [class*="grid-cols-4"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* flex rows -> vertical */
+
+  #formsID7375 .flex-row {
+    flex-direction: column !important;
+  }
+
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    width: 100% !important;
+
+    font-size: 14px !important;
+  }
+
+  #formsID7375 button[type="submit"] {
+    width: 100% !important;
+  }
+}
 >>>>>>> Stashed changes
