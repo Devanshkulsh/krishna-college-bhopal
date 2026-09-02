@@ -4,18 +4,23 @@
   --color-primary: #16898b;
   --color-primary-deep: #0f6669;
   --color-primary-soft: #d9f4f1;
+
   --color-secondary: #2c9144;
   --color-secondary-deep: #155d32;
+
   --color-accent: #b16a18;
   --color-accent-bright: #d9922b;
+
   --color-cream: #fff9ef;
   --color-surface: #ffffff;
+
   --color-ink: #123536;
   --color-muted: #5d7471;
 }
-/* =========================
-   GLOBAL RESET
-========================= */
+
+/* ==========================================================
+   ROOT
+========================================================== */
 
 :root {
   font-family:
@@ -41,36 +46,48 @@
 
   --cream: #fff9ef;
   --surface: #ffffff;
+
   --ink: #123536;
   --muted: #5d7471;
 }
 
-* {
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
 
-  color: var(--ink);
-  background: #ffffff;
+  margin: 0;
+  padding: 0;
 
   overflow-x: hidden;
 
+  background: #ffffff;
+  color: var(--ink);
+
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -88,6 +105,10 @@ select {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -98,13 +119,9 @@ img {
   max-width: 100%;
 }
 
-button {
-  cursor: pointer;
-}
-
-/* =========================
-   NOTICE MARQUEE
-========================= */
+/* ==========================================================
+   MARQUEE
+========================================================== */
 
 @keyframes marquee {
   0% {
@@ -115,6 +132,11 @@ button {
     transform: translateX(-50%);
   }
 }
+
+/* ==========================================================
+   DEPARTMENT CAROUSEL
+========================================================== */
+
 @keyframes departmentScroll {
   0% {
     transform: translateX(0);
@@ -124,10 +146,12 @@ button {
     transform: translateX(-50%);
   }
 }
+
 .department-carousel:hover {
   animation-play-state: paused;
 }
 
+<<<<<<< Updated upstream
 /* =========================
    STUDENT FEEDBACK SLIDER
 ========================= */
@@ -206,3 +230,405 @@ button {
     width: 22px;
   }
 }
+=======
+/* ==========================================================
+   LMS FORM MAIN CONTAINER
+========================================================== */
+
+#formsID7375 {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #ffffff !important;
+
+  overflow-x: hidden !important;
+}
+
+/* ==========================================================
+   LMS BOX SIZING
+========================================================== */
+
+#formsID7375 *,
+#formsID7375 *::before,
+#formsID7375 *::after {
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================
+   LMS FORM
+========================================================== */
+
+#formsID7375 form {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+}
+
+/* ==========================================================
+   NORMAL INPUTS / SELECT / TEXTAREA
+========================================================== */
+
+#formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+#formsID7375 select,
+#formsID7375 textarea {
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================
+   CHECKBOX / RADIO
+========================================================== */
+
+#formsID7375 input[type="checkbox"],
+#formsID7375 input[type="radio"] {
+  display: inline-block !important;
+
+  width: 18px !important;
+  height: 18px !important;
+
+  min-width: 18px !important;
+  max-width: 18px !important;
+
+  flex: 0 0 18px !important;
+
+  padding: 0 !important;
+
+  margin-top: 2px !important;
+  margin-right: 8px !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+
+  cursor: pointer;
+}
+
+/* ==========================================================
+   LMS TEXT
+========================================================== */
+
+#formsID7375 label,
+#formsID7375 span,
+#formsID7375 p,
+#formsID7375 small {
+  min-width: 0 !important;
+  max-width: 100% !important;
+
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+
+  white-space: normal !important;
+
+  writing-mode: horizontal-tb !important;
+}
+
+/* ==========================================================
+   LMS IMAGE / LOGO
+========================================================== */
+
+#formsID7375 img {
+  max-width: 100% !important;
+  height: auto !important;
+
+  object-fit: contain !important;
+}
+
+/* ==========================================================
+   LMS BUTTON
+========================================================== */
+
+#formsID7375 button {
+  max-width: 100% !important;
+}
+
+/* ==========================================================
+   PREFERRED COLLEGE FULL WIDTH
+========================================================== */
+
+#formsID7375 input[placeholder*="Preferred College" i] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Direct wrapper */
+
+#formsID7375 div:has(> input[placeholder*="Preferred College" i]) {
+  grid-column: 1 / -1 !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* If LMS has one extra wrapper */
+
+#formsID7375 div:has(> div > input[placeholder*="Preferred College" i]) {
+  grid-column: 1 / -1 !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* ==========================================================
+   CONSENT ROW
+========================================================== */
+
+#formsID7375 label:has(input[type="checkbox"]) {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+
+  gap: 8px !important;
+
+  white-space: normal !important;
+}
+
+#formsID7375 div:has(> input[type="checkbox"]) {
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 1024px) {
+  #formsID7375 {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    overflow-x: hidden !important;
+  }
+
+  #formsID7375 form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Preferred College full row */
+
+  #formsID7375 div:has(> input[placeholder*="Preferred College" i]),
+  #formsID7375 div:has(> div > input[placeholder*="Preferred College" i]) {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Consent text should not clip */
+
+  #formsID7375 label:has(input[type="checkbox"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    gap: 8px !important;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #formsID7375 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #formsID7375 form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+  #formsID7375 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow-x: hidden !important;
+  }
+
+  #formsID7375 form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+  }
+
+  /* NORMAL INPUTS */
+
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    font-size: 16px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* CHECKBOX */
+
+  #formsID7375 input[type="checkbox"],
+  #formsID7375 input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-width: 18px !important;
+    max-width: 18px !important;
+
+    flex: 0 0 18px !important;
+
+    margin-right: 8px !important;
+  }
+
+  /* TEXT WRAPPING */
+
+  #formsID7375 label,
+  #formsID7375 span,
+  #formsID7375 p,
+  #formsID7375 small {
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+
+    white-space: normal !important;
+
+    writing-mode: horizontal-tb !important;
+  }
+
+  /* PREFERRED COLLEGE */
+
+  #formsID7375 input[placeholder*="Preferred College" i] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #formsID7375 div:has(> input[placeholder*="Preferred College" i]),
+  #formsID7375 div:has(> div > input[placeholder*="Preferred College" i]) {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* CONSENT ROW */
+
+  #formsID7375 label:has(input[type="checkbox"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    gap: 7px !important;
+
+    white-space: normal !important;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+  #formsID7375 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    font-size: 16px !important;
+  }
+
+  #formsID7375 input[type="checkbox"],
+  #formsID7375 input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-width: 18px !important;
+    max-width: 18px !important;
+
+    flex: 0 0 18px !important;
+  }
+}
+
+/* ==========================================================
+   VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 360px) {
+  #formsID7375 input:not([type="checkbox"]):not([type="radio"]),
+  #formsID7375 select,
+  #formsID7375 textarea {
+    font-size: 16px !important;
+  }
+
+  #formsID7375 input[type="checkbox"],
+  #formsID7375 input[type="radio"] {
+    width: 17px !important;
+    height: 17px !important;
+
+    min-width: 17px !important;
+    max-width: 17px !important;
+
+    flex: 0 0 17px !important;
+  }
+
+  #formsID7375 label,
+  #formsID7375 span,
+  #formsID7375 p,
+  #formsID7375 small {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+
+    white-space: normal !important;
+  }
+}
+>>>>>>> Stashed changes

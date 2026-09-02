@@ -1,231 +1,416 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaBookOpen,
   FaDownload,
   FaGraduationCap,
   FaHeadset,
   FaShareAlt,
+  FaTimes,
 } from "react-icons/fa";
 
 const HeroSlider = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formLoading, setFormLoading] = useState(true);
+
+  /* =====================================================
+     LOAD LMS FORM
+  ===================================================== */
+
+  useEffect(() => {
+    let timer;
+
+    const loadLmsForm = () => {
+      const container = document.getElementById("formsID7375");
+
+      if (!container) return;
+
+      if (container.children.length > 0) {
+        setFormLoading(false);
+        return;
+      }
+
+      const oldScript = document.getElementById("krishna-lms-script");
+
+      if (oldScript) {
+        oldScript.remove();
+      }
+
+      const script = document.createElement("script");
+
+      script.id = "krishna-lms-script";
+      script.type = "module";
+
+      script.src =
+        "https://ntechzy.in/api/v1/student-form/form.js?v=" + Date.now();
+
+      script.setAttribute("path", '["/"]');
+      script.setAttribute("divid", "formsID7375");
+
+      script.setAttribute(
+        "courses",
+        '["Select Course","BAMS","BHMS"]'
+      );
+
+      script.setAttribute("styles", "basic");
+      script.setAttribute("logo", "/logoayu.png");
+      script.setAttribute("contact", "+91-xxxxxxxxxx");
+
+      script.onload = () => {
+        setTimeout(() => {
+          setFormLoading(false);
+        }, 700);
+      };
+
+      script.onerror = () => {
+        console.error("LMS admission form failed to load");
+        setFormLoading(false);
+      };
+
+      document.body.appendChild(script);
+    };
+
+    timer = setTimeout(loadLmsForm, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  /* =====================================================
+     MOBILE BODY SCROLL LOCK
+  ===================================================== */
+
+  useEffect(() => {
+    if (isFormOpen && window.innerWidth < 1024) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isFormOpen]);
+
   return (
     <section className="relative w-full overflow-hidden">
-
+      {/* ================================================= */}
       {/* HERO */}
-      <div className="relative min-h-[720px] sm:min-h-[760px] md:min-h-[820px] lg:min-h-[670px]">
+      {/* ================================================= */}
 
-        {/* BACKGROUND IMAGE */}
+      <div
+        className="
+          relative
+          min-h-[540px]
+          sm:min-h-[580px]
+          md:min-h-[620px]
+          lg:min-h-[700px]
+        "
+      >
+        {/* BACKGROUND */}
+
         <img
           src="/hero/campus.png"
-          alt="Krishna College Bhopal"
+          alt="Shri Krishna Ayurvedic Hospital"
           className="
-            absolute inset-0 h-full w-full
+            absolute
+            inset-0
+            h-full
+            w-full
             object-cover
             object-center
-            lg:object-cover
           "
         />
 
         {/* OVERLAY */}
+
         <div
           className="
-            absolute inset-0
+            absolute
+            inset-0
+
             bg-gradient-to-b
             from-[#071d35]/95
-            via-[#0b2742]/85
-            to-[#071d35]/80
+            via-[#0b2742]/82
+            to-[#071d35]/58
 
             lg:bg-gradient-to-r
-            lg:from-[#071d35]/95
-            lg:via-[#0b2742]/75
-            lg:to-black/10
+            lg:from-[#071d35]/96
+            lg:via-[#0b2742]/80
+            lg:to-[#071d35]/20
           "
         />
 
+        {/* ================================================= */}
         {/* MAIN CONTENT */}
+        {/* ================================================= */}
+
         <div
           className="
-            relative z-10
+            relative
+            z-10
+
             mx-auto
-            grid
-            max-w-[1600px]
-            grid-cols-1
-            gap-8
+            flex
 
-            px-4
-            pb-12
-            pt-8
+            min-h-[540px]
+            w-full
+            max-w-[1800px]
 
-            sm:px-5
-            sm:pt-10
+            items-start
 
-            md:gap-10
-            md:px-8
-            md:pb-16
-            md:pt-12
+            px-5
+            pb-5
+            pt-[85px]
 
-            lg:min-h-[670px]
-            lg:translate-y-12
-            lg:grid-cols-[1fr_420px]
-            lg:items-start
-            lg:px-14
-            lg:py-0
+            sm:min-h-[580px]
+            sm:px-7
+            sm:pt-[85px]
 
-            xl:px-20
+            md:min-h-[620px]
+            md:px-10
+            md:pt-[80px]
+
+            lg:min-h-[700px]
+            lg:items-center
+            lg:gap-12
+            lg:px-12
+            lg:py-8
+
+            xl:gap-14
+            xl:px-16
+
+            2xl:px-20
           "
         >
-
+          {/* ================================================= */}
           {/* LEFT CONTENT */}
+          {/* ================================================= */}
+
           <div
             className="
-              max-w-[800px]
+              mx-auto
+
+              flex
+              w-full
+              flex-col
+
+              items-center
+
               text-center
               text-white
 
+              lg:mx-0
+              lg:min-w-0
+              lg:flex-1
+              lg:items-start
               lg:text-left
             "
           >
+            {/* MAIN HEADING */}
 
             <h1
               className="
-                mx-auto
-                mt-2
-                max-w-[820px]
-                text-[28px]
-                font-bold
-                leading-[1.2]
+                max-w-[920px]
+
+                text-[27px]
+                font-extrabold
+                uppercase
+                leading-[1.18]
 
                 sm:text-[34px]
-
-                md:mt-6
                 md:text-[42px]
 
-                lg:mx-0
-                lg:mt-10
-                lg:text-[54px]
-                lg:leading-[1.15]
+                lg:text-[48px]
+                lg:leading-[1.1]
+
+                xl:text-[54px]
+                2xl:text-[58px]
               "
             >
-              WELCOME TO SHRI KRISHNA AYURVEDIC HOSPITAL
-
-              <span
-                className="
-                  mt-3
-                  block
-                  text-[15px]
-                  font-semibold
-                  leading-6
-
-                  sm:text-[17px]
-                  md:text-[21px]
-                  lg:text-[28px]
-                "
-              >
-                SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
-              </span>
-
-              <span
-                className="
-                  mt-4
-                  block
-                  text-[21px]
-                  font-bold
-                  leading-snug
-                  text-[#A3621D]
-
-                  sm:text-[24px]
-                  md:mt-5
-                  md:text-[30px]
-                  lg:text-[38px]
-                "
-              >
-                निःशुल्क स्वर्ण प्राशन शिविर
-              </span>
+              Welcome To Shri Krishna Ayurvedic Hospital
             </h1>
 
+            {/* UNIVERSITY */}
+
+            <p
+              className="
+                mt-5
+
+                text-[14px]
+                font-semibold
+                leading-6
+
+                sm:text-[16px]
+                md:text-[19px]
+                lg:text-[20px]
+                xl:text-[21px]
+              "
+            >
+              SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+            </p>
+
+            {/* HINDI TEXT */}
+
+            <h2
+              className="
+                mt-5
+
+                text-[24px]
+                font-bold
+                leading-snug
+
+                text-[#C8751B]
+
+                sm:text-[27px]
+                md:text-[31px]
+                lg:text-[34px]
+                xl:text-[37px]
+              "
+            >
+              निःशुल्क स्वर्ण प्राशन शिविर
+            </h2>
+
+            {/* ================================================= */}
             {/* BUTTONS */}
+            {/* MOBILE: SHIFTED LITTLE DOWN */}
+            {/* ================================================= */}
+
             <div
               className="
-                mt-6
+                mt-12
+
                 flex
+                w-full
+                max-w-[430px]
+
                 flex-col
                 gap-3
 
+                sm:mt-12
+                sm:max-w-[500px]
                 sm:flex-row
-                sm:flex-wrap
                 sm:justify-center
 
-                md:mt-8
-                md:gap-4
-
-                lg:mt-9
+                lg:mt-10
+                lg:max-w-none
                 lg:justify-start
-                lg:gap-5
               "
             >
+              {/* MOBILE APPLY */}
+
+              <button
+                type="button"
+                onClick={() => setIsFormOpen(true)}
+                className="
+                  flex
+
+                  h-[52px]
+                  w-full
+
+                  items-center
+                  justify-center
+
+                  rounded-xl
+
+                  bg-[#C8751B]
+
+                  px-6
+
+                  text-[16px]
+                  font-semibold
+                  text-white
+
+                  shadow-lg
+
+                  transition-all
+                  duration-300
+
+                  hover:-translate-y-0.5
+                  hover:bg-[#AD6414]
+
+                  sm:w-[210px]
+
+                  lg:hidden
+                "
+              >
+                Apply Now
+              </button>
+
+              {/* DESKTOP TOUR */}
+
               <a
                 href="/gallery"
                 className="
-                  inline-flex
-                  min-h-[46px]
-                  w-full
+                  hidden
+
+                  h-[54px]
+                  min-w-[230px]
+
                   items-center
                   justify-center
+
                   rounded-xl
-                  border-2
-                  border-[#A3621D]
-                  bg-[#A3621D]
-                  px-5
-                  py-3
-                  text-sm
+
+                  bg-[#C8751B]
+
+                  px-7
+
+                  text-[16px]
                   font-semibold
+
                   !text-white
-                  transition
+
+                  shadow-lg
+
+                  transition-all
                   duration-300
 
-                  hover:-translate-y-1
-                  hover:bg-[#c96f00]
+                  hover:-translate-y-0.5
+                  hover:bg-[#AD6414]
 
-                  sm:w-auto
-                  sm:min-w-[180px]
-
-                  md:px-7
-                  md:py-4
-                  md:text-base
+                  lg:flex
                 "
               >
                 Take A College Tour
               </a>
 
+              {/* OUR DEPARTMENTS */}
+
               <a
                 href="/departments"
                 className="
-                  inline-flex
-                  min-h-[46px]
+                  flex
+
+                  h-[52px]
                   w-full
+
                   items-center
                   justify-center
+
                   rounded-xl
-                  border-2
-                  border-[#A3621D]
-                  bg-[#A3621D]
-                  px-5
-                  py-3
-                  text-sm
+
+                  bg-[#C8751B]
+
+                  px-6
+
+                  text-[16px]
                   font-semibold
+
                   !text-white
-                  transition
+
+                  shadow-lg
+
+                  transition-all
                   duration-300
 
-                  hover:-translate-y-1
-                  hover:bg-[#c96f00]
+                  hover:-translate-y-0.5
+                  hover:bg-[#AD6414]
 
-                  sm:w-auto
-                  sm:min-w-[180px]
+                  sm:w-[210px]
 
-                  md:px-7
-                  md:py-4
-                  md:text-base
+                  lg:h-[54px]
+                  lg:w-[230px]
                 "
               >
                 Our Departments
@@ -233,67 +418,300 @@ const HeroSlider = () => {
             </div>
           </div>
 
-          {/* ADMISSION FORM */}
+          {/* ================================================= */}
+          {/* LMS FORM */}
+          {/* DESKTOP RIGHT / MOBILE POPUP */}
+          {/* ================================================= */}
+
           <div
-            className="
-              relative
-              z-20
-              mx-auto
-              w-full
-              max-w-[520px]
-              pb-4
+            className={`
+              fixed
 
-              lg:mx-0
-              lg:max-w-none
-              lg:pb-0
-            "
+              left-0
+              right-0
+              bottom-0
+              top-[104px]
+
+              z-[999999]
+
+              flex
+              items-start
+              justify-center
+
+              bg-black/75
+
+              px-3
+              pb-3
+              pt-3
+
+              transition-all
+              duration-200
+
+              ${
+                isFormOpen
+                  ? "visible pointer-events-auto opacity-100"
+                  : "invisible pointer-events-none opacity-0"
+              }
+
+              lg:visible
+              lg:relative
+              lg:inset-auto
+              lg:z-20
+
+              lg:block
+
+              lg:w-[500px]
+              xl:w-[520px]
+              2xl:w-[540px]
+
+              lg:flex-none
+
+              lg:bg-transparent
+              lg:p-0
+
+              lg:opacity-100
+              lg:pointer-events-auto
+            `}
+            onClick={(event) => {
+              if (
+                window.innerWidth < 1024 &&
+                event.target === event.currentTarget
+              ) {
+                setIsFormOpen(false);
+              }
+            }}
           >
-            <div
-              id="formsID7375"
-              className="
-                w-full
-                overflow-hidden
-                rounded-xl
-                bg-white
-                p-4
-                shadow-[0_12px_40px_rgba(0,0,0,0.22)]
+            {/* ================================================= */}
+            {/* FORM CARD */}
+            {/* ================================================= */}
 
-                sm:p-5
-                md:p-6
-                lg:p-8
+            <div
+              className="
+                flex
+
+                h-full
+                w-full
+
+                max-w-[440px]
+
+                flex-col
+
+                overflow-hidden
+
+                rounded-[18px]
+
+                bg-white
+
+                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+
+                lg:h-auto
+
+                lg:max-h-[650px]
+                lg:max-w-none
+
+                lg:rounded-[15px]
+
+                lg:shadow-[0_15px_45px_rgba(0,0,0,0.28)]
               "
-            />
+            >
+              {/* ================================================= */}
+              {/* MOBILE FORM HEADER */}
+              {/* ================================================= */}
+
+              <div
+                className="
+                  flex
+
+                  h-[64px]
+                  min-h-[64px]
+
+                  shrink-0
+
+                  items-center
+                  justify-between
+
+                  border-b
+                  border-gray-200
+
+                  bg-white
+
+                  px-5
+
+                  lg:hidden
+                "
+              >
+                <span
+                  className="
+                    text-[18px]
+                    font-medium
+                    text-[#07634C]
+                  "
+                >
+                  Apply For Admission
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => setIsFormOpen(false)}
+                  className="
+                    flex
+
+                    h-[46px]
+                    w-[46px]
+
+                    shrink-0
+
+                    items-center
+                    justify-center
+
+                    rounded-full
+
+                    bg-[#C8751B]
+
+                    text-[19px]
+                    text-white
+
+                    shadow-lg
+
+                    transition
+                    duration-200
+
+                    hover:bg-[#AD6414]
+                  "
+                  aria-label="Close Admission Form"
+                >
+                  <FaTimes />
+                </button>
+              </div>
+
+              {/* ================================================= */}
+              {/* FORM SCROLL AREA */}
+              {/* ================================================= */}
+
+              <div
+                className="
+                  min-h-0
+                  flex-1
+
+                  overflow-x-hidden
+                  overflow-y-auto
+
+                  bg-white
+
+                  px-3
+                  pb-5
+                  pt-3
+
+                  sm:px-4
+
+                  lg:flex-none
+                  lg:overflow-y-auto
+
+                  lg:px-4
+                  lg:pb-4
+                  lg:pt-3
+
+                  xl:px-5
+
+                  lg:[scrollbar-width:thin]
+                "
+                style={{
+                  WebkitOverflowScrolling: "touch",
+                }}
+              >
+                {formLoading && (
+                  <div
+                    className="
+                      flex
+                      min-h-[80px]
+                      items-center
+                      justify-center
+                      px-4
+                      text-center
+                      text-sm
+                      text-gray-500
+                    "
+                  >
+                    Loading admission form...
+                  </div>
+                )}
+
+                <div
+                  id="formsID7375"
+                  className="
+                    w-full
+                    max-w-full
+                    bg-white
+                  "
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* RIGHT FLOATING ACTION BUTTONS - DESKTOP ONLY */}
+        {/* ================================================= */}
+        {/* FLOATING RIGHT BUTTONS */}
+        {/* ================================================= */}
+
         <div
           className="
             absolute
+
             right-0
             top-1/2
+
             z-30
+
             hidden
+
             -translate-y-1/2
+
             flex-col
+
             overflow-hidden
+
             rounded-l-xl
+
             shadow-xl
 
             lg:flex
           "
         >
-          <a
-            href="/admission"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#e7bb37] text-xl !text-white hover:opacity-90"
+          <button
+            type="button"
+            className="
+              flex
+              h-[58px]
+              w-[58px]
+
+              items-center
+              justify-center
+
+              bg-[#e7bb37]
+
+              text-xl
+              text-white
+            "
             aria-label="Admission"
           >
             <FaGraduationCap />
-          </a>
+          </button>
 
           <a
             href="/courses"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#3988f0] text-xl !text-white hover:opacity-90"
+            className="
+              flex
+              h-[58px]
+              w-[58px]
+
+              items-center
+              justify-center
+
+              bg-[#3988f0]
+
+              text-xl
+              !text-white
+            "
             aria-label="Courses"
           >
             <FaBookOpen />
@@ -301,15 +719,39 @@ const HeroSlider = () => {
 
           <a
             href="/brochure"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#ff1238] text-xl !text-white hover:opacity-90"
-            aria-label="Download Brochure"
+            className="
+              flex
+              h-[58px]
+              w-[58px]
+
+              items-center
+              justify-center
+
+              bg-[#ff1238]
+
+              text-xl
+              !text-white
+            "
+            aria-label="Brochure"
           >
             <FaDownload />
           </a>
 
           <a
             href="tel:+919031081170"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#ec3f51] text-xl !text-white hover:opacity-90"
+            className="
+              flex
+              h-[58px]
+              w-[58px]
+
+              items-center
+              justify-center
+
+              bg-[#ec3f51]
+
+              text-xl
+              !text-white
+            "
             aria-label="Call"
           >
             <FaHeadset />
@@ -317,7 +759,19 @@ const HeroSlider = () => {
 
           <button
             type="button"
-            className="flex h-[58px] w-[58px] items-center justify-center bg-[#ef3d91] text-xl !text-white"
+            className="
+              flex
+              h-[58px]
+              w-[58px]
+
+              items-center
+              justify-center
+
+              bg-[#ef3d91]
+
+              text-xl
+              text-white
+            "
             aria-label="Share"
           >
             <FaShareAlt />
@@ -325,14 +779,21 @@ const HeroSlider = () => {
         </div>
       </div>
 
-      {/* BOTTOM NOTICE BAR */}
+      {/* ================================================= */}
+      {/* NOTICE BAR */}
+      {/* ================================================= */}
+
       <div
         className="
           relative
           z-20
+
           overflow-hidden
+
           bg-[#07634C]
+
           py-2.5
+
           text-white
 
           md:py-3
@@ -341,16 +802,24 @@ const HeroSlider = () => {
         <div
           className="
             flex
+
             min-w-max
+
             animate-[marquee_24s_linear_infinite]
+
             items-center
+
             gap-8
+
             whitespace-nowrap
+
             px-2
+
             text-[11px]
             font-semibold
 
             sm:text-xs
+
             md:gap-12
             md:text-base
           "
@@ -359,8 +828,11 @@ const HeroSlider = () => {
           <span>📢 BAMS Fee Structure Updated for 2026</span>
           <span>📢 NCISM Approved Curriculum</span>
           <span>📢 Explore Krishna College Departments</span>
+
           <span>📢 BAMS Admission 2026–27 Open</span>
           <span>📢 BAMS Fee Structure Updated for 2026</span>
+          <span>📢 NCISM Approved Curriculum</span>
+          <span>📢 Explore Krishna College Departments</span>
         </div>
       </div>
     </section>
