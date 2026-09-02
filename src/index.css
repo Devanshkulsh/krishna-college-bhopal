@@ -127,3 +127,82 @@ button {
 .department-carousel:hover {
   animation-play-state: paused;
 }
+
+/* =========================
+   STUDENT FEEDBACK SLIDER
+========================= */
+
+.student-feedback-slider .swiper {
+  overflow: hidden;
+  padding-block: 4px 52px;
+  padding-inline: 56px;
+}
+
+.student-feedback-slider .swiper-slide {
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.student-feedback-slider .swiper-slide-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.student-feedback-slider .swiper-button-prev,
+.student-feedback-slider .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  color: #168486;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(22, 132, 134, 0.18);
+}
+
+.student-feedback-slider .swiper-button-prev {
+  left: 0;
+}
+
+.student-feedback-slider .swiper-button-next {
+  right: 0;
+}
+
+.student-feedback-slider .swiper-button-prev::after,
+.student-feedback-slider .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.student-feedback-slider .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: rgba(22, 132, 134, 0.35);
+  opacity: 1;
+}
+
+.student-feedback-slider .swiper-pagination-bullet-active {
+  width: 28px;
+  border-radius: 999px;
+  background: #168486;
+}
+
+@media (max-width: 640px) {
+  .student-feedback-slider .swiper {
+    padding: 4px 2px 44px;
+  }
+
+  .student-feedback-slider .swiper-button-prev,
+  .student-feedback-slider .swiper-button-next {
+    display: none;
+  }
+
+  .student-feedback-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .student-feedback-slider .swiper-pagination-bullet-active {
+    width: 22px;
+  }
+}

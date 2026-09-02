@@ -1,12 +1,9 @@
-import React from 'react'
 import {
   FaEnvelope,
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa'
 
@@ -49,54 +46,95 @@ const ncismLinks = [
   { label: 'OPD IPD Summary', href: '/hospital/opd-ipd-summary' },
 ]
 
-const supportLinks = [
-  { label: 'Help Center', href: '/help-center' },
-  { label: "FAQ's", href: '/faq' },
-  { label: 'Contact Us', href: '/contact' },
-  { label: 'Anti Ragging', href: '/anti-ragging' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Grievance', href: '/grievance' },
-]
-
-const importantLinks = [
-  { label: 'Our Departments', href: '/departments' },
-  { label: 'NCISM Mandates', href: '/ncism-mandates' },
-  { label: 'Attendence', href: '/attendance' },
-  { label: 'Grievance', href: '/grievance' },
-  { label: 'UG Admission 2026', href: '/admission' },
-  { label: 'Career', href: '/career' },
-  { label: 'How To Apply', href: '/admission/how-to-apply' },
-  { label: 'Fees & Stipend', href: '/admission/course-fees' },
-  { label: 'Document Checklist', href: '/admission/documents' },
-  { label: 'OPD Services', href: '/hospital/opd' },
-  { label: 'News & Notice', href: '/notification' },
-  { label: 'Ministry Of Ayush', href: '/approvals' },
-  { label: 'Courses Enquiry', href: '/contact' },
-  { label: 'Request Call Back', href: '/contact' },
-]
-
 const FooterLinkColumn = ({ title, links }) => {
   return (
-    <div>
-      <h3 className="mb-5 text-[22px] font-bold leading-none text-white sm:mb-6 sm:text-[25px]">
+    <div className="min-w-0">
+      <h3 className="mb-4 text-[20px] font-bold leading-none text-white sm:mb-5 sm:text-[23px] lg:mb-6 lg:text-[25px]">
         {title}
       </h3>
 
-      <div className="space-y-3">
+      <div className="space-y-2.5 sm:space-y-3">
         {links.map((item) => (
           <a
             key={item.label}
             href={item.href}
             className="
               block
-              text-[16px]
-              leading-[1.25]
+              text-[14px]
+              leading-[1.35]
               text-white
               transition
               hover:text-[#e7a51d]
+              sm:text-[15px]
+              lg:text-[16px]
             "
           >
             {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const socialLinks = [
+  {
+    label: 'Facebook',
+    href: 'https://facebook.com',
+    icon: <FaFacebookF />,
+    className: 'bg-[#247bf1]',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com',
+    icon: <FaInstagram />,
+    className: 'bg-[#e33872]',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://youtube.com',
+    icon: <FaYoutube />,
+    className: 'bg-[#ff0808]',
+  },
+]
+
+const FooterSocialColumn = () => {
+  return (
+    <div className="min-w-0">
+      <h3 className="mb-4 text-[20px] font-bold leading-none text-white sm:mb-5 sm:text-[23px] lg:mb-6 lg:text-[25px]">
+        Follow Us
+      </h3>
+
+      <div className="flex flex-wrap items-center gap-3 sm:max-w-[190px]">
+        {socialLinks.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={item.label}
+            className={`
+              flex
+              h-10
+              w-10
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              text-[17px]
+              text-white
+              transition
+              hover:-translate-y-1
+              sm:h-11
+              sm:w-11
+              sm:text-[19px]
+              lg:h-[48px]
+              lg:w-[48px]
+              lg:text-[20px]
+              ${item.className}
+            `}
+          >
+            {item.icon}
           </a>
         ))}
       </div>
@@ -108,7 +146,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#168486] text-white">
 
-      <div className="mx-auto max-w-[1750px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 xl:px-14">
+      <div className="mx-auto max-w-[1560px] px-5 py-9 sm:px-6 sm:py-10 lg:px-10 lg:py-12 xl:px-12">
 
         {/* =====================================
             TOP AREA
@@ -117,40 +155,41 @@ const Footer = () => {
           className="
             grid
             items-start
-            gap-10
-            md:grid-cols-2
-            xl:grid-cols-[1.55fr_0.75fr_0.75fr_0.95fr_0.55fr]
-            xl:gap-12
+            gap-x-8
+            gap-y-8
+            sm:grid-cols-2
+            lg:grid-cols-[1.75fr_0.85fr_0.9fr_1.15fr_0.75fr]
+            lg:gap-y-10
+            xl:gap-x-10
           "
         >
 
           {/* LEFT */}
-          <div>
+          <div className="max-w-[520px] sm:col-span-2 lg:col-span-1">
 
             {/* LOGO */}
             <div
               className="
                 inline-flex
                 items-center
-                rounded-[16px]
+                rounded-[14px]
                 bg-white
-                px-4
-                py-3
+                px-3
+                py-2
+                sm:py-2.5
               "
             >
               <img
                 src="/logoayu.png"
                 alt="Krishna College Bhopal"
-                className="h-[74px] w-auto max-w-full object-contain"
+                className="h-[56px] w-auto max-w-full object-contain sm:h-[64px] lg:h-[68px]"
               />
             </div>
 
             {/* FIND US */}
-            <h3 className="mt-6 text-[22px] font-bold sm:text-[24px]">
-              Find Us Here
-            </h3>
+            
 
-            <div className="mt-5 space-y-4">
+            <div className="mt-4 space-y-3 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3 sm:space-y-0 lg:block lg:space-y-3">
 
               {/* PHONE */}
               <div className="flex items-center gap-3">
@@ -158,8 +197,8 @@ const Footer = () => {
                 <div
                   className="
                     flex
-                    h-11
-                    w-11
+                    h-10
+                    w-10
                     shrink-0
                     items-center
                     justify-center
@@ -167,14 +206,14 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
-                    sm:h-[50px]
-                    sm:w-[50px]
+                    sm:h-11
+                    sm:w-11
                   "
                 >
                   <FaPhoneAlt />
                 </div>
 
-                <div className="min-w-0 flex flex-wrap items-center gap-2 text-[14px] sm:text-[16px]">
+                <div className="min-w-0 flex flex-col items-start gap-1 text-[14px] min-[430px]:flex-row min-[430px]:items-center min-[430px]:gap-2 sm:text-[15px] lg:text-[16px]">
                   <a
                     href="tel:+917611150888"
                     className="hover:text-[#e7a51d]"
@@ -182,7 +221,7 @@ const Footer = () => {
                     +91-6262180303 
                   </a>
 
-                  <span>|</span>
+                  <span className="hidden min-[430px]:inline">|</span>
 
                   <a
                     href="tel:+917611150888"
@@ -200,8 +239,8 @@ const Footer = () => {
                 <div
                   className="
                     flex
-                    h-11
-                    w-11
+                    h-10
+                    w-10
                     shrink-0
                     items-center
                     justify-center
@@ -209,8 +248,8 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
-                    sm:h-[50px]
-                    sm:w-[50px]
+                    sm:h-11
+                    sm:w-11
                   "
                 >
                   <FaEnvelope />
@@ -218,7 +257,7 @@ const Footer = () => {
 
                 <a
                   href="mailto:shrikrishnayurvedic@.com"
-                  className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[16px]"
+                  className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[15px] lg:text-[16px]"
                 >
                   shrikrishnayurvedic@.com
                 </a>
@@ -226,14 +265,13 @@ const Footer = () => {
               </div>
 
               {/* ADDRESS */}
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 sm:col-span-2 lg:col-span-1">
 
                 <div
                   className="
-                    mt-1
                     flex
-                    h-11
-                    w-11
+                    h-10
+                    w-10
                     shrink-0
                     items-center
                     justify-center
@@ -241,82 +279,17 @@ const Footer = () => {
                     border
                     border-white/30
                     text-[19px]
-                    sm:h-[50px]
-                    sm:w-[50px]
+                    sm:h-11
+                    sm:w-11
                   "
                 >
                   <FaMapMarkerAlt />
                 </div>
 
-                <div className="min-w-0 pt-1 text-[14px] leading-7 sm:text-[16px] sm:leading-8">
-                  <p>
-                    <strong>Main Campus:</strong>{' '}
-                    Krishna College Bhopal
-                  </p>
-
-                  <p>
-                    <strong>City Address:</strong>{' '}
-                    Bhopal, Madhya Pradesh
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* SOCIAL */}
-            <div className="mt-10">
-
-              <h4 className="mb-5 text-[20px] font-bold sm:text-[22px]">
-                Follow Us:
-              </h4>
-
-              <div className="flex items-center gap-3">
-
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#247bf1] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
-                >
-                  <FaFacebookF />
-                </a>
-
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e33872] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
-                >
-                  <FaInstagram />
-                </a>
-
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ff0808] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
-                >
-                  <FaYoutube />
-                </a>
-
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#096fab] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
-                >
-                  <FaLinkedinIn />
-                </a>
-
-                <a
-                  href="https://wa.me/91"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#21b56d] text-[18px] transition hover:-translate-y-1 sm:h-[48px] sm:w-[48px] sm:text-[20px]"
-                >
-                  <FaWhatsapp />
-                </a>
+                <p className="min-w-0 text-[14px] leading-6 sm:text-[15px] lg:text-[16px]">
+                  <strong>Address:</strong>{' '}
+                  Krishna College Bhopal, Bhopal, Madhya Pradesh
+                </p>
 
               </div>
 
@@ -340,68 +313,7 @@ const Footer = () => {
             links={ncismLinks}
           />
 
-          <FooterLinkColumn
-            title="Support"
-            links={supportLinks}
-          />
-
-        </div>
-
-        {/* =====================================
-            IMPORTANT LINKS
-        ====================================== */}
-        <div
-          className="
-            mt-0
-            grid
-            gap-0
-            xl:-mt-42
-            xl:grid-cols-[1.55fr_3.0fr]
-          "
-        >
-
-          {/* empty left area for alignment */}
-          <div className="hidden xl:block" />
-
-          <div>
-
-            <h3 className="mb-5 text-[28px] font-bold leading-none sm:mb-6 sm:text-[34px]">
-              Important Links
-            </h3>
-
-            <div className="flex flex-wrap gap-2.5 sm:gap-3">
-
-              {importantLinks.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="
-                    max-w-full
-                    rounded-full
-                    bg-[#b77a0e]
-                    px-3
-                    py-2
-                    text-[14px]
-                    font-medium
-                    leading-none
-                    text-white
-                    shadow-[0_0_14px_rgba(227,160,32,0.55)]
-                    transition
-                    duration-300
-                    hover:-translate-y-0.5
-                    hover:bg-[#df930e]
-                    sm:px-4
-                    sm:py-[9px]
-                    sm:text-[15px]
-                  "
-                >
-                  {item.label}
-                </a>
-              ))}
-
-            </div>
-
-          </div>
+          <FooterSocialColumn />
 
         </div>
 
@@ -410,15 +322,18 @@ const Footer = () => {
         ====================================== */}
         <div
           className="
-            mt-7
+            mt-8
             flex
             flex-col
-            gap-4
+            gap-3
             border-t
             border-white/10
-            pt-5
-            text-[15px]
+            pt-4
+            text-[14px]
             text-white/80
+            sm:mt-10
+            sm:pt-5
+            sm:text-[15px]
             lg:flex-row
             lg:items-center
             lg:justify-between
@@ -429,43 +344,15 @@ const Footer = () => {
             <span>
               © 2026 Krishna College Bhopal. All Rights Reserved.
             </span>
-
-            <span className="text-white/40">|</span>
-
-            <span>Designed by</span>
-
-            <a
-              href="https://ntechzy.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-white"
-            >
-              Ntechzy
-            </a>
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center lg:justify-start lg:text-left">
 
-            <a href="/terms" className="hover:text-white">
-              Terms of service
-            </a>
-
-            <span className="text-[#ff6464]">•</span>
-
-            <a href="/refund-policy" className="hover:text-white">
-              Refund Policy
-            </a>
-
-            <span className="text-[#ff6464]">•</span>
-
-            <a href="/privacy-policy" className="hover:text-white">
-              Privacy policy
-            </a>
-
-            <span className="text-[#ff6464]">•</span>
-
-            <a href="/shipping-policy" className="hover:text-white">
-              Shipping Policy
+            <a href="https://ntechzy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white">
+              Designed by Ntechzy
             </a>
 
           </div>

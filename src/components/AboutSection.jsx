@@ -97,67 +97,6 @@ const AboutSection = () => {
                 lg:h-[610px]
               "
             />
-
-            {/* FLOATING BADGE */}
-            <div
-              className="
-                absolute
-                bottom-[16%]
-                right-[1%]
-                z-20
-                flex
-                max-w-[270px]
-                items-center
-                gap-4
-                rounded-xl
-                border-2
-                border-white
-                bg-[#eef2ff]
-                px-4
-                py-4
-                shadow-[0_12px_35px_rgba(0,0,0,0.12)]
-
-                sm:right-[4%]
-                sm:px-5
-                sm:py-5
-
-                md:right-[2%]
-              "
-            >
-              {/* BADGE ICON */}
-              <div
-                className="
-                  flex
-                  h-[58px]
-                  w-[58px]
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-md
-                  bg-[#168486]
-                  text-2xl
-                  text-white
-                "
-              >
-                ★
-              </div>
-
-              {/* BADGE TEXT */}
-              <p
-                className="
-                  text-[14px]
-                  font-semibold
-                  leading-6
-                  text-[#111111]
-
-                  sm:text-[16px]
-                "
-              >
-                Excellence in
-                <br />
-                Ayurvedic Education
-              </p>
-            </div>
           </div>
 
           {/* =========================

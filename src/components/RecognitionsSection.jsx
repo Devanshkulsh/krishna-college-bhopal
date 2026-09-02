@@ -80,11 +80,11 @@ const RecognitionsSection = () => {
                   sm:h-[150px]
                   sm:w-[150px]
 
-                  md:h-[190px]
-                  md:w-[190px]
+                  md:h-[160px]
+                  md:w-[160px]
 
-                  lg:h-[210px]
-                  lg:w-[210px]
+                  lg:h-[180px]
+                  lg:w-[180px]
                 "
               >
                 {/* LOGO IMAGE */}

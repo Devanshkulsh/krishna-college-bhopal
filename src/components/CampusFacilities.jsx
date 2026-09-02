@@ -1,5 +1,3 @@
-import React from 'react'
-
 const facilities = [
   {
     title: 'General & Laparoscopic Surgery',
@@ -65,17 +63,17 @@ const facilities = [
 
 const CampusFacilities = () => {
   return (
-    <section className="w-full bg-white py-10 md:py-14 lg:py-20">
+    <section className="w-full bg-white py-9 sm:py-12 md:py-14 lg:py-20">
       <div className="mx-auto max-w-[1750px] px-4 sm:px-6 md:px-8 lg:px-10">
 
         {/* HEADING */}
-        <div className="mb-8 text-center md:mb-10 lg:mb-14">
+        <div className="mb-7 text-center sm:mb-8 md:mb-10 lg:mb-14">
 
-          <h2 className="text-2xl font-bold text-[#1f2768] sm:text-3xl md:text-4xl">
+          <h2 className="text-[26px] font-bold leading-tight text-[#1f2768] sm:text-3xl md:text-4xl">
             Our Campus Facilities
           </h2>
 
-          <p className="mx-auto mt-3 max-w-3xl text-xs font-medium uppercase tracking-[1px] text-[#11a545] sm:text-sm md:mt-4 md:text-base md:tracking-[1.5px] lg:text-lg">
+          <p className="mx-auto mt-3 max-w-3xl text-[12px] font-medium uppercase leading-6 tracking-[0.8px] text-[#11a545] sm:text-sm md:mt-4 md:text-base md:tracking-[1.5px] lg:text-lg">
             Experience learning in an environment designed to nurture holistic
             education and well-being
           </p>
@@ -87,7 +85,7 @@ const CampusFacilities = () => {
           className="
             grid
             grid-cols-1
-            gap-4
+            gap-5
             sm:grid-cols-2
             sm:gap-5
             lg:grid-cols-3
@@ -117,7 +115,7 @@ const CampusFacilities = () => {
             >
 
               {/* IMAGE */}
-              <div className="h-[120px] overflow-hidden sm:h-[135px] md:h-[145px]">
+              <div className="flex aspect-[3/2] w-full items-center justify-center overflow-hidden bg-[#f7fbfb] sm:aspect-[3/2] lg:h-[230px] lg:aspect-auto xl:h-[170px]">
 
                 <img
                   src={facility.image}
@@ -125,23 +123,24 @@ const CampusFacilities = () => {
                   className="
                     h-full
                     w-full
-                    object-cover
+                    object-contain
                     transition
                     duration-500
                     group-hover:scale-105
+                    lg:object-cover
                   "
                 />
 
               </div>
 
               {/* CONTENT */}
-              <div className="px-4 py-3 sm:px-5 sm:py-4">
+              <div className="px-4 py-4 sm:px-5">
 
-                <h3 className="text-sm font-bold leading-5 text-[#1f2768] sm:text-[15px] md:text-[16px] md:leading-6">
+                <h3 className="text-[16px] font-bold leading-6 text-[#1f2768] sm:text-[16px] md:text-[16px] md:leading-6">
                   {facility.title}
                 </h3>
 
-                <p className="mt-1 text-[13px] leading-5 text-[#111827] sm:mt-2 sm:text-[14px] md:text-[15px] md:leading-6">
+                <p className="mt-2 text-[14px] leading-6 text-[#111827] md:text-[15px] md:leading-6">
                   {facility.description}
                 </p>
 
