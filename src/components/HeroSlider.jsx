@@ -12,6 +12,48 @@ const HeroSlider = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formLoading, setFormLoading] = useState(true);
 
+  const [activeContent, setActiveContent] = useState(0);
+  const [contentVisible, setContentVisible] = useState(true);
+
+  /* =====================================================
+     HERO CONTENT
+  ===================================================== */
+
+  const heroContents = [
+    {
+      title: "Welcome To Shri Krishna Ayurvedic Hospital",
+      subtitle: "SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)",
+      highlight: "निःशुल्क स्वर्ण प्राशन शिविर",
+    },
+    {
+      title: "Experience Authentic Ayurvedic Healthcare",
+      subtitle: "TRADITIONAL AYURVEDA • MODERN CARE",
+      highlight: "स्वस्थ जीवन की ओर एक कदम",
+    },
+    {
+      title: "Ayurveda For A Healthier Tomorrow",
+      subtitle: "SHRI KRISHNA AYURVEDIC HOSPITAL",
+      highlight: "प्राकृतिक उपचार • सम्पूर्ण स्वास्थ्य",
+    },
+  ];
+
+  /* =====================================================
+     HERO CONTENT AUTO CHANGE
+  ===================================================== */
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setContentVisible(false);
+
+      setTimeout(() => {
+        setActiveContent((prev) => (prev + 1) % heroContents.length);
+        setContentVisible(true);
+      }, 450);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   /* =====================================================
      LOAD LMS FORM
   ===================================================== */
@@ -91,6 +133,21 @@ const HeroSlider = () => {
       document.body.style.overflow = "";
     };
   }, [isFormOpen]);
+
+  /* =====================================================
+     MANUAL CONTENT CHANGE
+  ===================================================== */
+
+  const changeContent = (index) => {
+    if (index === activeContent) return;
+
+    setContentVisible(false);
+
+    setTimeout(() => {
+      setActiveContent(index);
+      setContentVisible(true);
+    }, 300);
+  };
 
   return (
     <section
@@ -211,87 +268,213 @@ const HeroSlider = () => {
               lg:text-left
             "
           >
-            {/* MAIN HEADING */}
+            {/* ================================================= */}
+            {/* ANIMATED CONTENT */}
+            {/* ================================================= */}
 
-            <h1
-              className="
-                max-w-[920px]
+            <div
+              className={`
+                w-full
 
-                text-[27px]
-                font-extrabold
-                uppercase
-                leading-[1.18]
+                transition-all
+                duration-500
+                ease-out
 
-                sm:text-[34px]
-                md:text-[42px]
-
-                lg:text-[48px]
-                lg:leading-[1.1]
-
-                xl:text-[54px]
-                2xl:text-[58px]
-              "
+                ${
+                  contentVisible
+                    ? "translate-y-0 opacity-100 blur-0"
+                    : "translate-y-4 opacity-0 blur-[2px]"
+                }
+              `}
             >
-              Welcome To Shri Krishna Ayurvedic Hospital
-            </h1>
+              {/* SMALL ACCENT */}
 
-            {/* UNIVERSITY */}
+              <div
+                className="
+                  mx-auto
+                  mb-4
 
-            <p
-              className="
-                mt-5
+                  h-[3px]
+                  w-[56px]
 
-                text-[14px]
-                font-semibold
-                leading-6
+                  rounded-full
 
-                sm:text-[16px]
-                md:text-[19px]
-                lg:text-[20px]
-                xl:text-[21px]
-              "
-            >
-              SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
-            </p>
+                  bg-[#C8751B]
 
-            {/* HINDI TEXT */}
+                  lg:mx-0
+                "
+              />
 
-            <h2
-              className="
-                mt-5
+              {/* MAIN HEADING */}
 
-                text-[24px]
-                font-bold
-                leading-snug
+              <h1
+                className="
+                  mx-auto
+                  max-w-[920px]
 
-                text-[#C8751B]
+                  text-[27px]
 
-                sm:text-[27px]
-                md:text-[31px]
-                lg:text-[34px]
-                xl:text-[37px]
-              "
-            >
-              निःशुल्क स्वर्ण प्राशन शिविर
-            </h2>
+                  font-extrabold
+                  uppercase
+
+                  leading-[1.18]
+
+                  tracking-[-0.02em]
+
+                  text-white
+
+                  sm:text-[34px]
+
+                  md:text-[42px]
+
+                  lg:mx-0
+                  lg:text-[48px]
+                  lg:leading-[1.1]
+
+                  xl:text-[54px]
+
+                  2xl:text-[58px]
+                "
+              >
+                {heroContents[activeContent].title}
+              </h1>
+
+              {/* SUBTITLE */}
+
+              <p
+                className="
+                  mt-5
+
+                  text-[14px]
+
+                  font-semibold
+
+                  leading-6
+
+                  tracking-[0.04em]
+
+                  text-white/90
+
+                  sm:text-[16px]
+
+                  md:text-[19px]
+
+                  lg:text-[20px]
+
+                  xl:text-[21px]
+                "
+              >
+                {heroContents[activeContent].subtitle}
+              </p>
+
+              {/* HIGHLIGHT */}
+
+              <div
+                className="
+                  mt-5
+
+                  flex
+                  justify-center
+
+                  lg:justify-start
+                "
+              >
+                <h2
+                  className="
+                    inline-flex
+
+                    rounded-full
+
+                    border
+                    border-[#C8751B]/40
+
+                    bg-[#C8751B]/10
+
+                    px-5
+                    py-2
+
+                    text-[22px]
+
+                    font-bold
+
+                    leading-snug
+
+                    text-[#E89A3D]
+
+                    backdrop-blur-sm
+
+                    sm:text-[27px]
+
+                    md:text-[31px]
+
+                    lg:text-[34px]
+
+                    xl:text-[37px]
+                  "
+                >
+                  {heroContents[activeContent].highlight}
+                </h2>
+              </div>
+            </div>
 
             {/* ================================================= */}
-            {/* BUTTONS */}
-            {/* MOBILE: SHIFTED LITTLE DOWN */}
+            {/* INDICATORS */}
             {/* ================================================= */}
 
             <div
               className="
-                mt-12
+                mt-6
+
+                flex
+                items-center
+                justify-center
+
+                gap-2
+
+                lg:justify-start
+              "
+            >
+              {heroContents.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => changeContent(index)}
+                  className={`
+                    h-[4px]
+
+                    rounded-full
+
+                    transition-all
+                    duration-500
+
+                    ${
+                      activeContent === index
+                        ? "w-10 bg-[#C8751B]"
+                        : "w-4 bg-white/40 hover:bg-white/70"
+                    }
+                  `}
+                  aria-label={`Show slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* ================================================= */}
+            {/* BUTTONS */}
+            {/* ================================================= */}
+
+            <div
+              className="
+                mt-10
 
                 flex
                 w-full
                 max-w-[430px]
 
                 flex-col
+
                 gap-3
 
-                sm:mt-12
+                sm:mt-10
                 sm:max-w-[500px]
                 sm:flex-row
                 sm:justify-center
@@ -322,6 +505,7 @@ const HeroSlider = () => {
                   px-6
 
                   text-[16px]
+
                   font-semibold
                   text-white
 
@@ -361,6 +545,7 @@ const HeroSlider = () => {
                   px-7
 
                   text-[16px]
+
                   font-semibold
 
                   !text-white
@@ -379,7 +564,7 @@ const HeroSlider = () => {
                 Take A College Tour
               </a>
 
-              {/* OUR DEPARTMENTS */}
+              {/* DEPARTMENTS */}
 
               <a
                 href="/departments"
@@ -399,6 +584,7 @@ const HeroSlider = () => {
                   px-6
 
                   text-[16px]
+
                   font-semibold
 
                   !text-white
@@ -424,7 +610,6 @@ const HeroSlider = () => {
 
           {/* ================================================= */}
           {/* LMS FORM */}
-          {/* DESKTOP RIGHT / MOBILE POPUP */}
           {/* ================================================= */}
 
           <div
@@ -460,6 +645,7 @@ const HeroSlider = () => {
               lg:visible
               lg:relative
               lg:inset-auto
+
               lg:z-20
 
               lg:block
@@ -485,9 +671,7 @@ const HeroSlider = () => {
               }
             }}
           >
-            {/* ================================================= */}
             {/* FORM CARD */}
-            {/* ================================================= */}
 
             <div
               className="
@@ -518,9 +702,7 @@ const HeroSlider = () => {
                 lg:shadow-[0_15px_45px_rgba(0,0,0,0.28)]
               "
             >
-              {/* ================================================= */}
-              {/* MOBILE FORM HEADER */}
-              {/* ================================================= */}
+              {/* MOBILE HEADER */}
 
               <div
                 className="
@@ -588,9 +770,7 @@ const HeroSlider = () => {
                 </button>
               </div>
 
-              {/* ================================================= */}
               {/* FORM SCROLL AREA */}
-              {/* ================================================= */}
 
               <div
                 className="
@@ -616,8 +796,6 @@ const HeroSlider = () => {
                   lg:pt-3
 
                   xl:px-5
-
-                  lg:[scrollbar-width:thin]
                 "
                 style={{
                   WebkitOverflowScrolling: "touch",
@@ -627,12 +805,18 @@ const HeroSlider = () => {
                   <div
                     className="
                       flex
+
                       min-h-[80px]
+
                       items-center
                       justify-center
+
                       px-4
+
                       text-center
+
                       text-sm
+
                       text-gray-500
                     "
                   >
@@ -687,16 +871,12 @@ const HeroSlider = () => {
               flex
               h-[58px]
               w-[58px]
-
               items-center
               justify-center
-
               bg-[#e7bb37]
-
               text-xl
               text-white
             "
-            aria-label="Admission"
           >
             <FaGraduationCap />
           </button>
@@ -707,16 +887,12 @@ const HeroSlider = () => {
               flex
               h-[58px]
               w-[58px]
-
               items-center
               justify-center
-
               bg-[#3988f0]
-
               text-xl
               !text-white
             "
-            aria-label="Courses"
           >
             <FaBookOpen />
           </a>
@@ -727,16 +903,12 @@ const HeroSlider = () => {
               flex
               h-[58px]
               w-[58px]
-
               items-center
               justify-center
-
               bg-[#ff1238]
-
               text-xl
               !text-white
             "
-            aria-label="Brochure"
           >
             <FaDownload />
           </a>
@@ -747,16 +919,12 @@ const HeroSlider = () => {
               flex
               h-[58px]
               w-[58px]
-
               items-center
               justify-center
-
               bg-[#ec3f51]
-
               text-xl
               !text-white
             "
-            aria-label="Call"
           >
             <FaHeadset />
           </a>
@@ -767,16 +935,12 @@ const HeroSlider = () => {
               flex
               h-[58px]
               w-[58px]
-
               items-center
               justify-center
-
               bg-[#ef3d91]
-
               text-xl
               text-white
             "
-            aria-label="Share"
           >
             <FaShareAlt />
           </button>
@@ -788,11 +952,8 @@ const HeroSlider = () => {
       {/* ================================================= */}
 
       <div
-        className="
+        className={`
           relative
-          -z-40
-
-          md:z-20
 
           overflow-hidden
 
@@ -803,7 +964,14 @@ const HeroSlider = () => {
           text-white
 
           md:py-3
-        "
+          md:z-20
+
+          ${
+            isFormOpen
+              ? "hidden lg:block"
+              : "block"
+          }
+        `}
       >
         <div
           className="
@@ -822,6 +990,7 @@ const HeroSlider = () => {
             px-2
 
             text-[11px]
+
             font-semibold
 
             sm:text-xs
