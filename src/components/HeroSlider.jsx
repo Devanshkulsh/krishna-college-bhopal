@@ -93,7 +93,11 @@ const HeroSlider = () => {
   }, [isFormOpen]);
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section
+      className={`relative w-full overflow-hidden ${
+        isFormOpen ? "z-[999999]" : "z-30"
+      }`}
+    >
       {/* ================================================= */}
       {/* HERO */}
       {/* ================================================= */}
