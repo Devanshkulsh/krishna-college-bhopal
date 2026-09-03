@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Director from "./pages/Director";
+import VisionMission from "./pages/VisionMission";
 
 const App = () => {
   return (
@@ -18,7 +19,6 @@ const App = () => {
       {/* ================= ROUTES ================= */}
 
       <Routes>
-
         {/* HOME */}
 
         <Route
@@ -45,6 +45,12 @@ const App = () => {
           element={<Director />}
         />
 
+        {/* VISION & MISSION */}
+
+        <Route
+          path="/about/vision-mission"
+          element={<VisionMission />}
+        />
       </Routes>
 
       {/* ================= FOOTER ================= */}
