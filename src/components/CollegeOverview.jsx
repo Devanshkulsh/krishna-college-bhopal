@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 const overviewCards = [
   {
     title: 'Hospital Details',
-    image: '/hero/HOSPITAL1.png',
+    image: '/hero/hospital.png',
     link: '/hospital',
   },
   {
@@ -13,7 +13,7 @@ const overviewCards = [
   },
   {
     title: 'College Details',
-    image: '/hero/campus.png',
+    image: '/hero/college.png',
     link: '/about',
   },
 ]

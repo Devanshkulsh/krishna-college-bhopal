@@ -58,22 +58,10 @@ const CoursesOffered = () => {
           {/* IMAGE */}
           <div className="relative min-h-[240px] overflow-hidden sm:min-h-[320px] lg:min-h-full">
             <img
-              src="/bams.png"
+              src="/hero/classroom.png"
               alt="BAMS course at Krishna College Bhopal"
               className="h-full min-h-[240px] w-full object-cover sm:min-h-[320px] lg:absolute lg:inset-0"
             />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-[#123536]/55 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#123536]/35 lg:via-transparent lg:to-transparent" />
-
-            <div className="absolute bottom-4 left-4 rounded-lg bg-white/95 px-4 py-3 shadow-md sm:bottom-6 sm:left-6">
-              <p className="text-xs font-semibold uppercase tracking-[1px] text-[#168486]">
-                Undergraduate Course
-              </p>
-
-              <p className="mt-1 text-xl font-bold text-[#1f2768] sm:text-2xl">
-                BAMS
-              </p>
-            </div>
           </div>
 
           {/* CONTENT */}
@@ -109,24 +97,6 @@ const CoursesOffered = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-6">
-              <h4 className="text-base font-bold text-[#1f2768] sm:text-lg">
-                Course Highlights
-              </h4>
-
-              <div className="mt-3 grid gap-2.5">
-                {courseHighlights.map((highlight) => (
-                  <p
-                    key={highlight}
-                    className="flex gap-2 text-sm leading-6 text-[#44515f] sm:text-base"
-                  >
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#A3621D]" />
-                    <span>{highlight}</span>
-                  </p>
-                ))}
-              </div>
             </div>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

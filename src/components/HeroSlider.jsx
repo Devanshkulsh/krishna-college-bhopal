@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  FaBookOpen,
-  FaDownload,
-  FaGraduationCap,
-  FaHeadset,
-  FaShareAlt,
-  FaTimes,
-} from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 const HeroSlider = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -151,7 +144,7 @@ const HeroSlider = () => {
 
   return (
     <section
-      className={`relative w-full overflow-hidden ${
+      className={`relative w-full ${
         isFormOpen ? "z-[999999]" : "z-30"
       }`}
     >
@@ -162,10 +155,13 @@ const HeroSlider = () => {
       <div
         className="
           relative
+
           min-h-[540px]
           sm:min-h-[580px]
           md:min-h-[620px]
-          lg:min-h-[700px]
+
+          lg:min-h-[450px]
+          xl:min-h-[470px]
         "
       >
         {/* BACKGROUND */}
@@ -232,13 +228,14 @@ const HeroSlider = () => {
             md:px-10
             md:pt-[80px]
 
-            lg:min-h-[700px]
+            lg:min-h-[450px]
             lg:items-center
-            lg:gap-12
+            lg:gap-8
             lg:px-12
-            lg:py-8
+            lg:py-2
 
-            xl:gap-14
+            xl:min-h-[470px]
+            xl:gap-10
             xl:px-16
 
             2xl:px-20
@@ -268,9 +265,7 @@ const HeroSlider = () => {
               lg:text-left
             "
           >
-            {/* ================================================= */}
             {/* ANIMATED CONTENT */}
-            {/* ================================================= */}
 
             <div
               className={`
@@ -292,7 +287,7 @@ const HeroSlider = () => {
               <div
                 className="
                   mx-auto
-                  mb-4
+                  mb-3
 
                   h-[3px]
                   w-[56px]
@@ -328,12 +323,13 @@ const HeroSlider = () => {
                   md:text-[42px]
 
                   lg:mx-0
-                  lg:text-[48px]
-                  lg:leading-[1.1]
+                  lg:max-w-[760px]
+                  lg:text-[39px]
+                  lg:leading-[1.08]
 
-                  xl:text-[54px]
+                  xl:text-[45px]
 
-                  2xl:text-[58px]
+                  2xl:text-[48px]
                 "
               >
                 {heroContents[activeContent].title}
@@ -343,7 +339,7 @@ const HeroSlider = () => {
 
               <p
                 className="
-                  mt-5
+                  mt-4
 
                   text-[14px]
 
@@ -359,9 +355,9 @@ const HeroSlider = () => {
 
                   md:text-[19px]
 
-                  lg:text-[20px]
+                  lg:text-[17px]
 
-                  xl:text-[21px]
+                  xl:text-[18px]
                 "
               >
                 {heroContents[activeContent].subtitle}
@@ -371,7 +367,7 @@ const HeroSlider = () => {
 
               <div
                 className="
-                  mt-5
+                  mt-4
 
                   flex
                   justify-center
@@ -407,9 +403,9 @@ const HeroSlider = () => {
 
                     md:text-[31px]
 
-                    lg:text-[34px]
+                    lg:text-[26px]
 
-                    xl:text-[37px]
+                    xl:text-[29px]
                   "
                 >
                   {heroContents[activeContent].highlight}
@@ -423,7 +419,7 @@ const HeroSlider = () => {
 
             <div
               className="
-                mt-6
+                mt-5
 
                 flex
                 items-center
@@ -464,7 +460,7 @@ const HeroSlider = () => {
 
             <div
               className="
-                mt-10
+                mt-6
 
                 flex
                 w-full
@@ -474,12 +470,11 @@ const HeroSlider = () => {
 
                 gap-3
 
-                sm:mt-10
                 sm:max-w-[500px]
                 sm:flex-row
                 sm:justify-center
 
-                lg:mt-10
+                lg:mt-5
                 lg:max-w-none
                 lg:justify-start
               "
@@ -532,8 +527,8 @@ const HeroSlider = () => {
                 className="
                   hidden
 
-                  h-[54px]
-                  min-w-[230px]
+                  h-[47px]
+                  min-w-[210px]
 
                   items-center
                   justify-center
@@ -544,7 +539,7 @@ const HeroSlider = () => {
 
                   px-7
 
-                  text-[16px]
+                  text-[15px]
 
                   font-semibold
 
@@ -599,8 +594,9 @@ const HeroSlider = () => {
 
                   sm:w-[210px]
 
-                  lg:h-[54px]
-                  lg:w-[230px]
+                  lg:h-[47px]
+                  lg:w-[210px]
+                  lg:text-[15px]
                 "
               >
                 Our Departments
@@ -650,9 +646,9 @@ const HeroSlider = () => {
 
               lg:block
 
-              lg:w-[500px]
-              xl:w-[520px]
-              2xl:w-[540px]
+              lg:w-[400px]
+              xl:w-[420px]
+              2xl:w-[430px]
 
               lg:flex-none
 
@@ -680,7 +676,7 @@ const HeroSlider = () => {
                 h-full
                 w-full
 
-                max-w-[440px]
+                max-w-[420px]
 
                 flex-col
 
@@ -693,9 +689,10 @@ const HeroSlider = () => {
                 shadow-[0_20px_60px_rgba(0,0,0,0.4)]
 
                 lg:h-auto
-
-                lg:max-h-[650px]
+                lg:max-h-none
                 lg:max-w-none
+
+                lg:overflow-visible
 
                 lg:rounded-[15px]
 
@@ -770,7 +767,7 @@ const HeroSlider = () => {
                 </button>
               </div>
 
-              {/* FORM SCROLL AREA */}
+              {/* FORM AREA */}
 
               <div
                 className="
@@ -789,13 +786,18 @@ const HeroSlider = () => {
                   sm:px-4
 
                   lg:flex-none
-                  lg:overflow-y-auto
+
+                  lg:h-auto
+                  lg:max-h-none
+
+                  lg:overflow-x-visible
+                  lg:overflow-y-visible
 
                   lg:px-4
                   lg:pb-4
                   lg:pt-3
 
-                  xl:px-5
+                  xl:px-4
                 "
                 style={{
                   WebkitOverflowScrolling: "touch",
@@ -836,115 +838,6 @@ const HeroSlider = () => {
             </div>
           </div>
         </div>
-
-        {/* ================================================= */}
-        {/* FLOATING RIGHT BUTTONS */}
-        {/* ================================================= */}
-
-        <div
-          className="
-            absolute
-
-            right-0
-            top-1/2
-
-            z-30
-
-            hidden
-
-            -translate-y-1/2
-
-            flex-col
-
-            overflow-hidden
-
-            rounded-l-xl
-
-            shadow-xl
-
-            lg:flex
-          "
-        >
-          <button
-            type="button"
-            className="
-              flex
-              h-[58px]
-              w-[58px]
-              items-center
-              justify-center
-              bg-[#e7bb37]
-              text-xl
-              text-white
-            "
-          >
-            <FaGraduationCap />
-          </button>
-
-          <a
-            href="/courses"
-            className="
-              flex
-              h-[58px]
-              w-[58px]
-              items-center
-              justify-center
-              bg-[#3988f0]
-              text-xl
-              !text-white
-            "
-          >
-            <FaBookOpen />
-          </a>
-
-          <a
-            href="/brochure"
-            className="
-              flex
-              h-[58px]
-              w-[58px]
-              items-center
-              justify-center
-              bg-[#ff1238]
-              text-xl
-              !text-white
-            "
-          >
-            <FaDownload />
-          </a>
-
-          <a
-            href="tel:+919031081170"
-            className="
-              flex
-              h-[58px]
-              w-[58px]
-              items-center
-              justify-center
-              bg-[#ec3f51]
-              text-xl
-              !text-white
-            "
-          >
-            <FaHeadset />
-          </a>
-
-          <button
-            type="button"
-            className="
-              flex
-              h-[58px]
-              w-[58px]
-              items-center
-              justify-center
-              bg-[#ef3d91]
-              text-xl
-              text-white
-            "
-          >
-            <FaShareAlt />
-          </button>
-        </div>
       </div>
 
       {/* ================================================= */}
@@ -966,11 +859,7 @@ const HeroSlider = () => {
           md:py-3
           md:z-20
 
-          ${
-            isFormOpen
-              ? "hidden lg:block"
-              : "block"
-          }
+          ${isFormOpen ? "hidden lg:block" : "block"}
         `}
       >
         <div

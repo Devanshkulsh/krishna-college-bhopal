@@ -2,149 +2,167 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section className="font-poppins w-full bg-[#FFFFFF] py-10 md:py-14 lg:py-20">
+    <section className="font-poppins w-full bg-white py-10 md:py-14 lg:py-16">
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 xl:px-14">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
 
-          {/* =========================
-              LEFT IMAGE AREA
-          ========================== */}
-          <div className="relative flex min-h-[420px] items-center justify-center md:min-h-[520px] lg:min-h-[600px]">
+          {/* LEFT - COLLEGE IMAGE */}
 
-            {/* BIG LIGHT CIRCLE */}
+          <div className="relative w-full">
+
+            {/* Decorative background */}
             <div
               className="
                 absolute
-                left-1/2
-                top-1/2
-                h-[300px]
-                w-[300px]
-                -translate-x-1/2
-                -translate-y-1/2
-                rounded-full
-                border-[34px]
-                border-[#edf2ff]
+                -bottom-4
+                -left-4
+                h-[90%]
+                w-[90%]
+                rounded-[24px]
+                bg-[#168486]/10
 
-                sm:h-[380px]
-                sm:w-[380px]
+                sm:-bottom-5
+                sm:-left-5
 
-                md:h-[440px]
-                md:w-[440px]
-
-                lg:h-[500px]
-                lg:w-[500px]
+                lg:-bottom-6
+                lg:-left-6
               "
             />
 
-            {/* GREEN SHAPE */}
+            {/* Main Image Card */}
+
             <div
-              className="
-                absolute
-                left-[3%]
-                top-[31%]
-                h-[230px]
-                w-[150px]
-                rotate-[8deg]
-                rounded-tl-[120px]
-                rounded-br-[120px]
-                bg-[#168486]
-
-                sm:h-[280px]
-                sm:w-[180px]
-
-                md:left-[5%]
-                md:h-[330px]
-                md:w-[210px]
-
-                lg:h-[360px]
-                lg:w-[230px]
-              "
-            />
-
-            {/* BROWN HALF CIRCLE */}
-            <div
-              className="
-                absolute
-                bottom-[6%]
-                left-[4%]
-                h-[68px]
-                w-[135px]
-                rounded-t-full
-                bg-[#A3621D]
-
-                sm:h-[80px]
-                sm:w-[160px]
-
-                md:left-[6%]
-                md:h-[92px]
-                md:w-[185px]
-              "
-            />
-
-            {/* GIRL IMAGE */}
-            <img
-              src="/hero/banner1.png"
-              alt="Shri Krishna Ayurvedic Hospital"
               className="
                 relative
                 z-10
-                h-[390px]
-                w-auto
-                object-contain
+                overflow-hidden
+                rounded-[20px]
+                border
+                border-gray-100
+                bg-white
+                p-2
+                shadow-[0_15px_45px_rgba(0,0,0,0.12)]
 
-                sm:h-[370px]
-                md:h-[560px]
-                lg:h-[610px]
+                sm:p-3
+                lg:rounded-[24px]
               "
-            />
+            >
+              <div
+                className="
+                  relative
+                  h-[300px]
+                  w-full
+                  overflow-hidden
+                  rounded-[15px]
+
+                  sm:h-[380px]
+                  md:h-[430px]
+                  lg:h-[440px]
+                  xl:h-[470px]
+                "
+              >
+                <img
+                  src="/hero/clg.png"
+                  alt="Shri Krishna University Chhatarpur"
+                  className="
+                    h-full
+                    w-full
+                    object-cover
+                    object-center
+                    transition-transform
+                    duration-700
+                    hover:scale-[1.03]
+                  "
+                />
+
+                {/* Subtle Image Gradient */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/20
+                    via-transparent
+                    to-transparent
+                  "
+                />
+              </div>
+            </div>
           </div>
 
-          {/* =========================
-              RIGHT CONTENT
-          ========================== */}
-          <div className="lg:pr-4">
+          {/* RIGHT - ABOUT CONTENT */}
+
+          <div className="lg:pl-3 xl:pl-5">
+
+            {/* SMALL LABEL */}
+
+            <div className="mb-3 flex items-center gap-3">
+              <div className="h-[2px] w-[38px] bg-[#A3621D]" />
+
+              <span
+                className="
+                  text-[13px]
+                  font-semibold
+                  uppercase
+                  tracking-[2px]
+                  text-[#168486]
+                  sm:text-[14px]
+                "
+              >
+                About Our Institution
+              </span>
+            </div>
 
             {/* MAIN HEADING */}
+
             <h2
               className="
-                text-[32px]
+                text-[30px]
                 font-bold
                 leading-[1.2]
                 tracking-[-0.5px]
                 text-[#162364]
 
-                sm:text-[38px]
-                md:text-[44px]
-                lg:text-[48px]
+                sm:text-[36px]
+                md:text-[40px]
+                lg:text-[42px]
+                xl:text-[46px]
               "
             >
               Welcome To Shri Krishna
             </h2>
 
             {/* BROWN LINE */}
-            <div className="mt-6 h-[2px] w-[155px] bg-[#A3621D]" />
+
+            <div className="mt-5 h-[3px] w-[120px] rounded-full bg-[#A3621D]" />
 
             {/* DESCRIPTION */}
+
             <div
               className="
-                mt-8
+                mt-6
                 max-w-[760px]
-                space-y-7
+                space-y-5
                 text-[15px]
                 font-normal
-                leading-[1.85]
+                leading-[1.8]
                 tracking-[-0.1px]
-                text-[#111111]
+                text-[#333333]
 
                 sm:text-[16px]
-                md:text-[17px]
-                lg:text-[17px]
+                lg:text-[16px]
+                xl:text-[17px]
               "
             >
               <p>
-                Welcome to Shri Krishna Ayurvedic Hospital and College,
-                Chhatarpur — an institution committed to excellence in
-                Ayurvedic education, healthcare and holistic wellness.
+                Welcome to{" "}
+                <strong className="font-semibold text-[#162364]">
+                  Shri Krishna Ayurvedic Hospital and College, Chhatarpur
+                </strong>{" "}
+                — an institution committed to excellence in Ayurvedic
+                education, healthcare and holistic wellness.
               </p>
 
               <p>
@@ -160,6 +178,37 @@ const AboutSection = () => {
                 strong academic foundation, we aim to prepare skilled and
                 responsible Ayurvedic healthcare professionals for the future.
               </p>
+            </div>
+
+            {/* BUTTON */}
+
+            <div className="mt-7">
+              <a
+                href="/about"
+                className="
+                  inline-flex
+                  h-[48px]
+                  items-center
+                  justify-center
+                  rounded-lg
+                  bg-[#168486]
+                  px-7
+                  text-[15px]
+                  font-semibold
+                  !text-white
+
+                  shadow-[0_8px_20px_rgba(22,132,134,0.22)]
+
+                  transition-all
+                  duration-300
+
+                  hover:-translate-y-0.5
+                  hover:bg-[#116d6f]
+                  hover:shadow-[0_12px_25px_rgba(22,132,134,0.28)]
+                "
+              >
+                Read More
+              </a>
             </div>
 
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   FaBars,
@@ -31,54 +31,12 @@ const navItems = [
     href: "/about",
     items: [
       {
-        label: "About College",
-        href: "/about/college",
+        label: "Director Message",
+        href: "/about/director-message",
       },
       {
-        label: "Our Principal",
-        href: "/about/principal",
-      },
-      {
-        label: "Statutory Disclosures",
-        href: "/about/disclosures",
-      },
-    ],
-  },
-
-  {
-    label: "Academics",
-    href: "/academics",
-    items: [
-      {
-        label: "Academic Calendar",
-        href: "/academics/calendar",
-      },
-      {
-        label: "Syllabus",
-        href: "/academics/syllabus",
-      },
-      {
-        label: "Examination",
-        href: "/academics/examination",
-      },
-    ],
-  },
-
-  {
-    label: "Courses",
-    href: "/courses",
-    items: [
-      {
-        label: "BAMS",
-        href: "/courses/bams",
-      },
-      {
-        label: "Course Fees",
-        href: "/admission/course-fees",
-      },
-      {
-        label: "Eligibility",
-        href: "/admission/eligibility",
+        label: "Vision/Mission",
+        href: "/about/vision-mission",
       },
     ],
   },
@@ -86,44 +44,25 @@ const navItems = [
   {
     label: "Departments",
     href: "/departments",
-    items: [
-      {
-        label: "Ayurveda",
-        href: "/departments/ayurveda",
-      },
-      {
-        label: "Samhita Siddhanta",
-        href: "/departments/samhita",
-      },
-      {
-        label: "Rachana Sharir",
-        href: "/departments/rachana-sharir",
-      },
-    ],
   },
 
   {
-    label: "Hospital",
-    href: "/hospital",
+    label: "Faculty",
+    href: "/faculty",
     items: [
       {
-        label: "OPD Services",
-        href: "/hospital/opd",
+        label: "Teaching Staff",
+        href: "/faculty/teaching-staff",
       },
       {
-        label: "IPD Services",
-        href: "/hospital/ipd",
+        label: "Non Teaching Staff",
+        href: "/faculty/non-teaching-staff",
       },
       {
-        label: "Panchakarma",
-        href: "/hospital/panchakarma",
+        label: "Hospital Staff",
+        href: "/faculty/hospital-staff",
       },
     ],
-  },
-
-  {
-    label: "Facility",
-    href: "/facility",
   },
 
   {
@@ -146,8 +85,13 @@ const navItems = [
   },
 
   {
-    label: "Attendance",
-    href: "/attendance",
+    label: "Facilities",
+    href: "/facilities",
+  },
+
+  {
+    label: "Committee",
+    href: "/committee",
   },
 
   {
@@ -191,34 +135,20 @@ const socialLinks = [
     icon: FaFacebookF,
     bg: "bg-[#3b5fa3]",
   },
-
   {
     label: "Instagram",
     href: "https://instagram.com",
     icon: FaInstagram,
     bg: "bg-[#e83f61]",
   },
-
-  {
-    label: "Twitter",
-    href: "https://twitter.com",
-    icon: FaTwitter,
-    bg: "bg-[#25a7e8]",
-  },
-
+  
   {
     label: "YouTube",
     href: "https://youtube.com",
     icon: FaYoutube,
     bg: "bg-[#ff1111]",
   },
-
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: FaLinkedinIn,
-    bg: "bg-[#0b83b5]",
-  },
+  
 ];
 
 /* =========================================================
@@ -228,6 +158,8 @@ const socialLinks = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState("");
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -235,36 +167,143 @@ const Navbar = () => {
   };
 
   const toggleSubmenu = (label) => {
-    setOpenSubmenu((current) =>
-      current === label ? "" : label
-    );
+    setOpenSubmenu((current) => (current === label ? "" : label));
   };
+
+  /* =========================================================
+     OPEN APPLY FORM
+  ========================================================= */
+
+  const openApplyForm = () => {
+    closeMenu();
+    setIsApplyOpen(true);
+  };
+
+  const closeApplyForm = () => {
+    setIsApplyOpen(false);
+  };
+
+  /* =========================================================
+     LMS FORM LOAD
+  ========================================================= */
+
+  useEffect(() => {
+    if (!isApplyOpen) return;
+
+    setFormLoading(true);
+
+    const timer = setTimeout(() => {
+      const container = document.getElementById("navbarFormsID7375");
+
+      if (!container) {
+        setFormLoading(false);
+        return;
+      }
+
+      if (container.children.length > 0) {
+        setFormLoading(false);
+        return;
+      }
+
+      const oldScript = document.getElementById("navbar-lms-form-script");
+
+      if (oldScript) {
+        oldScript.remove();
+      }
+
+      const script = document.createElement("script");
+
+      script.id = "navbar-lms-form-script";
+      script.type = "module";
+
+      script.src =
+        "https://ntechzy.in/api/v1/student-form/form.js?v=" + Date.now();
+
+      script.setAttribute("path", '["/"]');
+      script.setAttribute("divid", "navbarFormsID7375");
+
+      script.setAttribute(
+        "courses",
+        '["Select Course","BAMS","BHMS"]'
+      );
+
+      script.setAttribute("styles", "basic");
+      script.setAttribute("logo", "/logoayu.png");
+      script.setAttribute("contact", "+91-7611150888");
+
+      script.onload = () => {
+        setTimeout(() => {
+          setFormLoading(false);
+        }, 600);
+      };
+
+      script.onerror = () => {
+        console.error("Navbar LMS admission form failed to load");
+        setFormLoading(false);
+      };
+
+      document.body.appendChild(script);
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isApplyOpen]);
+
+  /* =========================================================
+     BODY SCROLL LOCK
+  ========================================================= */
+
+  useEffect(() => {
+    if (isApplyOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isApplyOpen]);
+
+  /* =========================================================
+     ESC KEY CLOSE
+  ========================================================= */
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsApplyOpen(false);
+      }
+    };
+
+    if (isApplyOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isApplyOpen]);
 
   return (
     <>
       <header className="relative z-50 w-full bg-white">
 
-        {/* =====================================================
-            TOP BAR
-        ===================================================== */}
+        {/* ================= TOP BAR ================= */}
 
         <div className="hidden h-[44px] bg-[#168486] lg:block">
-
           <div className="mx-auto flex h-full max-w-[1720px] items-center justify-between px-8">
 
             {/* LEFT CONTACT */}
 
             <div className="flex items-center gap-7 text-[14px] font-bold text-white">
-
               <a
                 href="tel:+917611150888"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
-
-                <span>
-                  +91-7611150888
-                </span>
+                <span>+91-7611150888</span>
               </a>
 
               <a
@@ -272,10 +311,7 @@ const Navbar = () => {
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
-
-                <span>
-                  +91-6262 180 303
-                </span>
+                <span>+91-6262 180 303</span>
               </a>
 
               <a
@@ -283,37 +319,19 @@ const Navbar = () => {
                 className="flex items-center gap-2 !text-white"
               >
                 <FaEnvelope className="text-[#f1a028]" />
-
-                <span>
-                  shrikrishnayurvedic@.com
-                </span>
+                <span>shrikrishnayurvedic@.com</span>
               </a>
-
             </div>
 
             {/* TOP RIGHT BUTTONS */}
 
             <div className="flex items-center gap-3">
-
               {[
-                [
-                  "BAMS(UG) Admission 2026",
-                  "/admission",
-                ],
-                [
-                  "Govt. Approval",
-                  "/approvals",
-                ],
-                [
-                  "Career",
-                  "/career",
-                ],
-                [
-                  "Notification",
-                  "/notification",
-                ],
+                ["BAMS(UG) Admission 2026", "/admission"],
+                ["Govt. Approval", "/approvals"],
+                ["Career", "/career"],
+                ["Notification", "/notification"],
               ].map(([label, href]) => (
-
                 <a
                   key={label}
                   href={href}
@@ -332,21 +350,15 @@ const Navbar = () => {
                 >
                   {label}
                 </a>
-
               ))}
-
             </div>
 
           </div>
-
         </div>
 
-        {/* =====================================================
-            MIDDLE HEADER
-        ===================================================== */}
+        {/* ================= MIDDLE HEADER ================= */}
 
         <div className="bg-white">
-
           <div
             className="
               mx-auto
@@ -357,21 +369,16 @@ const Navbar = () => {
               justify-between
               gap-2
               px-3
-
               min-[375px]:px-4
-
               sm:h-[100px]
               sm:gap-4
               sm:px-6
-
               lg:h-[112px]
               lg:px-8
             "
           >
 
-            {/* =================================================
-                LOGO + COLLEGE NAME
-            ================================================= */}
+            {/* LOGO + NAME */}
 
             <a
               href="/"
@@ -386,9 +393,6 @@ const Navbar = () => {
                 lg:flex-none
               "
             >
-
-              {/* LOGO */}
-
               <img
                 src="/logoayu.png"
                 alt="Shri Krishna Ayurvedic Hospital"
@@ -397,19 +401,14 @@ const Navbar = () => {
                   w-[56px]
                   shrink-0
                   object-contain
-
                   min-[375px]:h-[60px]
                   min-[375px]:w-[60px]
-
                   sm:h-[70px]
                   sm:w-[80px]
-
                   lg:h-[76px]
                   lg:w-[92px]
                 "
               />
-
-              {/* COLLEGE NAME */}
 
               <div className="min-w-0 flex-1">
 
@@ -420,16 +419,12 @@ const Navbar = () => {
                     uppercase
                     leading-[1.15]
                     text-[#09676b]
-
                     min-[360px]:text-[11px]
                     min-[400px]:text-[12px]
-
                     sm:text-[17px]
                     md:text-[20px]
-
                     lg:whitespace-nowrap
                     lg:text-[22px]
-
                     xl:text-[25px]
                   "
                 >
@@ -444,12 +439,9 @@ const Navbar = () => {
                     uppercase
                     leading-[1.3]
                     text-[#af680d]
-
                     min-[360px]:text-[7px]
                     min-[400px]:text-[8px]
-
                     sm:text-[9px]
-
                     lg:whitespace-nowrap
                     lg:text-[10px]
                   "
@@ -458,22 +450,16 @@ const Navbar = () => {
                 </p>
 
               </div>
-
             </a>
 
-            {/* =================================================
-                DESKTOP RIGHT CONTENT
-            ================================================= */}
+            {/* DESKTOP RIGHT */}
 
             <div className="hidden items-center lg:flex">
-
-              {/* ADMISSION */}
 
               <a
                 href="tel:+917611150888"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
-
                 <span
                   className="
                     flex
@@ -491,7 +477,6 @@ const Navbar = () => {
                 </span>
 
                 <span>
-
                   <small className="block text-[14px] text-gray-500">
                     For Admissions
                   </small>
@@ -499,18 +484,13 @@ const Navbar = () => {
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
                     +91-7611150888
                   </strong>
-
                 </span>
-
               </a>
-
-              {/* HOSPITAL */}
 
               <a
                 href="tel:+916262180303"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
-
                 <span
                   className="
                     flex
@@ -528,7 +508,6 @@ const Navbar = () => {
                 </span>
 
                 <span>
-
                   <small className="block text-[14px] text-gray-500">
                     For Hospital Helpline:
                   </small>
@@ -536,71 +515,50 @@ const Navbar = () => {
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
                     +91-6262 180 303
                   </strong>
-
                 </span>
-
               </a>
 
-              {/* SOCIAL */}
-
               <div className="ml-5 flex items-center gap-2.5">
-
-                {socialLinks.map(
-                  ({
-                    label,
-                    href,
-                    icon: Icon,
-                    bg,
-                  }) => (
-
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={label}
-                      className={`
-                        flex
-                        h-[52px]
-                        w-[52px]
-                        items-center
-                        justify-center
-                        rounded-lg
-                        ${bg}
-                        transition
-                        duration-300
-                        hover:-translate-y-1
-                        hover:shadow-lg
-                      `}
-                    >
-
-                      <Icon
-                        size={20}
-                        color="#ffffff"
-                        style={{
-                          color: "#ffffff",
-                          fill: "#ffffff",
-                        }}
-                      />
-
-                    </a>
-
-                  )
-                )}
-
+                {socialLinks.map(({ label, href, icon: Icon, bg }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className={`
+                      flex
+                      h-[52px]
+                      w-[52px]
+                      items-center
+                      justify-center
+                      rounded-lg
+                      ${bg}
+                      transition
+                      duration-300
+                      hover:-translate-y-1
+                      hover:shadow-lg
+                    `}
+                  >
+                    <Icon
+                      size={20}
+                      color="#ffffff"
+                      style={{
+                        color: "#ffffff",
+                        fill: "#ffffff",
+                      }}
+                    />
+                  </a>
+                ))}
               </div>
 
             </div>
 
-            {/* =================================================
-                MOBILE MENU BUTTON
-            ================================================= */}
+            {/* MOBILE MENU */}
 
             <button
               type="button"
-              onClick={() =>
-                setIsMenuOpen((current) => !current)
-              }
+              onClick={() => setIsMenuOpen((current) => !current)}
               aria-label="Toggle Menu"
               className="
                 ml-1
@@ -615,58 +573,39 @@ const Navbar = () => {
                 text-[18px]
                 !text-white
                 shadow-sm
-
                 min-[375px]:h-[44px]
                 min-[375px]:w-[44px]
-
                 sm:h-[48px]
                 sm:w-[48px]
-
                 lg:hidden
               "
             >
-              {isMenuOpen ? (
-                <FaTimes />
-              ) : (
-                <FaBars />
-              )}
+              {isMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
 
           </div>
-
         </div>
 
-        {/* =====================================================
-            NAVIGATION
-        ===================================================== */}
+        {/* ================= NAVIGATION ================= */}
 
         <div className="bg-[#07634c]">
-
           <nav
             className={`
               mx-auto
               max-w-[1720px]
               px-4
-
               sm:px-6
-
               lg:flex
               lg:h-[58px]
               lg:items-center
               lg:justify-between
-
-              ${
-                isMenuOpen
-                  ? "block"
-                  : "hidden lg:flex"
-              }
+              ${isMenuOpen ? "block" : "hidden lg:flex"}
             `}
           >
 
             <div className="flex flex-col lg:flex-row lg:items-center">
 
               {navItems.map((item) => (
-
                 <div
                   key={item.label}
                   className="
@@ -677,7 +616,6 @@ const Navbar = () => {
                     lg:border-0
                   "
                 >
-
                   <div className="flex items-center">
 
                     <a
@@ -693,21 +631,16 @@ const Navbar = () => {
                         !text-white
                         transition
                         hover:bg-black/10
-
                         lg:flex-none
                         lg:py-[19px]
-
                         xl:px-[17px]
                       "
                     >
                       {item.label}
                     </a>
 
-                    {/* SUB MENU */}
-
                     {item.items && (
                       <>
-
                         <FaChevronDown
                           className="
                             -ml-1
@@ -721,9 +654,7 @@ const Navbar = () => {
 
                         <button
                           type="button"
-                          onClick={() =>
-                            toggleSubmenu(item.label)
-                          }
+                          onClick={() => toggleSubmenu(item.label)}
                           className="
                             ml-auto
                             flex
@@ -735,13 +666,11 @@ const Navbar = () => {
                             lg:hidden
                           "
                         >
-
                           <FaChevronDown
                             className={`
                               text-xs
                               transition-transform
                               duration-300
-
                               ${
                                 openSubmenu === item.label
                                   ? "rotate-180"
@@ -749,9 +678,7 @@ const Navbar = () => {
                               }
                             `}
                           />
-
                         </button>
-
                       </>
                     )}
 
@@ -760,18 +687,15 @@ const Navbar = () => {
                   {/* DROPDOWN */}
 
                   {item.items && (
-
                     <div
                       className={`
                         bg-white
                         shadow-xl
-
                         lg:absolute
                         lg:left-0
                         lg:top-full
                         lg:z-50
                         lg:min-w-[230px]
-
                         ${
                           openSubmenu === item.label
                             ? "block"
@@ -779,9 +703,7 @@ const Navbar = () => {
                         }
                       `}
                     >
-
                       {item.items.map((child) => (
-
                         <a
                           key={child.label}
                           href={child.href}
@@ -802,31 +724,28 @@ const Navbar = () => {
                         >
                           {child.label}
                         </a>
-
                       ))}
-
                     </div>
-
                   )}
 
                 </div>
-
               ))}
 
             </div>
 
-            {/* ADMISSION BUTTON */}
+            {/* =================================================
+                APPLY NOW BUTTON
+            ================================================= */}
 
-            <a
-              href="/admission"
-              onClick={closeMenu}
+            <button
+              type="button"
+              onClick={openApplyForm}
               className="
                 my-3
                 flex
                 shrink-0
                 items-center
                 justify-center
-                gap-2
                 rounded-full
                 bg-[#A3621D]
                 px-8
@@ -837,24 +756,149 @@ const Navbar = () => {
                 transition
                 duration-300
                 hover:bg-[#8d5116]
-
                 lg:my-2
               "
             >
-              Admission
-
-              <FaChevronDown className="text-[10px]" />
-            </a>
+              Apply Now
+            </button>
 
           </nav>
-
         </div>
 
       </header>
 
-      {/* =====================================================
-          ONLY ONE GLOBAL WHATSAPP BUTTON
-      ===================================================== */}
+      {/* =========================================================
+          APPLY NOW LMS FORM POPUP
+      ========================================================= */}
+
+      {isApplyOpen && (
+        <div
+          className="
+            fixed
+            inset-0
+            z-[999999]
+            flex
+            items-center
+            justify-center
+            bg-black/70
+            p-3
+            backdrop-blur-[2px]
+            sm:p-5
+          "
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              closeApplyForm();
+            }
+          }}
+        >
+          <div
+            className="
+              relative
+
+              max-h-[94vh]
+              w-full
+              max-w-[680px]
+
+              overflow-y-auto
+              overflow-x-hidden
+
+              rounded-[18px]
+
+              bg-white
+
+              shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+
+              sm:rounded-[22px]
+            "
+          >
+
+            {/* CLOSE BUTTON */}
+
+            <button
+              type="button"
+              onClick={closeApplyForm}
+              className="
+                absolute
+                right-3
+                top-3
+                z-[100]
+
+                flex
+                h-[42px]
+                w-[42px]
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                bg-[#A3621D]
+
+                text-[18px]
+                !text-white
+
+                shadow-lg
+
+                transition-all
+                duration-300
+
+                hover:rotate-90
+                hover:bg-[#8d5116]
+
+                sm:right-4
+                sm:top-4
+              "
+              aria-label="Close Admission Form"
+            >
+              <FaTimes />
+            </button>
+
+            {/* FORM AREA */}
+
+            <div
+              className="
+                min-h-[220px]
+                bg-white
+                px-3
+                pb-4
+                pt-4
+
+                sm:px-5
+                sm:pb-5
+                sm:pt-5
+              "
+            >
+              {formLoading && (
+                <div
+                  className="
+                    flex
+                    min-h-[180px]
+                    items-center
+                    justify-center
+                    text-center
+                    text-[14px]
+                    font-medium
+                    text-gray-500
+                  "
+                >
+                  Loading admission form...
+                </div>
+              )}
+
+              <div
+                id="navbarFormsID7375"
+                className="
+                  w-full
+                  max-w-full
+                  bg-white
+                "
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ================= WHATSAPP ================= */}
 
       <a
         href="https://wa.me/917611150888"
@@ -870,10 +914,12 @@ const Navbar = () => {
           flex
           h-[46px]
           w-[46px]
+
           items-center
           justify-center
 
           rounded-full
+
           border-[3px]
           border-[#08735d]
 
@@ -904,7 +950,6 @@ const Navbar = () => {
           }}
         />
       </a>
-
     </>
   );
 };
