@@ -76,7 +76,7 @@ const About = () => {
     <main className="bg-white text-[#17352c]">
       {/* ================= PAGE BANNER ================= */}
       {/* ================= PAGE BANNER ================= */}
-<section className="relative overflow-hidden bg-[#0f5f43]">
+<section className="relative overflow-hidden bg-[#168486]">
   {/* Decorative Circles */}
   <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10" />
   <div className="absolute -bottom-32 -left-16 h-64 w-64 rounded-full bg-[#d68a1f]/10" />
@@ -304,7 +304,7 @@ const About = () => {
       </section>
 
       {/* ================= TEAM ================= */}
-      <section className="bg-[#173f2b] py-16 text-white md:py-20">
+      <section className="bg-[#A3621D] py-16 text-white md:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#f5b544]">
@@ -313,7 +313,7 @@ const About = () => {
 
             <h2 className="mt-3 text-3xl font-bold md:text-4xl">Our Team</h2>
 
-            <p className="mt-6 max-w-xl leading-8 text-white/75">
+            <p className="mt-6 max-w-xl leading-8 text-white">
               Our hospital is managed and served by a dedicated team of
               qualified and skilled healthcare professionals committed to
               providing authentic Ayurvedic treatment.
@@ -323,12 +323,12 @@ const About = () => {
               {teamPoints.map((item, index) => (
                 <div key={index} className="flex gap-3">
                   <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#f5b544]" />
-                  <span className="leading-7 text-white/90">{item}</span>
+                  <span className="leading-7 text-white">{item}</span>
                 </div>
               ))}
             </div>
 
-            <p className="mt-7 border-l-4 border-[#f5b544] pl-5 leading-7 text-white/80">
+            <p className="mt-7 border-l-4 border-[#f5b544] pl-5 leading-7 text-white">
               We maintain patient-centric ethics with utmost professionalism
               and compassionate care.
             </p>
@@ -338,7 +338,7 @@ const About = () => {
             <div className="rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
               <Stethoscope className="h-9 w-9 text-[#f5b544]" />
               <h3 className="mt-5 text-lg font-bold">Qualified Doctors</h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
+              <p className="mt-2 text-sm leading-6 text-white">
                 BAMS & MD Ayurveda professionals
               </p>
             </div>
@@ -348,7 +348,7 @@ const About = () => {
               <h3 className="mt-5 text-lg font-bold">
                 Panchakarma Therapists
               </h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
+              <p className="mt-2 text-sm leading-6 text-white">
                 Skilled in traditional therapies
               </p>
             </div>
@@ -356,7 +356,7 @@ const About = () => {
             <div className="rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
               <Users className="h-9 w-9 text-[#f5b544]" />
               <h3 className="mt-5 text-lg font-bold">Support Staff</h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
+              <p className="mt-2 text-sm leading-6 text-white">
                 Experienced paramedical professionals
               </p>
             </div>
@@ -364,7 +364,7 @@ const About = () => {
             <div className="mt-8 rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
               <HeartPulse className="h-9 w-9 text-[#f5b544]" />
               <h3 className="mt-5 text-lg font-bold">Patient Centric</h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
+              <p className="mt-2 text-sm leading-6 text-white">
                 Professional and compassionate care
               </p>
             </div>
@@ -413,7 +413,7 @@ const About = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-3xl bg-white shadow-lg">
             <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-              <div className="flex flex-col justify-center bg-[#287b3e] p-8 text-white md:p-12">
+              <div className="flex flex-col justify-center bg-[#168486] p-8 text-white md:p-12">
                 <ShieldCheck className="h-12 w-12 text-[#ffd166]" />
 
                 <h2 className="mt-6 text-3xl font-bold">Our Commitment</h2>

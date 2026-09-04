@@ -7,7 +7,6 @@ import {
   Building2,
   Users,
   BookOpenCheck,
-  HandHeart,
 } from "lucide-react";
 
 const DirectorMessage = () => {
@@ -36,13 +35,12 @@ const DirectorMessage = () => {
 
   return (
     <main className="bg-white text-[#17352c]">
+      {/* =====================================================
+          PAGE BANNER
+      ====================================================== */}
 
-      {/* ================= PAGE BANNER ================= */}
-
-      <section className="relative overflow-hidden bg-[#0f5f43]">
-
+      <section className="relative overflow-hidden bg-[#168486]">
         {/* Decorative Circles */}
-
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10" />
 
         <div className="absolute -bottom-32 -left-16 h-64 w-64 rounded-full bg-[#d68a1f]/10" />
@@ -63,11 +61,9 @@ const DirectorMessage = () => {
             lg:px-8
           "
         >
-
           <div className="flex flex-col items-center">
-
+            {/* SMALL TITLE */}
             <div className="flex items-center justify-center gap-3">
-
               <span className="h-[2px] w-10 bg-[#d68a1f]" />
 
               <span
@@ -84,9 +80,9 @@ const DirectorMessage = () => {
               </span>
 
               <span className="h-[2px] w-10 bg-[#d68a1f]" />
-
             </div>
 
+            {/* PAGE TITLE */}
             <h1
               className="
                 mt-5
@@ -100,19 +96,18 @@ const DirectorMessage = () => {
             >
               Director Message
             </h1>
-
           </div>
-
         </div>
 
+        {/* BOTTOM LINE */}
         <div className="h-[4px] w-full bg-[#d68a1f]" />
-
       </section>
 
-      {/* ================= MESSAGE INTRO ================= */}
+      {/* =====================================================
+          DIRECTOR IMAGE + MESSAGE
+      ====================================================== */}
 
-      <section className="py-10 md:py-12">
-
+      <section className="py-10 md:py-14">
         <div
           className="
             mx-auto
@@ -123,60 +118,59 @@ const DirectorMessage = () => {
             px-4
             sm:px-6
             lg:grid-cols-[0.8fr_1.2fr]
+            lg:gap-10
             lg:px-8
           "
         >
+          {/* =================================================
+              LEFT SIDE - DIRECTOR IMAGE
+          ================================================= */}
 
-          {/* LEFT CARD */}
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-2xl
+              bg-[#edf6f1]
+              shadow-[0_12px_40px_rgba(0,0,0,0.10)]
+              lg:mt-[89px]
+            "
+          >
+            <img
+              src="/hero/director.png"
+              alt="Director - Shri Krishna Ayurvedic Hospital"
+              className="
+                h-[500px]
+                w-full
+                object-cover
+                object-top
+                sm:h-[580px]
+                md:h-[620px]
+                lg:h-[560px]
+              "
+            />
 
-          <div className="rounded-2xl bg-[#f2f8f4] p-7 shadow-sm">
-
+            {/* BOTTOM GRADIENT */}
             <div
               className="
-                flex
-                h-14
-                w-14
-                items-center
-                justify-center
-                rounded-full
-                bg-[#0f5f43]
+                pointer-events-none
+                absolute
+                inset-x-0
+                bottom-0
+                h-24
+                bg-gradient-to-t
+                from-black/20
+                to-transparent
               "
-            >
-              <HandHeart className="h-7 w-7 text-white" />
-            </div>
-
-            <h2 className="mt-5 text-2xl font-bold text-[#17352c]">
-              Director & Medical Superintendent
-            </h2>
-
-            <p className="mt-3 text-sm leading-6 text-gray-600">
-              Shri Krishna Ayurvedic Hospital, Chhatarpur (M.P.)
-            </p>
-
-            <div
-              className="
-                mt-6
-                rounded-xl
-                border-l-4
-                border-[#d68a1f]
-                bg-white
-                p-5
-              "
-            >
-              <Quote className="h-7 w-7 text-[#d68a1f]" />
-
-              <p className="mt-3 leading-7 text-gray-600">
-                Promoting Ayurveda as a way of life rooted in balance, nature,
-                compassion and inner peace.
-              </p>
-            </div>
-
+            />
           </div>
 
-          {/* RIGHT CONTENT */}
+          {/* =================================================
+              RIGHT SIDE - MESSAGE
+          ================================================= */}
 
-          <div>
-
+          <div className="lg:pt-2">
+            {/* LABEL */}
             <span
               className="
                 inline-block
@@ -192,6 +186,7 @@ const DirectorMessage = () => {
               Dear Visitors
             </span>
 
+            {/* HEADING */}
             <h2
               className="
                 mt-5
@@ -205,10 +200,11 @@ const DirectorMessage = () => {
               Message from the Director
             </h2>
 
+            {/* ORANGE LINE */}
             <div className="mt-5 h-1 w-20 rounded-full bg-[#d68a1f]" />
 
+            {/* MESSAGE CONTENT */}
             <div className="mt-7 space-y-5 text-[16px] leading-8 text-gray-600">
-
               <p>
                 It is both an honour and a heartfelt responsibility to serve as
                 the Director & Medical Superintendent of Shri Krishna Ayurvedic
@@ -242,23 +238,19 @@ const DirectorMessage = () => {
                 underprivileged and rural communities of Bundelkhand and
                 beyond.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* ================= HIGHLIGHTS ================= */}
+      {/* =====================================================
+          HIGHLIGHTS
+      ====================================================== */}
 
       <section className="bg-[#f7faf8] py-10 md:py-12">
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
+          {/* SECTION HEADING */}
           <div className="text-center">
-
             <span
               className="
                 text-sm
@@ -274,11 +266,10 @@ const DirectorMessage = () => {
             <h2 className="mt-3 text-3xl font-bold text-[#17352c]">
               We Take Pride In
             </h2>
-
           </div>
 
+          {/* HIGHLIGHT CARDS */}
           <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-
             {highlights.map((item, index) => {
               const Icon = item.icon;
 
@@ -299,7 +290,7 @@ const DirectorMessage = () => {
                     hover:shadow-md
                   "
                 >
-
+                  {/* ICON */}
                   <div
                     className="
                       flex
@@ -309,45 +300,55 @@ const DirectorMessage = () => {
                       justify-center
                       rounded-xl
                       bg-[#eaf7ed]
+                      transition
+                      duration-300
+                      group-hover:bg-[#168486]
                     "
                   >
-                    <Icon className="h-6 w-6 text-[#0f6b49]" />
+                    <Icon
+                      className="
+                        h-6
+                        w-6
+                        text-[#168486]
+                        transition
+                        duration-300
+                        group-hover:text-white
+                      "
+                    />
                   </div>
 
+                  {/* TEXT */}
                   <p className="mt-5 leading-7 text-gray-600">
                     {item.text}
                   </p>
-
                 </div>
               );
             })}
-
           </div>
-
         </div>
-
       </section>
 
-      {/* ================= CLOSING MESSAGE ================= */}
+      {/* =====================================================
+          CLOSING MESSAGE
+      ====================================================== */}
 
       <section className="py-10 md:py-12">
-
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-
           <div
             className="
               rounded-3xl
-              bg-[#0f5f43]
+              bg-[#168486]
               p-7
               text-white
+              shadow-[0_15px_45px_rgba(0,0,0,0.12)]
               md:p-10
             "
           >
-
+            {/* QUOTE ICON */}
             <Quote className="h-10 w-10 text-[#f0b35a]" />
 
-            <div className="mt-6 space-y-5 text-[16px] leading-8 text-white/85">
-
+            {/* MESSAGE */}
+            <div className="mt-6 space-y-5 text-[16px] leading-8 text-white">
               <p>
                 In this hospital, every patient is seen as a guest of the divine,
                 and every healing journey is guided by compassion, authenticity,
@@ -367,27 +368,21 @@ const DirectorMessage = () => {
                 Ayurveda as a way of life, rooted in balance, nature, and inner
                 peace.
               </p>
-
             </div>
 
+            {/* SIGNATURE */}
             <div className="mt-8 border-t border-white/20 pt-6">
-
               <p className="text-lg font-bold text-white">
                 Director & Medical Superintendent
               </p>
 
-              <p className="mt-1 text-sm text-white/75">
+              <p className="mt-1 text-sm text-white">
                 Shri Krishna Ayurvedic Hospital, Chhatarpur (M.P.)
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 };

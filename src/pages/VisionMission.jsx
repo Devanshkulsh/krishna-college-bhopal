@@ -33,7 +33,7 @@ const VisionMission = () => {
         className="
           relative
           overflow-hidden
-          bg-[#0f5f43]
+          bg-[#168486]
           py-12
           sm:py-14
           md:py-16

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import {
   FaBars,
@@ -8,10 +9,8 @@ import {
   FaFacebookF,
   FaHospital,
   FaInstagram,
-  FaLinkedinIn,
   FaPhoneAlt,
   FaTimes,
-  FaTwitter,
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
@@ -44,6 +43,13 @@ const navItems = [
   {
     label: "Departments",
     href: "/departments",
+  },
+
+  /* ================= HOSPITAL ================= */
+
+  {
+    label: "Hospital",
+    href: "/hospital",
   },
 
   {
@@ -107,16 +113,12 @@ const navItems = [
         href: "/gallery/events",
       },
       {
-        label: "Hospital",
+        label: "Hospital Gallery",
         href: "/gallery/hospital",
       },
     ],
   },
 
-  {
-    label: "Blog",
-    href: "/blog",
-  },
 
   {
     label: "Contact Us",
@@ -141,14 +143,12 @@ const socialLinks = [
     icon: FaInstagram,
     bg: "bg-[#e83f61]",
   },
-  
   {
     label: "YouTube",
     href: "https://youtube.com",
     icon: FaYoutube,
     bg: "bg-[#ff1111]",
   },
-  
 ];
 
 /* =========================================================
@@ -161,13 +161,23 @@ const Navbar = () => {
   const [isApplyOpen, setIsApplyOpen] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
 
+  /* =========================================================
+     CLOSE MOBILE MENU
+  ========================================================= */
+
   const closeMenu = () => {
     setIsMenuOpen(false);
     setOpenSubmenu("");
   };
 
+  /* =========================================================
+     MOBILE SUBMENU
+  ========================================================= */
+
   const toggleSubmenu = (label) => {
-    setOpenSubmenu((current) => (current === label ? "" : label));
+    setOpenSubmenu((current) =>
+      current === label ? "" : label
+    );
   };
 
   /* =========================================================
@@ -193,7 +203,9 @@ const Navbar = () => {
     setFormLoading(true);
 
     const timer = setTimeout(() => {
-      const container = document.getElementById("navbarFormsID7375");
+      const container = document.getElementById(
+        "navbarFormsID7375"
+      );
 
       if (!container) {
         setFormLoading(false);
@@ -205,7 +217,9 @@ const Navbar = () => {
         return;
       }
 
-      const oldScript = document.getElementById("navbar-lms-form-script");
+      const oldScript = document.getElementById(
+        "navbar-lms-form-script"
+      );
 
       if (oldScript) {
         oldScript.remove();
@@ -217,19 +231,35 @@ const Navbar = () => {
       script.type = "module";
 
       script.src =
-        "https://ntechzy.in/api/v1/student-form/form.js?v=" + Date.now();
+        "https://ntechzy.in/api/v1/student-form/form.js?v=" +
+        Date.now();
 
       script.setAttribute("path", '["/"]');
-      script.setAttribute("divid", "navbarFormsID7375");
+
+      script.setAttribute(
+        "divid",
+        "navbarFormsID7375"
+      );
 
       script.setAttribute(
         "courses",
         '["Select Course","BAMS","BHMS"]'
       );
 
-      script.setAttribute("styles", "basic");
-      script.setAttribute("logo", "/logoayu.png");
-      script.setAttribute("contact", "+91-7611150888");
+      script.setAttribute(
+        "styles",
+        "basic"
+      );
+
+      script.setAttribute(
+        "logo",
+        "/logoayu.png"
+      );
+
+      script.setAttribute(
+        "contact",
+        "+91-7611150888"
+      );
 
       script.onload = () => {
         setTimeout(() => {
@@ -238,7 +268,10 @@ const Navbar = () => {
       };
 
       script.onerror = () => {
-        console.error("Navbar LMS admission form failed to load");
+        console.error(
+          "Navbar LMS admission form failed to load"
+        );
+
         setFormLoading(false);
       };
 
@@ -278,63 +311,104 @@ const Navbar = () => {
     };
 
     if (isApplyOpen) {
-      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener(
+        "keydown",
+        handleKeyDown
+      );
     }
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
     };
   }, [isApplyOpen]);
 
   return (
     <>
+      {/* =====================================================
+          HEADER
+      ====================================================== */}
+
       <header className="relative z-50 w-full bg-white">
 
-        {/* ================= TOP BAR ================= */}
+        {/* =================================================
+            TOP BAR
+        ================================================= */}
 
         <div className="hidden h-[44px] bg-[#168486] lg:block">
+
           <div className="mx-auto flex h-full max-w-[1720px] items-center justify-between px-8">
 
             {/* LEFT CONTACT */}
 
             <div className="flex items-center gap-7 text-[14px] font-bold text-white">
+
               <a
                 href="tel:+917611150888"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
-                <span>+91-7611150888</span>
+
+                <span>
+                  +91-7611150888
+                </span>
               </a>
+
 
               <a
                 href="tel:+916262180303"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
-                <span>+91-6262 180 303</span>
+
+                <span>
+                  +91-6262 180 303
+                </span>
               </a>
+
 
               <a
                 href="mailto:shrikrishnayurvedic@.com"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaEnvelope className="text-[#f1a028]" />
-                <span>shrikrishnayurvedic@.com</span>
+
+                <span>
+                  shrikrishnayurvedic@.com
+                </span>
               </a>
+
             </div>
+
 
             {/* TOP RIGHT BUTTONS */}
 
             <div className="flex items-center gap-3">
+
               {[
-                ["BAMS(UG) Admission 2026", "/admission"],
-                ["Govt. Approval", "/approvals"],
-                ["Career", "/career"],
-                ["Notification", "/notification"],
+                [
+                  "BAMS(UG) Admission 2026",
+                  "/admission",
+                ],
+                [
+                  "Govt. Approval",
+                  "/approvals",
+                ],
+                [
+                  "Career",
+                  "/career",
+                ],
+                [
+                  "Notification",
+                  "/notification",
+                ],
               ].map(([label, href]) => (
-                <a
+
+                <Link
                   key={label}
-                  href={href}
+                  to={href}
                   className="
                     rounded-full
                     bg-[#A3621D]
@@ -349,16 +423,23 @@ const Navbar = () => {
                   "
                 >
                   {label}
-                </a>
+                </Link>
+
               ))}
+
             </div>
 
           </div>
+
         </div>
 
-        {/* ================= MIDDLE HEADER ================= */}
+
+        {/* =================================================
+            MIDDLE HEADER
+        ================================================= */}
 
         <div className="bg-white">
+
           <div
             className="
               mx-auto
@@ -380,8 +461,8 @@ const Navbar = () => {
 
             {/* LOGO + NAME */}
 
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={closeMenu}
               className="
                 flex
@@ -393,6 +474,7 @@ const Navbar = () => {
                 lg:flex-none
               "
             >
+
               <img
                 src="/logoayu.png"
                 alt="Shri Krishna Ayurvedic Hospital"
@@ -409,6 +491,7 @@ const Navbar = () => {
                   lg:w-[92px]
                 "
               />
+
 
               <div className="min-w-0 flex-1">
 
@@ -446,20 +529,28 @@ const Navbar = () => {
                     lg:text-[10px]
                   "
                 >
-                  SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+                  SHRI KRISHNA UNIVERSITY,
+                  CHHATARPUR (M.P.)
                 </p>
 
               </div>
-            </a>
 
-            {/* DESKTOP RIGHT */}
+            </Link>
+
+
+            {/* =================================================
+                DESKTOP RIGHT
+            ================================================= */}
 
             <div className="hidden items-center lg:flex">
+
+              {/* ADMISSION */}
 
               <a
                 href="tel:+917611150888"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
+
                 <span
                   className="
                     flex
@@ -477,6 +568,7 @@ const Navbar = () => {
                 </span>
 
                 <span>
+
                   <small className="block text-[14px] text-gray-500">
                     For Admissions
                   </small>
@@ -484,13 +576,19 @@ const Navbar = () => {
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
                     +91-7611150888
                   </strong>
+
                 </span>
+
               </a>
+
+
+              {/* HOSPITAL HELPLINE */}
 
               <a
                 href="tel:+916262180303"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
+
                 <span
                   className="
                     flex
@@ -508,6 +606,7 @@ const Navbar = () => {
                 </span>
 
                 <span>
+
                   <small className="block text-[14px] text-gray-500">
                     For Hospital Helpline:
                   </small>
@@ -515,50 +614,75 @@ const Navbar = () => {
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
                     +91-6262 180 303
                   </strong>
+
                 </span>
+
               </a>
 
+
+              {/* SOCIAL MEDIA */}
+
               <div className="ml-5 flex items-center gap-2.5">
-                {socialLinks.map(({ label, href, icon: Icon, bg }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={label}
-                    className={`
-                      flex
-                      h-[52px]
-                      w-[52px]
-                      items-center
-                      justify-center
-                      rounded-lg
-                      ${bg}
-                      transition
-                      duration-300
-                      hover:-translate-y-1
-                      hover:shadow-lg
-                    `}
-                  >
-                    <Icon
-                      size={20}
-                      color="#ffffff"
-                      style={{
-                        color: "#ffffff",
-                        fill: "#ffffff",
-                      }}
-                    />
-                  </a>
-                ))}
+
+                {socialLinks.map(
+                  ({
+                    label,
+                    href,
+                    icon: Icon,
+                    bg,
+                  }) => (
+
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      className={`
+                        flex
+                        h-[52px]
+                        w-[52px]
+                        items-center
+                        justify-center
+                        rounded-lg
+                        ${bg}
+                        transition
+                        duration-300
+                        hover:-translate-y-1
+                        hover:shadow-lg
+                      `}
+                    >
+
+                      <Icon
+                        size={20}
+                        color="#ffffff"
+                        style={{
+                          color: "#ffffff",
+                          fill: "#ffffff",
+                        }}
+                      />
+
+                    </a>
+
+                  )
+                )}
+
               </div>
 
             </div>
 
-            {/* MOBILE MENU */}
+
+            {/* =================================================
+                MOBILE MENU BUTTON
+            ================================================= */}
 
             <button
               type="button"
-              onClick={() => setIsMenuOpen((current) => !current)}
+              onClick={() =>
+                setIsMenuOpen(
+                  (current) => !current
+                )
+              }
               aria-label="Toggle Menu"
               className="
                 ml-1
@@ -580,15 +704,24 @@ const Navbar = () => {
                 lg:hidden
               "
             >
-              {isMenuOpen ? <FaTimes /> : <FaBars />}
+              {isMenuOpen ? (
+                <FaTimes />
+              ) : (
+                <FaBars />
+              )}
             </button>
 
           </div>
+
         </div>
 
-        {/* ================= NAVIGATION ================= */}
+
+        {/* =================================================
+            MAIN NAVIGATION
+        ================================================= */}
 
         <div className="bg-[#07634c]">
+
           <nav
             className={`
               mx-auto
@@ -599,13 +732,20 @@ const Navbar = () => {
               lg:h-[58px]
               lg:items-center
               lg:justify-between
-              ${isMenuOpen ? "block" : "hidden lg:flex"}
+              ${
+                isMenuOpen
+                  ? "block"
+                  : "hidden lg:flex"
+              }
             `}
           >
+
+            {/* NAV ITEMS */}
 
             <div className="flex flex-col lg:flex-row lg:items-center">
 
               {navItems.map((item) => (
+
                 <div
                   key={item.label}
                   className="
@@ -616,15 +756,18 @@ const Navbar = () => {
                     lg:border-0
                   "
                 >
+
                   <div className="flex items-center">
 
-                    <a
-                      href={item.href}
+                    {/* MAIN LINK */}
+
+                    <Link
+                      to={item.href}
                       onClick={closeMenu}
                       className="
                         flex-1
                         whitespace-nowrap
-                        px-[14px]
+                        px-[12px]
                         py-[15px]
                         text-[14px]
                         font-bold
@@ -633,14 +776,20 @@ const Navbar = () => {
                         hover:bg-black/10
                         lg:flex-none
                         lg:py-[19px]
-                        xl:px-[17px]
+                        xl:px-[14px]
                       "
                     >
                       {item.label}
-                    </a>
+                    </Link>
+
+
+                    {/* DROPDOWN ICON */}
 
                     {item.items && (
                       <>
+
+                        {/* DESKTOP ARROW */}
+
                         <FaChevronDown
                           className="
                             -ml-1
@@ -652,9 +801,16 @@ const Navbar = () => {
                           "
                         />
 
+
+                        {/* MOBILE DROPDOWN BUTTON */}
+
                         <button
                           type="button"
-                          onClick={() => toggleSubmenu(item.label)}
+                          onClick={() =>
+                            toggleSubmenu(
+                              item.label
+                            )
+                          }
                           className="
                             ml-auto
                             flex
@@ -666,72 +822,92 @@ const Navbar = () => {
                             lg:hidden
                           "
                         >
+
                           <FaChevronDown
                             className={`
                               text-xs
                               transition-transform
                               duration-300
                               ${
-                                openSubmenu === item.label
+                                openSubmenu ===
+                                item.label
                                   ? "rotate-180"
                                   : ""
                               }
                             `}
                           />
+
                         </button>
+
                       </>
                     )}
 
                   </div>
 
-                  {/* DROPDOWN */}
+
+                  {/* =================================================
+                      DROPDOWN
+                  ================================================= */}
 
                   {item.items && (
+
                     <div
                       className={`
                         bg-white
                         shadow-xl
+
                         lg:absolute
                         lg:left-0
                         lg:top-full
                         lg:z-50
-                        lg:min-w-[230px]
+                        lg:min-w-[240px]
+
                         ${
-                          openSubmenu === item.label
+                          openSubmenu ===
+                          item.label
                             ? "block"
                             : "hidden lg:group-hover:block"
                         }
                       `}
                     >
-                      {item.items.map((child) => (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          onClick={closeMenu}
-                          className="
-                            block
-                            border-b
-                            border-gray-100
-                            px-5
-                            py-3
-                            text-sm
-                            font-semibold
-                            !text-[#08666b]
-                            transition
-                            hover:bg-[#eef8f6]
-                            hover:!text-[#A3621D]
-                          "
-                        >
-                          {child.label}
-                        </a>
-                      ))}
+
+                      {item.items.map(
+                        (child) => (
+
+                          <Link
+                            key={child.label}
+                            to={child.href}
+                            onClick={closeMenu}
+                            className="
+                              block
+                              border-b
+                              border-gray-100
+                              px-5
+                              py-3
+                              text-sm
+                              font-semibold
+                              !text-[#08666b]
+                              transition
+                              hover:bg-[#eef8f6]
+                              hover:!text-[#A3621D]
+                            "
+                          >
+                            {child.label}
+                          </Link>
+
+                        )
+                      )}
+
                     </div>
+
                   )}
 
                 </div>
+
               ))}
 
             </div>
+
 
             {/* =================================================
                 APPLY NOW BUTTON
@@ -763,15 +939,18 @@ const Navbar = () => {
             </button>
 
           </nav>
+
         </div>
 
       </header>
+
 
       {/* =========================================================
           APPLY NOW LMS FORM POPUP
       ========================================================= */}
 
       {isApplyOpen && (
+
         <div
           className="
             fixed
@@ -786,28 +965,26 @@ const Navbar = () => {
             sm:p-5
           "
           onClick={(event) => {
-            if (event.target === event.currentTarget) {
+            if (
+              event.target ===
+              event.currentTarget
+            ) {
               closeApplyForm();
             }
           }}
         >
+
           <div
             className="
               relative
-
               max-h-[94vh]
               w-full
               max-w-[680px]
-
               overflow-y-auto
               overflow-x-hidden
-
               rounded-[18px]
-
               bg-white
-
               shadow-[0_25px_80px_rgba(0,0,0,0.45)]
-
               sm:rounded-[22px]
             "
           >
@@ -817,41 +994,33 @@ const Navbar = () => {
             <button
               type="button"
               onClick={closeApplyForm}
+              aria-label="Close Admission Form"
               className="
                 absolute
                 right-3
                 top-3
                 z-[100]
-
                 flex
                 h-[42px]
                 w-[42px]
-
                 items-center
                 justify-center
-
                 rounded-full
-
                 bg-[#A3621D]
-
                 text-[18px]
                 !text-white
-
                 shadow-lg
-
                 transition-all
                 duration-300
-
                 hover:rotate-90
                 hover:bg-[#8d5116]
-
                 sm:right-4
                 sm:top-4
               "
-              aria-label="Close Admission Form"
             >
               <FaTimes />
             </button>
+
 
             {/* FORM AREA */}
 
@@ -862,13 +1031,14 @@ const Navbar = () => {
                 px-3
                 pb-4
                 pt-4
-
                 sm:px-5
                 sm:pb-5
                 sm:pt-5
               "
             >
+
               {formLoading && (
+
                 <div
                   className="
                     flex
@@ -883,7 +1053,9 @@ const Navbar = () => {
                 >
                   Loading admission form...
                 </div>
+
               )}
+
 
               <div
                 id="navbarFormsID7375"
@@ -893,12 +1065,19 @@ const Navbar = () => {
                   bg-white
                 "
               />
+
             </div>
+
           </div>
+
         </div>
+
       )}
 
-      {/* ================= WHATSAPP ================= */}
+
+      {/* =========================================================
+          WHATSAPP FLOATING BUTTON
+      ========================================================= */}
 
       <a
         href="https://wa.me/917611150888"
@@ -943,13 +1122,16 @@ const Navbar = () => {
           sm:text-[27px]
         "
       >
+
         <FaWhatsapp
           style={{
             color: "#ffffff",
             fill: "#ffffff",
           }}
         />
+
       </a>
+
     </>
   );
 };
