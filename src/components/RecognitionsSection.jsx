@@ -6,15 +6,16 @@ const recognitions = [
     image: "/hero/ncism.png",
     scale: 1,
   },
-  {
-    name: "Health Department",
-    image: "/hero/health.png",
-    scale: 2.15,
-  },
+  
   {
     name: "University Affiliation",
-    image: "/hero/university.png",
-    scale: 1,
+    image: "/hero/clglogo.jpeg",
+    scale: 2.0,
+  },
+  {
+    name: "Health Department",
+    image: "/hero/gov.png",
+    scale: 1.2,
   },
   {
     name: "Ministry of AYUSH",
@@ -41,24 +42,20 @@ const RecognitionsSection = () => {
     >
       <div className="mx-auto max-w-[1500px] px-4 md:px-8 lg:px-12">
 
-        {/* ================= HEADING ================= */}
-
+        {/* HEADING */}
         <div className="mb-8 text-center md:mb-14">
           <h2 className="text-2xl font-extrabold uppercase text-[#13233d] md:text-3xl lg:text-4xl">
             Our Recognitions
           </h2>
         </div>
 
-        {/* ================= LOGOS ================= */}
-
+        {/* LOGOS */}
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8 lg:gap-12">
           {recognitions.map((item) => (
             <div
               key={item.name}
               className="flex items-center justify-center"
             >
-              {/* LOGO CIRCLE */}
-
               <div
                 className="
                   relative
@@ -73,22 +70,16 @@ const RecognitionsSection = () => {
                   shadow-[0_0_28px_rgba(229,185,48,0.55)]
                   transition-all
                   duration-300
-
                   hover:-translate-y-1
                   hover:shadow-[0_0_35px_rgba(229,185,48,0.75)]
-
                   sm:h-[150px]
                   sm:w-[150px]
-
                   md:h-[160px]
                   md:w-[160px]
-
                   lg:h-[180px]
                   lg:w-[180px]
                 "
               >
-                {/* LOGO IMAGE */}
-
                 <img
                   src={item.image}
                   alt={item.name}
