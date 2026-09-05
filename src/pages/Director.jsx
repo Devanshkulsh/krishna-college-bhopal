@@ -104,72 +104,12 @@ const DirectorMessage = () => {
       </section>
 
       {/* =====================================================
-          DIRECTOR IMAGE + MESSAGE
+          DIRECTOR MESSAGE
       ====================================================== */}
 
       <section className="py-10 md:py-14">
-        <div
-          className="
-            mx-auto
-            grid
-            max-w-7xl
-            items-start
-            gap-8
-            px-4
-            sm:px-6
-            lg:grid-cols-[0.8fr_1.2fr]
-            lg:gap-10
-            lg:px-8
-          "
-        >
-          {/* =================================================
-              LEFT SIDE - DIRECTOR IMAGE
-          ================================================= */}
-
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-2xl
-              bg-[#edf6f1]
-              shadow-[0_12px_40px_rgba(0,0,0,0.10)]
-              lg:mt-[89px]
-            "
-          >
-            <img
-              src="/hero/director.png"
-              alt="Director - Shri Krishna Ayurvedic Hospital"
-              className="
-                h-[500px]
-                w-full
-                object-cover
-                object-top
-                sm:h-[580px]
-                md:h-[620px]
-                lg:h-[560px]
-              "
-            />
-
-            {/* BOTTOM GRADIENT */}
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-x-0
-                bottom-0
-                h-24
-                bg-gradient-to-t
-                from-black/20
-                to-transparent
-              "
-            />
-          </div>
-
-          {/* =================================================
-              RIGHT SIDE - MESSAGE
-          ================================================= */}
-
-          <div className="lg:pt-2">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div>
             {/* LABEL */}
             <span
               className="
@@ -206,17 +146,18 @@ const DirectorMessage = () => {
             {/* MESSAGE CONTENT */}
             <div className="mt-7 space-y-5 text-[16px] leading-8 text-gray-600">
               <p>
-                It is both an honour and a heartfelt responsibility to serve as
-                the Director & Medical Superintendent of Shri Krishna Ayurvedic
-                Hospital, Chhatarpur — an institution envisioned as a centre of
-                excellence for Ayurvedic healing and holistic well-being.
+                It is both an honour and a heartfelt responsibility to serve
+                as the Director & Medical Superintendent of Shri Krishna
+                Ayurvedic Hospital, Chhatarpur — an institution envisioned as
+                a centre of excellence for Ayurvedic healing and holistic
+                well-being.
               </p>
 
               <p>
-                At a time when modern lifestyles are increasingly stressful and
-                illness is often managed symptomatically, our hospital stands as
-                a beacon of integrative healthcare, offering ancient Ayurvedic
-                wisdom fused with scientific diagnostic precision.
+                At a time when modern lifestyles are increasingly stressful
+                and illness is often managed symptomatically, our hospital
+                stands as a beacon of integrative healthcare, offering ancient
+                Ayurvedic wisdom fused with scientific diagnostic precision.
               </p>
 
               <p>
@@ -350,9 +291,9 @@ const DirectorMessage = () => {
             {/* MESSAGE */}
             <div className="mt-6 space-y-5 text-[16px] leading-8 text-white">
               <p>
-                In this hospital, every patient is seen as a guest of the divine,
-                and every healing journey is guided by compassion, authenticity,
-                and scientific reasoning.
+                In this hospital, every patient is seen as a guest of the
+                divine, and every healing journey is guided by compassion,
+                authenticity, and scientific reasoning.
               </p>
 
               <p>
@@ -363,10 +304,10 @@ const DirectorMessage = () => {
               </p>
 
               <p>
-                I invite you all — patients, students, collaborators, and seekers
-                — to join hands with us in this sacred mission of promoting
-                Ayurveda as a way of life, rooted in balance, nature, and inner
-                peace.
+                I invite you all — patients, students, collaborators, and
+                seekers — to join hands with us in this sacred mission of
+                promoting Ayurveda as a way of life, rooted in balance, nature,
+                and inner peace.
               </p>
             </div>
 

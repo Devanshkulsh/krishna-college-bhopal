@@ -46,7 +46,7 @@ const CoursesOffered = () => {
           </h2>
 
           <p className="mx-auto mt-4 max-w-[780px] text-sm leading-7 text-[#44515f] sm:text-base md:text-[17px] md:leading-8">
-            Krishna College Bhopal currently offers one undergraduate programme,
+            SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.) currently offers one undergraduate programme,
             BAMS, designed to build a strong foundation in Ayurveda, modern
             medical understanding, and practical clinical learning.
           </p>

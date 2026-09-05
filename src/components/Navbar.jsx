@@ -119,7 +119,6 @@ const navItems = [
     ],
   },
 
-
   {
     label: "Contact Us",
     href: "/contact",
@@ -368,7 +367,7 @@ const Navbar = () => {
                 </span>
               </a>
 
-
+ 
               <a
                 href="mailto:shrikrishnayurvedic@.com"
                 className="flex items-center gap-2 !text-white"
@@ -511,7 +510,8 @@ const Navbar = () => {
                     xl:text-[25px]
                   "
                 >
-                  SHRI KRISHNA AYURVEDIC HOSPITAL
+                   SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+                  
                 </div>
 
                 <p
@@ -529,8 +529,7 @@ const Navbar = () => {
                     lg:text-[10px]
                   "
                 >
-                  SHRI KRISHNA UNIVERSITY,
-                  CHHATARPUR (M.P.)
+                 
                 </p>
 
               </div>

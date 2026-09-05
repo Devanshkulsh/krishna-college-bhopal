@@ -131,7 +131,8 @@ const AboutSection = () => {
                 xl:text-[46px]
               "
             >
-              Welcome To Shri Krishna
+              Welcome To SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+
             </h2>
 
             {/* BROWN LINE */}
@@ -159,7 +160,7 @@ const AboutSection = () => {
               <p>
                 Welcome to{" "}
                 <strong className="font-semibold text-[#162364]">
-                  Shri Krishna Ayurvedic Hospital and College, Chhatarpur
+                  SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
                 </strong>{" "}
                 — an institution committed to excellence in Ayurvedic
                 education, healthcare and holistic wellness.

@@ -54,11 +54,12 @@ const CollegeOverview = () => {
           </p>
 
           <h2 className="text-[26px] font-bold leading-tight text-[#162364] sm:text-3xl md:text-4xl lg:text-[42px]">
-            Krishna College Bhopal Ayurvedic Medical College & Hospital
+            SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
           </h2>
 
           <p className="mx-auto mt-4 max-w-[960px] text-sm leading-7 text-[#334155] sm:text-base sm:leading-8 lg:text-[18px]">
-            Krishna College Bhopal Ayurvedic Medical College & Hospital is
+            SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+ is
             committed to quality Ayurvedic education with traditional
             knowledge, practical learning, clinical exposure and
             hospital-based training.

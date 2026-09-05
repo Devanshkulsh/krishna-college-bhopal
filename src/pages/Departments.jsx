@@ -5,7 +5,7 @@ const departments = [
   {
     title: "Kayachikitsa",
     subtitle: "Internal Medicine Department",
-    image: "/departments/kayachikitsa.png",
+    image: "/hero/Kayachikitsa.png",
     points: [
       "Treatment of fever, diabetes, arthritis, skin disorders, indigestion and lifestyle diseases.",
       "Ayurvedic medicines combined with Panchakarma therapies.",
@@ -15,7 +15,7 @@ const departments = [
   {
     title: "Panchakarma Therapy Unit",
     subtitle: "Detoxification & Rejuvenation",
-    image: "/departments/panchakarma.png",
+    image: "/hero/panchkarma.png",
     points: [
       "Vamana, Virechana, Basti, Nasya and Raktamokshana therapies.",
       "Supports detoxification, immunity and rejuvenation.",
@@ -25,7 +25,7 @@ const departments = [
   {
     title: "Shalya Tantra",
     subtitle: "Ayurvedic Surgery Department",
-    image: "/departments/shalya.png",
+    image: "/hero/salya.png",
     points: [
       "Ksharasutra therapy for piles, fistula and ano-rectal disorders.",
       "Minimally invasive Ayurvedic surgical techniques.",
@@ -35,7 +35,7 @@ const departments = [
   {
     title: "Shalakya Tantra",
     subtitle: "ENT & Eye Care Department",
-    image: "/departments/shalakya.png",
+    image: "/hero/Shalakya.png",
     points: [
       "Care for disorders of eyes, ears, nose, throat and oral cavity.",
       "Netra Tarpana, Nasya, Karnapoorana, Kavala and Gandusha.",
@@ -45,7 +45,7 @@ const departments = [
   {
     title: "Prasuti & Striroga",
     subtitle: "Gynecology & Women's Health",
-    image: "/departments/prasuti.png",
+    image: "/hero/Prasuti.png",
     points: [
       "Management of menstrual disorders, infertility and women's health concerns.",
       "Antenatal and postnatal Ayurvedic care.",
@@ -55,7 +55,7 @@ const departments = [
   {
     title: "Kaumarbhritya",
     subtitle: "Pediatrics Department",
-    image: "/departments/kaumarbhritya.png",
+    image: "/hero/Kaumarbhritya.png",
     points: [
       "Ayurvedic care for childhood diseases and growth disorders.",
       "Swarna Prashana Sanskar for immunity support.",
@@ -65,7 +65,7 @@ const departments = [
   {
     title: "Rasayana & Vajikarana",
     subtitle: "Rejuvenation & Wellness",
-    image: "/departments/rasayana.png",
+    image: "/hero/Rasayana.png",
     points: [
       "Rejuvenation and vitality enhancement therapies.",
       "Stress management and wellness-focused Ayurvedic programs.",
@@ -75,7 +75,7 @@ const departments = [
   {
     title: "Out Patient Department",
     subtitle: "OPD Services",
-    image: "/departments/opd.png",
+    image: "/hero/opd.png",
     points: [
       "Consultations available across departments.",
       "Monday to Saturday, 9:00 AM to 5:00 PM.",

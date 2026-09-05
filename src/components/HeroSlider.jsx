@@ -14,7 +14,7 @@ const HeroSlider = () => {
 
   const heroContents = [
     {
-      title: "Welcome To Shri Krishna Ayurvedic Hospital",
+      title: "Welcome To SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)",
       subtitle: "SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)",
       highlight: "निःशुल्क स्वर्ण प्राशन शिविर",
     },
