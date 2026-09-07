@@ -164,7 +164,9 @@ const HeroSlider = () => {
           xl:min-h-[470px]
         "
       >
-        {/* BACKGROUND */}
+        {/* ================================================= */}
+        {/* BACKGROUND - CLARITY IMPROVED */}
+        {/* ================================================= */}
 
         <img
           src="/hero/campus.png"
@@ -176,10 +178,13 @@ const HeroSlider = () => {
             w-full
             object-cover
             object-center
+            [image-rendering:auto]
           "
         />
 
-        {/* OVERLAY */}
+        {/* ================================================= */}
+        {/* OVERLAY - LIGHTER FOR CLEAR IMAGE */}
+        {/* ================================================= */}
 
         <div
           className="
@@ -187,14 +192,14 @@ const HeroSlider = () => {
             inset-0
 
             bg-gradient-to-b
-            from-[#071d35]/95
-            via-[#0b2742]/82
-            to-[#071d35]/58
+            from-[#071d35]/80
+            via-[#0b2742]/58
+            to-[#071d35]/30
 
             lg:bg-gradient-to-r
-            lg:from-[#071d35]/96
-            lg:via-[#0b2742]/80
-            lg:to-[#071d35]/20
+            lg:from-[#071d35]/88
+            lg:via-[#0b2742]/55
+            lg:to-transparent
           "
         />
 
@@ -265,7 +270,9 @@ const HeroSlider = () => {
               lg:text-left
             "
           >
+            {/* ================================================= */}
             {/* ANIMATED CONTENT */}
+            {/* ================================================= */}
 
             <div
               className={`
@@ -277,8 +284,8 @@ const HeroSlider = () => {
 
                 ${
                   contentVisible
-                    ? "translate-y-0 opacity-100 blur-0"
-                    : "translate-y-4 opacity-0 blur-[2px]"
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
                 }
               `}
             >
@@ -300,7 +307,9 @@ const HeroSlider = () => {
                 "
               />
 
-              {/* MAIN HEADING */}
+              {/* ================================================= */}
+              {/* MAIN HEADING - CLEARER */}
+              {/* ================================================= */}
 
               <h1
                 className="
@@ -317,6 +326,8 @@ const HeroSlider = () => {
                   tracking-[-0.02em]
 
                   text-white
+
+                  drop-shadow-[0_2px_4px_rgba(0,0,0,0.50)]
 
                   sm:text-[34px]
 
@@ -335,7 +346,9 @@ const HeroSlider = () => {
                 {heroContents[activeContent].title}
               </h1>
 
-              {/* SUBTITLE */}
+              {/* ================================================= */}
+              {/* SUBTITLE - CLEARER */}
+              {/* ================================================= */}
 
               <p
                 className="
@@ -349,7 +362,9 @@ const HeroSlider = () => {
 
                   tracking-[0.04em]
 
-                  text-white/90
+                  text-white
+
+                  drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]
 
                   sm:text-[16px]
 
@@ -363,7 +378,9 @@ const HeroSlider = () => {
                 {heroContents[activeContent].subtitle}
               </p>
 
+              {/* ================================================= */}
               {/* HIGHLIGHT */}
+              {/* ================================================= */}
 
               <div
                 className="
@@ -667,7 +684,9 @@ const HeroSlider = () => {
               }
             }}
           >
+            {/* ================================================= */}
             {/* FORM CARD */}
+            {/* ================================================= */}
 
             <div
               className="
@@ -699,7 +718,9 @@ const HeroSlider = () => {
                 lg:shadow-[0_15px_45px_rgba(0,0,0,0.28)]
               "
             >
+              {/* ================================================= */}
               {/* MOBILE HEADER */}
+              {/* ================================================= */}
 
               <div
                 className="
@@ -767,7 +788,9 @@ const HeroSlider = () => {
                 </button>
               </div>
 
+              {/* ================================================= */}
               {/* FORM AREA */}
+              {/* ================================================= */}
 
               <div
                 className="

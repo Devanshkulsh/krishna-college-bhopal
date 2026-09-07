@@ -85,7 +85,7 @@ const departments = [
   {
     title: "In-Patient Department",
     subtitle: "IPD Services",
-    image: "/departments/ipd.png",
+    image: "/hero/ipd.png",
     points: [
       "Well-furnished rooms with medical supervision.",
       "Customized Ayurvedic diet and therapy support.",
@@ -95,7 +95,7 @@ const departments = [
   {
     title: "Diagnostic & Pathology Unit",
     subtitle: "Laboratory & Diagnostics",
-    image: "/departments/pathology.png",
+    image: "/hero/Pathology.png",
     points: [
       "Blood tests and urine analysis.",
       "Nadi Pariksha, Dosha analysis and modern lab testing.",
@@ -105,7 +105,7 @@ const departments = [
   {
     title: "Ayurvedic Pharmacy",
     subtitle: "Medicines & Formulations",
-    image: "/departments/pharmacy.png",
+    image: "/hero/phar.png",
     points: [
       "Certified Ayurvedic medicines and in-house formulations.",
       "GMP-certified products under expert supervision.",
@@ -115,7 +115,7 @@ const departments = [
   {
     title: "Yoga & Lifestyle Counseling",
     subtitle: "Wellness Center",
-    image: "/departments/yoga.png",
+    image: "/hero/yoga1.png",
     points: [
       "Yoga, pranayama, meditation and diet planning.",
       "Focused on stress relief, prevention and healthy living.",
