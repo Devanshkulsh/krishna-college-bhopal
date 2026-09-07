@@ -131,7 +131,7 @@ const AboutSection = () => {
                 xl:text-[46px]
               "
             >
-              Welcome To SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
+              WELCOME TO SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
 
             </h2>
 
