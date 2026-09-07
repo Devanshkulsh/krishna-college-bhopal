@@ -314,7 +314,7 @@ const ExcellenceSection = () => {
               ================================================ */}
 
               <a
-                href="tel:+916262180303"
+                href="tel:+916262618035"
                 className="
                   mx-auto
                   mt-7
@@ -364,7 +364,7 @@ const ExcellenceSection = () => {
                       lg:text-[12px]
                     "
                   >
-                    Hospital Helpline
+                    For Admission & Enquiry
                   </span>
 
                   <span
@@ -384,7 +384,7 @@ const ExcellenceSection = () => {
                       xl:text-[31px]
                     "
                   >
-                    +91-6262180303
+                    +91-6262618035
                   </span>
                 </div>
               </a>

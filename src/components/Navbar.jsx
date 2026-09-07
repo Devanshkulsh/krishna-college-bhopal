@@ -257,7 +257,7 @@ const Navbar = () => {
 
       script.setAttribute(
         "contact",
-        "+91-7611150888"
+        "+91-6262618035"
       );
 
       script.onload = () => {
@@ -345,13 +345,13 @@ const Navbar = () => {
             <div className="flex items-center gap-7 text-[14px] font-bold text-white">
 
               <a
-                href="tel:+917611150888"
+                href="tel:+916262618035"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
 
                 <span>
-                  +91-7611150888
+                  +91-6262618035
                 </span>
               </a>
 
@@ -546,7 +546,7 @@ const Navbar = () => {
               {/* ADMISSION */}
 
               <a
-                href="tel:+917611150888"
+                href="tel:+916262618035"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
 
@@ -573,7 +573,7 @@ const Navbar = () => {
                   </small>
 
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                    +91-7611150888
+                    +91-6262618035
                   </strong>
 
                 </span>
@@ -1079,7 +1079,7 @@ const Navbar = () => {
       ========================================================= */}
 
       <a
-        href="https://wa.me/917611150888"
+        href="https://wa.me/916262618035"
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"

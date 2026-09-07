@@ -215,19 +215,19 @@ const Footer = () => {
 
                 <div className="min-w-0 flex flex-col items-start gap-1 text-[14px] min-[430px]:flex-row min-[430px]:items-center min-[430px]:gap-2 sm:text-[15px] lg:text-[16px]">
                   <a
-                    href="tel:+917611150888"
+                    href="tel:+916262618035"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-6262180303 
+                    +91-6262618035
                   </a>
 
                   <span className="hidden min-[430px]:inline">|</span>
 
                   <a
-                    href="tel:+917611150888"
+                    href="tel:+916262618035"
                     className="hover:text-[#e7a51d]"
                   >
-                    +91-6262180303 
+                    +91-6262618035
                   </a>
                 </div>
 
