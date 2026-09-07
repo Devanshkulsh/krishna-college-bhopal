@@ -914,12 +914,12 @@ const HeroSlider = () => {
           <span>📢 BAMS Admission 2026–27 Open</span>
           <span>📢 BAMS Fee Structure Updated for 2026</span>
           <span>📢 NCISM Approved Curriculum</span>
-          <span>📢 Explore Krishna College Departments</span>
+          <span>📢 Explore Department Of Ayurveda Shri Krishna University, Chhatarpur (M.P.)</span>
 
           <span>📢 BAMS Admission 2026–27 Open</span>
           <span>📢 BAMS Fee Structure Updated for 2026</span>
           <span>📢 NCISM Approved Curriculum</span>
-          <span>📢 Explore Krishna College Departments</span>
+          <span>📢  Explore Department Of Ayurveda Shri Krishna University, Chhatarpur (M.P.) </span>
         </div>
       </div>
     </section>

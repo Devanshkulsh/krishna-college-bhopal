@@ -31,7 +31,7 @@ const ncismLinks = [
   { label: 'College Council', href: '/ncism-mandates/college-council' },
   { label: 'Clinical materials', href: '/ncism-mandates/clinical-materials' },
   {
-    label: 'College Teaching Staff Details',
+    label: 'Department of Ayurveda Teaching Staff Details',
     href: '/ncism-mandates/teaching-staff',
   },
   {
@@ -288,7 +288,7 @@ const Footer = () => {
 
                 <p className="min-w-0 text-[14px] leading-6 sm:text-[15px] lg:text-[16px]">
                   <strong>Address:</strong>{' '}
-                  Krishna College Bhopal, Bhopal, Madhya Pradesh
+                  N-H 86, Village Chauka, Sagar Road, Chhatarpur, Madhya Pradesh.
                 </p>
 
               </div>

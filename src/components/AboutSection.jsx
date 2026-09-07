@@ -158,7 +158,7 @@ const AboutSection = () => {
               "
             >
               <p>
-                Welcome to{" "}
+                WELCOME TO{" "}
                 <strong className="font-semibold text-[#162364]">
                   SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
                 </strong>{" "}
