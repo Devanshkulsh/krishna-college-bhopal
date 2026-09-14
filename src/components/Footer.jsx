@@ -192,46 +192,61 @@ const Footer = () => {
             <div className="mt-4 space-y-3 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3 sm:space-y-0 lg:block lg:space-y-3">
 
               {/* PHONE */}
-              <div className="flex items-center gap-3">
+<div className="flex items-center gap-3">
 
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/30
-                    text-[19px]
-                    sm:h-11
-                    sm:w-11
-                  "
-                >
-                  <FaPhoneAlt />
-                </div>
+  <div
+    className="
+      flex
+      h-10
+      w-10
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-white/30
+      text-[19px]
+      sm:h-11
+      sm:w-11
+    "
+  >
+    <FaPhoneAlt />
+  </div>
 
-                <div className="min-w-0 flex flex-col items-start gap-1 text-[14px] min-[430px]:flex-row min-[430px]:items-center min-[430px]:gap-2 sm:text-[15px] lg:text-[16px]">
-                  <a
-                    href="tel:+916262618035"
-                    className="hover:text-[#e7a51d]"
-                  >
-                    +91-6262618035
-                  </a>
+  <div className="min-w-0 flex flex-col gap-1 text-[14px] sm:text-[15px] lg:text-[16px]">
 
-                  <span className="hidden min-[430px]:inline">|</span>
+    {/* Contact Numbers */}
+    <div className="flex items-center gap-2">
+      <span className="font-semibold">
+        Hospital Helpline:
+      </span>
 
-                  <a
-                    href="tel:+916262618035"
-                    className="hover:text-[#e7a51d]"
-                  >
-                    +91-6262618035
-                  </a>
-                </div>
+      <a
+        href="tel:+916262618031"
+        className="hover:text-[#e7a51d]"
+      >
+        +91-6262618031
+      </a>
+    </div>
 
-              </div>
+    {/* Hospital Helpline */}
+    <div className="flex items-center gap-2">
+      <span className="font-semibold">
+        Addmission Helpline:
+      </span>
+
+      <a
+        href="tel:++91-6262618035
+"
+        className="hover:text-[#e7a51d]"
+      >
+        +91-6262618035
+      </a>
+    </div>
+
+  </div>
+
+</div>
 
               {/* EMAIL */}
               <div className="flex items-center gap-3">
