@@ -73,19 +73,19 @@ const navItems = [
 
   {
     label: "NCISM Mandates",
-    href: "/ncism-mandates",
+    href: "/committee",
     items: [
       {
         label: "Permissions",
-        href: "/ncism-mandates/permissions",
+        href: "/committee",
       },
       {
         label: "Compliance",
-        href: "/ncism-mandates/compliance",
+        href: "/committee",
       },
       {
         label: "Reports",
-        href: "/ncism-mandates/reports",
+        href: "/committee",
       },
     ],
   },
@@ -185,6 +185,7 @@ const Navbar = () => {
 
   const openApplyForm = () => {
     closeMenu();
+    setFormLoading(true);
     setIsApplyOpen(true);
   };
 
@@ -198,8 +199,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (!isApplyOpen) return;
-
-    setFormLoading(true);
 
     const timer = setTimeout(() => {
       const container = document.getElementById(
@@ -369,13 +368,13 @@ const Navbar = () => {
 
  
               <a
-                href="mailto:shrikrishnayurvedic@.com"
+                href="mailto:skahospitel2022@gmail.com"
                 className="flex items-center gap-2 !text-white"
               >
                 <FaEnvelope className="text-[#f1a028]" />
 
                 <span>
-                  shrikrishnayurvedic@.com
+                  skahospitel2022@gmail.com
                 </span>
               </a>
 
@@ -389,19 +388,19 @@ const Navbar = () => {
               {[
                 [
                   "BAMS(UG) Admission 2026",
-                  "/admission",
+                  "/contact",
                 ],
                 [
                   "Govt. Approval",
-                  "/approvals",
+                  "/committee",
                 ],
                 [
                   "Career",
-                  "/career",
+                  "/contact",
                 ],
                 [
                   "Notification",
-                  "/notification",
+                  "/committee",
                 ],
               ].map(([label, href]) => (
 

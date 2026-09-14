@@ -8,42 +8,42 @@ import {
 } from 'react-icons/fa'
 
 const quickLinks = [
-  { label: 'About Collage', href: '/about' },
-  { label: 'Mission & Vision', href: '/about/mission-vision' },
-  { label: 'Our Objectives', href: '/about/objectives' },
-  { label: "Chairman's Message", href: '/about/chairman' },
-  { label: 'Director Message', href: '/about/director' },
-  { label: "Principal's Message", href: '/about/principal' },
-  { label: "Suprintendent's", href: '/about/superintendent' },
+  { label: 'About College', href: '/about' },
+  { label: 'Mission & Vision', href: '/about/vision-mission' },
+  { label: 'Director Message', href: '/about/director-message' },
+  { label: 'Departments', href: '/departments' },
+  { label: 'Facilities', href: '/facilities' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 const academics = [
-  { label: 'Message of Chairman', href: '/academics/chairman' },
-  { label: 'Message of Director', href: '/academics/director' },
-  { label: 'Teaching Staff-List', href: '/academics/teaching-staff' },
-  { label: 'Non Teaching Staff', href: '/academics/non-teaching-staff' },
-  { label: 'Infrastructure', href: '/facility' },
-  { label: 'Medical Camp', href: '/medical-camp' },
-  { label: 'Equipment Details', href: '/equipment' },
+  { label: 'Teaching Staff-List', href: '/faculty/teaching-staff' },
+  { label: 'Non Teaching Staff', href: '/faculty/non-teaching-staff' },
+  { label: 'Hospital Staff', href: '/faculty/hospital-staff' },
+  { label: 'Infrastructure', href: '/facilities' },
+  { label: 'Medical Camp', href: '/gallery/events' },
+  { label: 'Campus Gallery', href: '/gallery/campus' },
+  { label: 'Hospital Gallery', href: '/gallery/hospital' },
 ]
 
 const ncismLinks = [
-  { label: 'College Council', href: '/ncism-mandates/college-council' },
-  { label: 'Clinical materials', href: '/ncism-mandates/clinical-materials' },
+  { label: 'College Council', href: '/committee' },
+  { label: 'Clinical materials', href: '/hospital' },
   {
     label: 'Department of Ayurveda Teaching Staff Details',
-    href: '/ncism-mandates/teaching-staff',
+    href: '/faculty/teaching-staff',
   },
   {
     label: 'Research & Publication',
-    href: '/ncism-mandates/research-publication',
+    href: '/committee',
   },
   {
     label: 'Principal Information',
-    href: '/ncism-mandates/principal-information',
+    href: '/about/director-message',
   },
-  { label: 'Attendance', href: '/attendance' },
-  { label: 'OPD IPD Summary', href: '/hospital/opd-ipd-summary' },
+  { label: 'Committee Documents', href: '/committee' },
+  { label: 'OPD IPD Summary', href: '/hospital' },
 ]
 
 const FooterLinkColumn = ({ title, links }) => {
@@ -181,7 +181,7 @@ const Footer = () => {
             >
               <img
                 src="/logoayu.png"
-                alt="Krishna College Bhopal"
+                alt="Shri Krishna Ayurvedic Hospital logo"
                 className="h-[56px] w-auto max-w-full object-contain sm:h-[64px] lg:h-[68px]"
               />
             </div>
@@ -236,8 +236,7 @@ const Footer = () => {
       </span>
 
       <a
-        href="tel:++91-6262618035
-"
+        href="tel:+916262618035"
         className="hover:text-[#e7a51d]"
       >
         +91-6262618035
@@ -271,10 +270,10 @@ const Footer = () => {
                 </div>
 
                 <a
-                  href="mailto:shrikrishnayurvedic@.com"
+                  href="mailto:skahospitel2022@gmail.com"
                   className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[15px] lg:text-[16px]"
                 >
-                  shrikrishnayurvedic@.com
+                  skahospitel2022@gmail.com
                 </a>
 
               </div>
@@ -357,7 +356,7 @@ const Footer = () => {
 
           <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center lg:justify-start lg:text-left">
             <span>
-              © 2026 Krishna College Bhopal. All Rights Reserved.
+              © 2026 Shri Krishna Ayurvedic Hospital. All Rights Reserved.
             </span>
           </p>
 

@@ -45,7 +45,7 @@ const HeroSlider = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroContents.length]);
 
   /* =====================================================
      LOAD LMS FORM

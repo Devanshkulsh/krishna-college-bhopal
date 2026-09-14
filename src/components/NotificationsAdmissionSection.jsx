@@ -73,7 +73,7 @@ const NotificationsAdmissionSection = () => {
               {/* Scrolling Content */}
               <ScrollingList
                 items={notifications}
-                href="/notification"
+                href="/committee"
               />
 
             </div>
@@ -97,7 +97,7 @@ const NotificationsAdmissionSection = () => {
               {/* Scrolling Content */}
               <ScrollingList
                 items={admissionInfo}
-                href="/admission"
+                href="/contact"
               />
 
             </div>
@@ -128,7 +128,7 @@ const NotificationsAdmissionSection = () => {
               <div className="mt-5 flex flex-wrap gap-3 md:mt-7 md:gap-4">
 
                 <a
-                  href="/admission"
+                  href="/contact"
                   className="rounded-full bg-[#A3621D] px-5 py-2.5 text-[15px] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#e94349] md:px-7 md:py-3 md:text-[16px]"
                 >
                   Apply Today
@@ -149,7 +149,7 @@ const NotificationsAdmissionSection = () => {
                 <FaPhoneAlt className="mr-1 text-[#ec3f8c]" />
 
                 <a
-                  href="tel:+91 7611150888"
+                  href="tel:+917611150888"
                   className="transition hover:text-[#ffc44d]"
                 >
                   +91-7611150888
@@ -158,7 +158,7 @@ const NotificationsAdmissionSection = () => {
                 <span>|</span>
 
                 <a
-                  href="tel:+91 6262 180 303"
+                  href="tel:+916262180303"
                   className="transition hover:text-[#ffc44d]"
                 >
                   +91-6262 180 303

@@ -24,7 +24,7 @@ const featureCards = [
     description:
       'Study BAMS with experienced faculty, structured academics, practical learning and strong clinical exposure.',
     button: 'Apply For Admission',
-    link: '/admission',
+    link: '/contact',
   },
   {
     title: 'Learn with Experienced Faculty',
@@ -38,7 +38,7 @@ const featureCards = [
     description:
       'Develop hands-on understanding through hospital training, laboratories and facilities that support professional growth.',
     button: 'Explore Facilities',
-    link: '/facility',
+    link: '/facilities',
   },
 ]
 
