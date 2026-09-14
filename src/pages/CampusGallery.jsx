@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Images,
   X,
@@ -79,7 +79,6 @@ const CampusGallery = () => {
 
   const openImage = (index) => {
     setSelectedImage(index);
-    document.body.style.overflow = "hidden";
   };
 
   /* =========================================================
@@ -88,8 +87,16 @@ const CampusGallery = () => {
 
   const closeImage = () => {
     setSelectedImage(null);
-    document.body.style.overflow = "";
   };
+
+  useEffect(() => {
+    document.body.style.overflow =
+      selectedImage !== null ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   /* =========================================================
      NEXT IMAGE

@@ -23,13 +23,6 @@ const courseDetails = [
   },
 ]
 
-const courseHighlights = [
-  'Ayurvedic medical education with practical hospital-based training',
-  'Experienced faculty guidance across core BAMS subjects',
-  'Clinical exposure through OPD, IPD and departmental learning',
-  'Structured academic support for professional growth',
-]
-
 const CoursesOffered = () => {
   return (
     <section className="w-full overflow-hidden border-y border-[#E3E6E9] bg-[#EEF1F4] py-10 shadow-[inset_0_8px_20px_rgba(0,0,0,0.02),inset_0_-8px_20px_rgba(0,0,0,0.02)] sm:py-12 md:py-16 lg:py-20">
@@ -101,7 +94,7 @@ const CoursesOffered = () => {
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href="/courses/bams"
+                href="/departments"
                 className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#A3621D] px-5 py-3 text-sm font-bold !text-white transition hover:-translate-y-1 hover:bg-[#bf6200] sm:w-auto sm:px-6 sm:text-base"
               >
                 Read More
@@ -109,14 +102,14 @@ const CoursesOffered = () => {
               </a>
 
               <a
-                href="/admission/course-fees"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-lg border border-[#168486] px-5 py-3 text-sm font-bold text-[#168486] transition hover:-translate-y-1 hover:bg-[#168486] hover:text-white sm:w-auto sm:px-6 sm:text-base"
               >
                 Fee Structure
               </a>
 
               <a
-                href="/academics/syllabus"
+                href="/departments"
                 className="inline-flex items-center justify-center rounded-lg border border-[#1f2768] px-5 py-3 text-sm font-bold text-[#1f2768] transition hover:-translate-y-1 hover:bg-[#1f2768] hover:text-white sm:w-auto sm:px-6 sm:text-base"
               >
                 Syllabus

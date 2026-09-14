@@ -106,7 +106,7 @@ const RecognitionAffiliations = () => {
 
             <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-5">
               <a
-                href="/admission"
+                href="/contact"
                 className="
                   inline-flex
                   items-center

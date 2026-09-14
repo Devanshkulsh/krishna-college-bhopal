@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Bell,
-  BookOpen,
   FileText,
   GraduationCap,
   ShieldCheck,
@@ -11,17 +10,17 @@ const updates = [
   {
     icon: GraduationCap,
     text: "BAMS Admission 2026-27 Open",
-    href: "/admission",
+    href: "/contact",
   },
   {
     icon: FileText,
     text: "Latest Notification",
-    href: "/notifications",
+    href: "/committee",
   },
   {
     icon: ShieldCheck,
     text: "NCISM Mandates",
-    href: "/ncism",
+    href: "/committee",
   },
 ];
 

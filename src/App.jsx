@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 
 /* =========================================================
    COMPONENTS
@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SEO from "./seo/SEO";
 
 /* =========================================================
    HOME
@@ -73,9 +74,47 @@ import Contact from "./pages/Contact";
 ========================================================= */
 import EventsGallery from "./pages/EventsGallery";
 import HospitalGallery from "./pages/HospitalGallery";
+import NotFound from "./pages/NotFound";
+
+const redirectRoutes = {
+  "/about/mission-vision": "/about/vision-mission",
+  "/about/director": "/about/director-message",
+  "/about/chairman": "/about/director-message",
+  "/about/principal": "/about/director-message",
+  "/about/superintendent": "/about/director-message",
+  "/about/objectives": "/about/vision-mission",
+  "/academics/chairman": "/about/director-message",
+  "/academics/director": "/about/director-message",
+  "/academics/teaching-staff": "/faculty/teaching-staff",
+  "/academics/non-teaching-staff": "/faculty/non-teaching-staff",
+  "/facility": "/facilities",
+  "/medical-camp": "/gallery/events",
+  "/equipment": "/facilities",
+  "/attendance": "/committee",
+  "/hospital/opd-ipd-summary": "/hospital",
+  "/admission": "/contact",
+  "/admission/course-fees": "/contact",
+  "/academics/syllabus": "/departments",
+  "/courses/bams": "/departments",
+  "/approvals": "/committee",
+  "/career": "/contact",
+  "/notification": "/committee",
+  "/ncism-mandates": "/committee",
+  "/ncism-mandates/permissions": "/committee",
+  "/ncism-mandates/compliance": "/committee",
+  "/ncism-mandates/reports": "/committee",
+  "/ncism-mandates/college-council": "/committee",
+  "/ncism-mandates/clinical-materials": "/committee",
+  "/ncism-mandates/teaching-staff": "/faculty/teaching-staff",
+  "/ncism-mandates/research-publication": "/committee",
+  "/ncism-mandates/principal-information": "/about/director-message",
+};
+
 const App = () => {
   return (
     <>
+      <SEO />
+
       {/* =====================================================
           NAVBAR
       ====================================================== */}
@@ -130,6 +169,11 @@ const App = () => {
         <Route
           path="/departments"
           element={<Departments />}
+        />
+
+        <Route
+          path="/departments/:departmentSlug"
+          element={<Navigate to="/departments" replace />}
         />
 
 
@@ -217,6 +261,19 @@ const App = () => {
         <Route
           path="/contact"
           element={<Contact />}
+        />
+
+        {Object.entries(redirectRoutes).map(([path, to]) => (
+          <Route
+            key={path}
+            path={path}
+            element={<Navigate to={to} replace />}
+          />
+        ))}
+
+        <Route
+          path="*"
+          element={<NotFound />}
         />
 
       </Routes>

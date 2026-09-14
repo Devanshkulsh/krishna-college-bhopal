@@ -1,0 +1,15 @@
+{
+  "name": "Shri Krishna Ayurvedic Hospital",
+  "short_name": "SK Ayurvedic",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#168486",
+  "icons": [
+    {
+      "src": "/logoayu.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

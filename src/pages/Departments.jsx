@@ -325,10 +325,7 @@ const Departments = () => {
 
                   {/* BUTTON */}
                   <a
-                    href={`/departments/${department.title
-                      .toLowerCase()
-                      .replaceAll("&", "and")
-                      .replaceAll(" ", "-")}`}
+                    href="/departments"
                     className="
                       mt-7
                       inline-flex
