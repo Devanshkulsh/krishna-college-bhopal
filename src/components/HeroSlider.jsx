@@ -3,7 +3,6 @@ import { FaTimes } from "react-icons/fa";
 
 const HeroSlider = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [formLoading, setFormLoading] = useState(true);
 
   const [activeContent, setActiveContent] = useState(0);
   const [contentVisible, setContentVisible] = useState(true);
@@ -46,70 +45,6 @@ const HeroSlider = () => {
 
     return () => clearInterval(interval);
   }, [heroContents.length]);
-
-  /* =====================================================
-     LOAD LMS FORM
-  ===================================================== */
-
-  useEffect(() => {
-    let timer;
-
-    const loadLmsForm = () => {
-      const container = document.getElementById("formsID7375");
-
-      if (!container) return;
-
-      if (container.children.length > 0) {
-        setFormLoading(false);
-        return;
-      }
-
-      const oldScript = document.getElementById("krishna-lms-script");
-
-      if (oldScript) {
-        oldScript.remove();
-      }
-
-      const script = document.createElement("script");
-
-      script.id = "krishna-lms-script";
-      script.type = "module";
-
-      script.src =
-        "https://ntechzy.in/api/v1/student-form/form.js?v=" + Date.now();
-
-      script.setAttribute("path", '["/"]');
-      script.setAttribute("divid", "formsID7375");
-
-      script.setAttribute(
-        "courses",
-        '["Select Course","BAMS","BHMS"]'
-      );
-
-      script.setAttribute("styles", "basic");
-      script.setAttribute("logo", "/logoayu.png");
-      script.setAttribute("contact", "+91-xxxxxxxxxx");
-
-      script.onload = () => {
-        setTimeout(() => {
-          setFormLoading(false);
-        }, 700);
-      };
-
-      script.onerror = () => {
-        console.error("LMS admission form failed to load");
-        setFormLoading(false);
-      };
-
-      document.body.appendChild(script);
-    };
-
-    timer = setTimeout(loadLmsForm, 300);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   /* =====================================================
      MOBILE BODY SCROLL LOCK
@@ -826,29 +761,6 @@ const HeroSlider = () => {
                   WebkitOverflowScrolling: "touch",
                 }}
               >
-                {formLoading && (
-                  <div
-                    className="
-                      flex
-
-                      min-h-[80px]
-
-                      items-center
-                      justify-center
-
-                      px-4
-
-                      text-center
-
-                      text-sm
-
-                      text-gray-500
-                    "
-                  >
-                    Loading admission form...
-                  </div>
-                )}
-
                 <div
                   id="formsID7375"
                   className="
