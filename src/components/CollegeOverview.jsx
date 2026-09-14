@@ -8,8 +8,8 @@ const overviewCards = [
   },
   {
     title: 'Pharmacy Details',
-    image: '/hero/PHARMACY.png',
-    link: '/facilities',
+    image: '/hero/pharmacy.png',
+    link: '/pharmacy',
   },
   {
     title: 'Department Of Ayurveda Shri Krishna University, Chhatarpur (M.P.)',
