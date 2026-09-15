@@ -24,7 +24,6 @@ const navItems = [
     label: "Home",
     href: "/",
   },
-
   {
     label: "About Us",
     href: "/about",
@@ -39,7 +38,6 @@ const navItems = [
       },
     ],
   },
-
   {
     label: "Departments",
     href: "/departments",
@@ -51,7 +49,6 @@ const navItems = [
     label: "Hospital",
     href: "/hospital",
   },
-
   {
     label: "Faculty",
     href: "/faculty",
@@ -70,7 +67,6 @@ const navItems = [
       },
     ],
   },
-
   {
     label: "NCISM Mandates",
     href: "/committee",
@@ -89,17 +85,14 @@ const navItems = [
       },
     ],
   },
-
   {
     label: "Facilities",
     href: "/facilities",
   },
-
   {
     label: "Committee",
     href: "/committee",
   },
-
   {
     label: "Gallery",
     href: "/gallery",
@@ -118,7 +111,6 @@ const navItems = [
       },
     ],
   },
-
   {
     label: "Contact Us",
     href: "/contact",
@@ -132,19 +124,19 @@ const navItems = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/skuindia?rdid=EL57jO3BWlqaF0kJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1RFt9JKFiX%2F#",
     icon: FaFacebookF,
     bg: "bg-[#3b5fa3]",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/shreekrishnauniversity?stkn=MXdja2QzOHpzc3JnNA%3D%3D",
     icon: FaInstagram,
     bg: "bg-[#e83f61]",
   },
   {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/results?search_query=shri+krishna+university+chhatarpur",
     icon: FaYoutube,
     bg: "bg-[#ff1111]",
   },
@@ -174,9 +166,7 @@ const Navbar = () => {
   ========================================================= */
 
   const toggleSubmenu = (label) => {
-    setOpenSubmenu((current) =>
-      current === label ? "" : label
-    );
+    setOpenSubmenu((current) => (current === label ? "" : label));
   };
 
   /* =========================================================
@@ -201,9 +191,7 @@ const Navbar = () => {
     if (!isApplyOpen) return;
 
     const timer = setTimeout(() => {
-      const container = document.getElementById(
-        "navbarFormsID7375"
-      );
+      const container = document.getElementById("navbarFormsID7375");
 
       if (!container) {
         setFormLoading(false);
@@ -215,9 +203,7 @@ const Navbar = () => {
         return;
       }
 
-      const oldScript = document.getElementById(
-        "navbar-lms-form-script"
-      );
+      const oldScript = document.getElementById("navbar-lms-form-script");
 
       if (oldScript) {
         oldScript.remove();
@@ -229,8 +215,7 @@ const Navbar = () => {
       script.type = "module";
 
       script.src =
-        "https://ntechzy.in/api/v1/student-form/form.js?v=" +
-        Date.now();
+        "https://ntechzy.in/api/v1/student-form/form.js?v=" + Date.now();
 
       script.setAttribute("path", '["/"]');
 
@@ -266,10 +251,7 @@ const Navbar = () => {
       };
 
       script.onerror = () => {
-        console.error(
-          "Navbar LMS admission form failed to load"
-        );
-
+        console.error("Navbar LMS admission form failed to load");
         setFormLoading(false);
       };
 
@@ -309,17 +291,11 @@ const Navbar = () => {
     };
 
     if (isApplyOpen) {
-      window.addEventListener(
-        "keydown",
-        handleKeyDown
-      );
+      window.addEventListener("keydown", handleKeyDown);
     }
 
     return () => {
-      window.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isApplyOpen]);
 
@@ -336,7 +312,6 @@ const Navbar = () => {
         ================================================= */}
 
         <div className="hidden h-[44px] bg-[#168486] lg:block">
-
           <div className="mx-auto flex h-full max-w-[1720px] items-center justify-between px-8">
 
             {/* LEFT CONTACT */}
@@ -354,19 +329,17 @@ const Navbar = () => {
                 </span>
               </a>
 
-
               <a
-                href="tel:+916262180303"
+                href="tel:+91-9695966669 "
                 className="flex items-center gap-2 !text-white"
               >
                 <FaPhoneAlt className="text-[#f1a028]" />
 
                 <span>
-                  +91-6262 180 303
+                  +91-9695966669
                 </span>
               </a>
 
- 
               <a
                 href="mailto:skahospitel2022@gmail.com"
                 className="flex items-center gap-2 !text-white"
@@ -380,11 +353,9 @@ const Navbar = () => {
 
             </div>
 
-
             {/* TOP RIGHT BUTTONS */}
 
             <div className="flex items-center gap-3">
-
               {[
                 [
                   "BAMS(UG) Admission 2026",
@@ -403,7 +374,6 @@ const Navbar = () => {
                   "/committee",
                 ],
               ].map(([label, href]) => (
-
                 <Link
                   key={label}
                   to={href}
@@ -422,22 +392,17 @@ const Navbar = () => {
                 >
                   {label}
                 </Link>
-
               ))}
-
             </div>
 
           </div>
-
         </div>
-
 
         {/* =================================================
             MIDDLE HEADER
         ================================================= */}
 
         <div className="bg-white">
-
           <div
             className="
               mx-auto
@@ -472,7 +437,6 @@ const Navbar = () => {
                 lg:flex-none
               "
             >
-
               <img
                 src="/logoayu.png"
                 alt="Shri Krishna Ayurvedic Hospital"
@@ -490,9 +454,7 @@ const Navbar = () => {
                 "
               />
 
-
               <div className="min-w-0 flex-1">
-
                 <div
                   className="
                     text-[10px]
@@ -509,8 +471,7 @@ const Navbar = () => {
                     xl:text-[25px]
                   "
                 >
-                   SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
-                  
+                  SHRI KRISHNA UNIVERSITY, CHHATARPUR (M.P.)
                 </div>
 
                 <p
@@ -528,13 +489,10 @@ const Navbar = () => {
                     lg:text-[10px]
                   "
                 >
-                 
                 </p>
-
               </div>
 
             </Link>
-
 
             {/* =================================================
                 DESKTOP RIGHT
@@ -545,10 +503,9 @@ const Navbar = () => {
               {/* ADMISSION */}
 
               <a
-                href="tel:+916262618035"
+                href="tel:+916262618035,+919695966669"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
-
                 <span
                   className="
                     flex
@@ -566,27 +523,28 @@ const Navbar = () => {
                 </span>
 
                 <span>
-
                   <small className="block text-[14px] text-gray-500">
                     For Admissions
                   </small>
 
-                  <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                    +91-6262618035
+                  <strong className="block text-[15px] font-semibold text-[#173d6b]">
+                    <span className="block">
+                      +91-6262618035
+                    </span>
+
+                    <span className="block">
+                      +91-9695966669
+                    </span>
                   </strong>
-
                 </span>
-
               </a>
-
 
               {/* HOSPITAL HELPLINE */}
 
               <a
-                href="tel:+916262180303"
+                href="tel:+916262618031"
                 className="flex items-center gap-3 border-r border-gray-200 px-6"
               >
-
                 <span
                   className="
                     flex
@@ -604,21 +562,19 @@ const Navbar = () => {
                 </span>
 
                 <span>
-
                   <small className="block text-[14px] text-gray-500">
                     For Hospital Helpline:
                   </small>
 
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                    +91-6262180303
+                    +91-6262618031
                   </strong>
-
                 </span>
-
               </a>
 
-
-              {/* SOCIAL MEDIA */}
+              {/* =================================================
+                  SOCIAL MEDIA
+              ================================================= */}
 
               <div className="ml-5 flex items-center gap-2.5">
 
@@ -629,12 +585,11 @@ const Navbar = () => {
                     icon: Icon,
                     bg,
                   }) => (
-
                     <a
                       key={label}
                       href={href}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       aria-label={label}
                       className={`
                         flex
@@ -650,7 +605,6 @@ const Navbar = () => {
                         hover:shadow-lg
                       `}
                     >
-
                       <Icon
                         size={20}
                         color="#ffffff"
@@ -659,16 +613,13 @@ const Navbar = () => {
                           fill: "#ffffff",
                         }}
                       />
-
                     </a>
-
                   )
                 )}
 
               </div>
 
             </div>
-
 
             {/* =================================================
                 MOBILE MENU BUTTON
@@ -710,16 +661,13 @@ const Navbar = () => {
             </button>
 
           </div>
-
         </div>
-
 
         {/* =================================================
             MAIN NAVIGATION
         ================================================= */}
 
         <div className="bg-[#07634c]">
-
           <nav
             className={`
               mx-auto
@@ -743,7 +691,6 @@ const Navbar = () => {
             <div className="flex flex-col lg:flex-row lg:items-center">
 
               {navItems.map((item) => (
-
                 <div
                   key={item.label}
                   className="
@@ -754,7 +701,6 @@ const Navbar = () => {
                     lg:border-0
                   "
                 >
-
                   <div className="flex items-center">
 
                     {/* MAIN LINK */}
@@ -780,12 +726,10 @@ const Navbar = () => {
                       {item.label}
                     </Link>
 
-
                     {/* DROPDOWN ICON */}
 
                     {item.items && (
                       <>
-
                         {/* DESKTOP ARROW */}
 
                         <FaChevronDown
@@ -798,7 +742,6 @@ const Navbar = () => {
                             lg:block
                           "
                         />
-
 
                         {/* MOBILE DROPDOWN BUTTON */}
 
@@ -820,92 +763,74 @@ const Navbar = () => {
                             lg:hidden
                           "
                         >
-
                           <FaChevronDown
                             className={`
                               text-xs
                               transition-transform
                               duration-300
                               ${
-                                openSubmenu ===
-                                item.label
+                                openSubmenu === item.label
                                   ? "rotate-180"
                                   : ""
                               }
                             `}
                           />
-
                         </button>
-
                       </>
                     )}
 
                   </div>
-
 
                   {/* =================================================
                       DROPDOWN
                   ================================================= */}
 
                   {item.items && (
-
                     <div
                       className={`
                         bg-white
                         shadow-xl
-
                         lg:absolute
                         lg:left-0
                         lg:top-full
                         lg:z-50
                         lg:min-w-[240px]
-
                         ${
-                          openSubmenu ===
-                          item.label
+                          openSubmenu === item.label
                             ? "block"
                             : "hidden lg:group-hover:block"
                         }
                       `}
                     >
-
-                      {item.items.map(
-                        (child) => (
-
-                          <Link
-                            key={child.label}
-                            to={child.href}
-                            onClick={closeMenu}
-                            className="
-                              block
-                              border-b
-                              border-gray-100
-                              px-5
-                              py-3
-                              text-sm
-                              font-semibold
-                              !text-[#08666b]
-                              transition
-                              hover:bg-[#eef8f6]
-                              hover:!text-[#A3621D]
-                            "
-                          >
-                            {child.label}
-                          </Link>
-
-                        )
-                      )}
-
+                      {item.items.map((child) => (
+                        <Link
+                          key={child.label}
+                          to={child.href}
+                          onClick={closeMenu}
+                          className="
+                            block
+                            border-b
+                            border-gray-100
+                            px-5
+                            py-3
+                            text-sm
+                            font-semibold
+                            !text-[#08666b]
+                            transition
+                            hover:bg-[#eef8f6]
+                            hover:!text-[#A3621D]
+                          "
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
                     </div>
-
                   )}
 
                 </div>
-
               ))}
 
             </div>
-
 
             {/* =================================================
                 APPLY NOW BUTTON
@@ -937,18 +862,15 @@ const Navbar = () => {
             </button>
 
           </nav>
-
         </div>
 
       </header>
-
 
       {/* =========================================================
           APPLY NOW LMS FORM POPUP
       ========================================================= */}
 
       {isApplyOpen && (
-
         <div
           className="
             fixed
@@ -971,7 +893,6 @@ const Navbar = () => {
             }
           }}
         >
-
           <div
             className="
               relative
@@ -1019,7 +940,6 @@ const Navbar = () => {
               <FaTimes />
             </button>
 
-
             {/* FORM AREA */}
 
             <div
@@ -1036,7 +956,6 @@ const Navbar = () => {
             >
 
               {formLoading && (
-
                 <div
                   className="
                     flex
@@ -1051,9 +970,7 @@ const Navbar = () => {
                 >
                   Loading admission form...
                 </div>
-
               )}
-
 
               <div
                 id="navbarFormsID7375"
@@ -1067,11 +984,8 @@ const Navbar = () => {
             </div>
 
           </div>
-
         </div>
-
       )}
-
 
       {/* =========================================================
           WHATSAPP FLOATING BUTTON
@@ -1120,14 +1034,12 @@ const Navbar = () => {
           sm:text-[27px]
         "
       >
-
         <FaWhatsapp
           style={{
             color: "#ffffff",
             fill: "#ffffff",
           }}
         />
-
       </a>
 
     </>

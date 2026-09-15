@@ -77,22 +77,25 @@ const FooterLinkColumn = ({ title, links }) => {
   )
 }
 
+/* =====================================
+   SOCIAL MEDIA LINKS
+===================================== */
 const socialLinks = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com',
+    href: 'https://www.facebook.com/skuindia?rdid=EL57jO3BWlqaF0kJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1RFt9JKFiX%2F#',
     icon: <FaFacebookF />,
     className: 'bg-[#247bf1]',
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/shreekrishnauniversity?stkn=MXdja2QzOHpzc3JnNA%3D%3D',
     icon: <FaInstagram />,
     className: 'bg-[#e33872]',
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com',
+    href: 'https://www.youtube.com/results?search_query=shri+krishna+university+chhatarpur',
     icon: <FaYoutube />,
     className: 'bg-[#ff0808]',
   },
@@ -111,8 +114,9 @@ const FooterSocialColumn = () => {
             key={item.label}
             href={item.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label={item.label}
+            title={item.label}
             className={`
               flex
               h-10
@@ -146,7 +150,19 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#168486] text-white">
 
-      <div className="mx-auto max-w-[1560px] px-5 py-9 sm:px-6 sm:py-10 lg:px-10 lg:py-12 xl:px-12">
+      <div
+        className="
+          mx-auto
+          max-w-[1560px]
+          px-5
+          py-9
+          sm:px-6
+          sm:py-10
+          lg:px-10
+          lg:py-12
+          xl:px-12
+        "
+      >
 
         {/* =====================================
             TOP AREA
@@ -164,7 +180,9 @@ const Footer = () => {
           "
         >
 
-          {/* LEFT */}
+          {/* =====================================
+              LEFT SECTION
+          ====================================== */}
           <div className="max-w-[520px] sm:col-span-2 lg:col-span-1">
 
             {/* LOGO */}
@@ -182,72 +200,132 @@ const Footer = () => {
               <img
                 src="/logoayu.png"
                 alt="Shri Krishna Ayurvedic Hospital logo"
-                className="h-[56px] w-auto max-w-full object-contain sm:h-[64px] lg:h-[68px]"
+                className="
+                  h-[56px]
+                  w-auto
+                  max-w-full
+                  object-contain
+                  sm:h-[64px]
+                  lg:h-[68px]
+                "
               />
             </div>
 
-            {/* FIND US */}
-            
+            {/* =====================================
+                CONTACT DETAILS
+            ====================================== */}
+            <div
+              className="
+                mt-4
+                space-y-3
+                sm:grid
+                sm:grid-cols-2
+                sm:gap-x-6
+                sm:gap-y-3
+                sm:space-y-0
+                lg:block
+                lg:space-y-3
+              "
+            >
 
-            <div className="mt-4 space-y-3 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3 sm:space-y-0 lg:block lg:space-y-3">
+              {/* =====================================
+                  PHONE
+              ====================================== */}
+              <div className="flex items-start gap-3">
 
-              {/* PHONE */}
-<div className="flex items-center gap-3">
+                {/* PHONE ICON */}
+                <div
+                  className="
+                    flex
+                    h-10
+                    w-10
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-white/30
+                    text-[19px]
+                    sm:h-11
+                    sm:w-11
+                  "
+                >
+                  <FaPhoneAlt />
+                </div>
 
-  <div
-    className="
-      flex
-      h-10
-      w-10
-      shrink-0
-      items-center
-      justify-center
-      rounded-full
-      border
-      border-white/30
-      text-[19px]
-      sm:h-11
-      sm:w-11
-    "
-  >
-    <FaPhoneAlt />
-  </div>
+                {/* PHONE NUMBERS */}
+                <div
+                  className="
+                    min-w-0
+                    flex
+                    flex-col
+                    gap-1
+                    text-[14px]
+                    sm:text-[15px]
+                    lg:text-[16px]
+                  "
+                >
 
-  <div className="min-w-0 flex flex-col gap-1 text-[14px] sm:text-[15px] lg:text-[16px]">
+                  {/* Hospital Helpline */}
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-semibold whitespace-nowrap">
+                      Hospital Helpline:
+                    </span>
 
-    {/* Contact Numbers */}
-    <div className="flex items-center gap-2">
-      <span className="font-semibold">
-        Hospital Helpline:
-      </span>
+                    <a
+                      href="tel:+916262618031"
+                      className="
+                        whitespace-nowrap
+                        transition
+                        hover:text-[#e7a51d]
+                      "
+                    >
+                      +91-6262618031
+                    </a>
+                  </div>
 
-      <a
-        href="tel:+916262618031"
-        className="hover:text-[#e7a51d]"
-      >
-        +91-6262618031
-      </a>
-    </div>
+                  {/* Admission Helpline 1 */}
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-semibold whitespace-nowrap">
+                      Admission Helpline:
+                    </span>
 
-    {/* Hospital Helpline */}
-    <div className="flex items-center gap-2">
-      <span className="font-semibold">
-        Addmission Helpline:
-      </span>
+                    <a
+                      href="tel:+916262618035"
+                      className="
+                        whitespace-nowrap
+                        transition
+                        hover:text-[#e7a51d]
+                      "
+                    >
+                      +91-6262618035
+                    </a>
+                  </div>
 
-      <a
-        href="tel:+916262618035"
-        className="hover:text-[#e7a51d]"
-      >
-        +91-6262618035
-      </a>
-    </div>
+                  {/* Admission Helpline 2 */}
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-semibold whitespace-nowrap">
+                      Admission Helpline:
+                    </span>
 
-  </div>
+                    <a
+                      href="tel:+919695966669"
+                      className="
+                        whitespace-nowrap
+                        transition
+                        hover:text-[#e7a51d]
+                      "
+                    >
+                      +91-9695966669
+                    </a>
+                  </div>
 
-</div>
+                </div>
+              </div>
 
-              {/* EMAIL */}
+              {/* =====================================
+                  EMAIL
+              ====================================== */}
               <div className="flex items-center gap-3">
 
                 <div
@@ -271,14 +349,24 @@ const Footer = () => {
 
                 <a
                   href="mailto:skahospitel2022@gmail.com"
-                  className="min-w-0 break-all text-[14px] hover:text-[#e7a51d] sm:text-[15px] lg:text-[16px]"
+                  className="
+                    min-w-0
+                    break-all
+                    text-[14px]
+                    transition
+                    hover:text-[#e7a51d]
+                    sm:text-[15px]
+                    lg:text-[16px]
+                  "
                 >
                   skahospitel2022@gmail.com
                 </a>
 
               </div>
 
-              {/* ADDRESS */}
+              {/* =====================================
+                  ADDRESS
+              ====================================== */}
               <div className="flex items-start gap-3 sm:col-span-2 lg:col-span-1">
 
                 <div
@@ -300,7 +388,15 @@ const Footer = () => {
                   <FaMapMarkerAlt />
                 </div>
 
-                <p className="min-w-0 text-[14px] leading-6 sm:text-[15px] lg:text-[16px]">
+                <p
+                  className="
+                    min-w-0
+                    text-[14px]
+                    leading-6
+                    sm:text-[15px]
+                    lg:text-[16px]
+                  "
+                >
                   <strong>Address:</strong>{' '}
                   N-H 86, Village Chauka, Sagar Road, Chhatarpur, Madhya Pradesh.
                 </p>
@@ -311,22 +407,33 @@ const Footer = () => {
 
           </div>
 
-          {/* COLUMNS */}
+          {/* =====================================
+              QUICK LINKS
+          ====================================== */}
           <FooterLinkColumn
             title="Quick Links"
             links={quickLinks}
           />
 
+          {/* =====================================
+              ACADEMICS
+          ====================================== */}
           <FooterLinkColumn
             title="Academics"
             links={academics}
           />
 
+          {/* =====================================
+              NCISM MANDATES
+          ====================================== */}
           <FooterLinkColumn
             title="NCISM Mandates"
             links={ncismLinks}
           />
 
+          {/* =====================================
+              SOCIAL MEDIA
+          ====================================== */}
           <FooterSocialColumn />
 
         </div>
@@ -354,21 +461,52 @@ const Footer = () => {
           "
         >
 
-          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center lg:justify-start lg:text-left">
+          {/* COPYRIGHT */}
+          <p
+            className="
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-x-2
+              gap-y-1
+              text-center
+              lg:justify-start
+              lg:text-left
+            "
+          >
             <span>
               © 2026 Shri Krishna Ayurvedic Hospital. All Rights Reserved.
             </span>
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center lg:justify-start lg:text-left">
-
-            <a href="https://ntechzy.in"
+          {/* DESIGNER */}
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-x-4
+              gap-y-2
+              text-center
+              lg:justify-start
+              lg:text-left
+            "
+          >
+            <a
+              href="https://ntechzy.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-white">
+              className="
+                font-semibold
+                text-white
+                transition
+                hover:text-[#e7a51d]
+              "
+            >
               Designed by Ntechzy
             </a>
-
           </div>
 
         </div>
