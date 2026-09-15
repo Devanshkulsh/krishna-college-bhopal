@@ -610,7 +610,7 @@ const Navbar = () => {
                   </small>
 
                   <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                    +91-6262 180 303
+                    +91-6262180303
                   </strong>
 
                 </span>

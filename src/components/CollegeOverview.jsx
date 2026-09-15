@@ -8,7 +8,7 @@ const overviewCards = [
   },
   {
     title: 'Pharmacy Details',
-    image: '/hero/pharmacy.png',
+    image: '/hero/PHARMACY.png',
     link: '/pharmacy',
   },
   {
