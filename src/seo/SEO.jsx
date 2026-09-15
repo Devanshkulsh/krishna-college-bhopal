@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   DEFAULT_IMAGE,
+  PRIMARY_KEYWORDS,
   SITE_NAME,
   SITE_URL,
   aliasCanonicalMap,
@@ -52,6 +53,14 @@ const setJsonLd = (id, data) => {
   element.textContent = JSON.stringify(data);
 };
 
+const removeJsonLd = (id) => {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.remove();
+  }
+};
+
 const buildBreadcrumbs = (pathname) => {
   const segments = pathname.split("/").filter(Boolean);
   const items = [
@@ -96,13 +105,20 @@ const SEO = () => {
 
     const title = metadata.title;
     const description = metadata.description;
-    const canonicalUrl = `${SITE_URL}${canonicalPath === "/" ? "/" : canonicalPath}`;
+    const resolvedCanonicalPath = metadata.canonicalPath || canonicalPath;
+    const canonicalUrl = `${SITE_URL}${resolvedCanonicalPath === "/" ? "/" : resolvedCanonicalPath}`;
     const imageUrl = `${SITE_URL}${metadata.image || DEFAULT_IMAGE}`;
+    const keywords = [...new Set([...PRIMARY_KEYWORDS, ...(metadata.keywords || [])])].join(", ");
 
     document.title = title;
+    document.documentElement.lang = "en-IN";
 
     setMeta('meta[name="description"]', "content", description);
+    setMeta('meta[name="keywords"]', "content", keywords);
     setMeta('meta[name="robots"]', "content", "index, follow");
+    setMeta('meta[name="googlebot"]', "content", "index, follow, max-image-preview:large");
+    setMeta('meta[name="geo.region"]', "content", "IN-MP");
+    setMeta('meta[name="geo.placename"]', "content", "Chhatarpur, Madhya Pradesh");
     setMeta('meta[property="og:title"]', "content", title);
     setMeta('meta[property="og:description"]', "content", description);
     setMeta('meta[property="og:type"]', "content", metadata.type || "website");
@@ -143,14 +159,34 @@ const SEO = () => {
         "@type": "EducationalOrganization",
         name: SITE_NAME,
       },
+      keywords,
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: imageUrl,
       },
     });
 
-    if (canonicalPath !== "/") {
-      setJsonLd("breadcrumb-schema", buildBreadcrumbs(canonicalPath));
+    if (resolvedCanonicalPath !== "/") {
+      setJsonLd("breadcrumb-schema", buildBreadcrumbs(resolvedCanonicalPath));
+    } else {
+      removeJsonLd("breadcrumb-schema");
+    }
+
+    if (resolvedCanonicalPath === "/") {
+      setJsonLd("course-schema", {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        name: "Bachelor of Ayurvedic Medicine and Surgery (BAMS)",
+        description:
+          "BAMS course with Ayurvedic education, practical learning, clinical exposure and hospital-based training at Shri Krishna Ayurvedic Hospital, Chhatarpur.",
+        provider: {
+          "@type": "EducationalOrganization",
+          name: SITE_NAME,
+          sameAs: `${SITE_URL}/`,
+        },
+      });
+    } else {
+      removeJsonLd("course-schema");
     }
   }, [pathname]);
 
