@@ -25,13 +25,14 @@ const contactCards = [
     title: "For Admissions",
     numbers: [
       {
-        label: "+91-6262618035",
-        href: "tel:+916262618035",
-      },
-      {
         label: "+91-9695966669",
         href: "tel:+919695966669",
       },
+      {
+        label: "+91-6262618035",
+        href: "tel:+916262618035",
+      },
+      
     ],
     action: "Call Now",
     type: "phone",
@@ -230,7 +231,7 @@ const Contact = () => {
                     </a>
                   ) : (
                     <a
-                      href="tel:+916262618035"
+                      href="tel:+91 9695966669"
                       className="
                         mt-5
                         inline-flex
@@ -306,17 +307,17 @@ const Contact = () => {
                   </p>
 
                   <a
-                    href="tel:+916262618035"
-                    className="mt-1 block font-bold text-[#14245f] transition hover:text-[#e98b0c]"
-                  >
-                    +91-6262618035
-                  </a>
-
-                  <a
                     href="tel:+919695966669"
                     className="mt-1 block font-bold text-[#14245f] transition hover:text-[#e98b0c]"
                   >
                     +91-9695966669
+                  </a>
+
+                  <a
+                    href="tel:+9163262618035"
+                    className="mt-1 block font-bold text-[#14245f] transition hover:text-[#e98b0c]"
+                  >
+                    +91-63262618035
                   </a>
                 </div>
               </div>
