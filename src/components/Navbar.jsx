@@ -203,7 +203,9 @@ const Navbar = () => {
         return;
       }
 
-      const oldScript = document.getElementById("navbar-lms-form-script");
+      const oldScript = document.getElementById(
+        "navbar-lms-form-script"
+      );
 
       if (oldScript) {
         oldScript.remove();
@@ -312,11 +314,23 @@ const Navbar = () => {
         ================================================= */}
 
         <div className="hidden h-[44px] bg-[#168486] lg:block">
+
           <div className="mx-auto flex h-full max-w-[1720px] items-center justify-between px-8">
 
             {/* LEFT CONTACT */}
 
             <div className="flex items-center gap-7 text-[14px] font-bold text-white">
+
+              <a
+                href="tel:+919695966669"
+                className="flex items-center gap-2 !text-white"
+              >
+                <FaPhoneAlt className="text-[#f1a028]" />
+
+                <span>
+                  +91-9695966669
+                </span>
+              </a>
 
               <a
                 href="tel:+916262618035"
@@ -326,17 +340,6 @@ const Navbar = () => {
 
                 <span>
                   +91-6262618035
-                </span>
-              </a>
-
-              <a
-                href="tel:+91-9695966669 "
-                className="flex items-center gap-2 !text-white"
-              >
-                <FaPhoneAlt className="text-[#f1a028]" />
-
-                <span>
-                  +91-9695966669
                 </span>
               </a>
 
@@ -356,6 +359,7 @@ const Navbar = () => {
             {/* TOP RIGHT BUTTONS */}
 
             <div className="flex items-center gap-3">
+
               {[
                 [
                   "BAMS(UG) Admission 2026",
@@ -374,6 +378,7 @@ const Navbar = () => {
                   "/committee",
                 ],
               ].map(([label, href]) => (
+
                 <Link
                   key={label}
                   to={href}
@@ -392,10 +397,13 @@ const Navbar = () => {
                 >
                   {label}
                 </Link>
+
               ))}
+
             </div>
 
           </div>
+
         </div>
 
         {/* =================================================
@@ -403,6 +411,7 @@ const Navbar = () => {
         ================================================= */}
 
         <div className="bg-white">
+
           <div
             className="
               mx-auto
@@ -422,7 +431,9 @@ const Navbar = () => {
             "
           >
 
-            {/* LOGO + NAME */}
+            {/* =================================================
+                LOGO + NAME
+            ================================================= */}
 
             <Link
               to="/"
@@ -437,6 +448,7 @@ const Navbar = () => {
                 lg:flex-none
               "
             >
+
               <img
                 src="/logoayu.png"
                 alt="Shri Krishna Ayurvedic Hospital"
@@ -455,6 +467,7 @@ const Navbar = () => {
               />
 
               <div className="min-w-0 flex-1">
+
                 <div
                   className="
                     text-[10px]
@@ -490,6 +503,7 @@ const Navbar = () => {
                   "
                 >
                 </p>
+
               </div>
 
             </Link>
@@ -500,17 +514,18 @@ const Navbar = () => {
 
             <div className="hidden items-center lg:flex">
 
-              {/* ADMISSION */}
+              {/* =================================================
+                  ADMISSION
+              ================================================= */}
 
-              <a
-                href="tel:+916262618035,+919695966669"
-                className="flex items-center gap-3 border-r border-gray-200 px-6"
-              >
+              <div className="flex items-center gap-3 border-r border-gray-200 px-6">
+
                 <span
                   className="
                     flex
                     h-[52px]
                     w-[52px]
+                    shrink-0
                     items-center
                     justify-center
                     rounded-md
@@ -523,28 +538,60 @@ const Navbar = () => {
                 </span>
 
                 <span>
+
                   <small className="block text-[14px] text-gray-500">
                     For Admissions
                   </small>
 
-                  <strong className="block text-[15px] font-semibold text-[#173d6b]">
-                    <span className="block">
-                      +91-6262618035
-                    </span>
+                  <strong className="whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
 
-                    <span className="block">
+                    <a
+                      href="tel:+919695966669"
+                      className="
+                        !text-[#173d6b]
+                        transition
+                        hover:!text-[#A3621D]
+                      "
+                    >
                       +91-9695966669
-                    </span>
-                  </strong>
-                </span>
-              </a>
+                    </a>
 
-              {/* HOSPITAL HELPLINE */}
+                    <span>, </span>
+
+                    <a
+                      href="tel:+916262618035"
+                      className="
+                        !text-[#173d6b]
+                        transition
+                        hover:!text-[#A3621D]
+                      "
+                    >
+                      +91-6262618035
+                    </a>
+
+                  </strong>
+
+                </span>
+
+              </div>
+
+              {/* =================================================
+                  HOSPITAL ICON
+              ================================================= */}
 
               <a
-                href="tel:+916262618031"
-                className="flex items-center gap-3 border-r border-gray-200 px-6"
+                href="/hospital"
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  border-r
+                  border-gray-200
+                  px-6
+                "
+                aria-label="Hospital"
               >
+
                 <span
                   className="
                     flex
@@ -561,15 +608,6 @@ const Navbar = () => {
                   <FaHospital />
                 </span>
 
-                <span>
-                  <small className="block text-[14px] text-gray-500">
-                    For Hospital Helpline:
-                  </small>
-
-                  <strong className="block whitespace-nowrap text-[15px] font-semibold text-[#173d6b]">
-                    +91-6262618031
-                  </strong>
-                </span>
               </a>
 
               {/* =================================================
@@ -585,6 +623,7 @@ const Navbar = () => {
                     icon: Icon,
                     bg,
                   }) => (
+
                     <a
                       key={label}
                       href={href}
@@ -605,6 +644,7 @@ const Navbar = () => {
                         hover:shadow-lg
                       `}
                     >
+
                       <Icon
                         size={20}
                         color="#ffffff"
@@ -613,7 +653,9 @@ const Navbar = () => {
                           fill: "#ffffff",
                         }}
                       />
+
                     </a>
+
                   )
                 )}
 
@@ -653,14 +695,115 @@ const Navbar = () => {
                 lg:hidden
               "
             >
+
               {isMenuOpen ? (
                 <FaTimes />
               ) : (
                 <FaBars />
               )}
+
             </button>
 
           </div>
+
+        </div>
+
+        {/* =================================================
+            MOBILE ADMISSION NUMBERS
+        ================================================= */}
+
+        <div
+          className="
+            border-t
+            border-gray-100
+            bg-white
+            py-2.5
+            lg:hidden
+          "
+        >
+
+          <div
+            className="
+              flex
+              items-center
+              justify-start
+              gap-2
+              px-4
+              text-[#173d6b]
+              min-[375px]:px-5
+              sm:px-6
+            "
+          >
+
+            <FaPhoneAlt
+              className="
+                shrink-0
+                text-[13px]
+                text-[#A3621D]
+                min-[375px]:text-[14px]
+              "
+            />
+
+            <div
+              className="
+                flex
+                min-w-0
+                flex-wrap
+                items-center
+                gap-x-1
+                text-[10px]
+                font-semibold
+                min-[360px]:text-[11px]
+                min-[400px]:text-[12px]
+                sm:text-[14px]
+              "
+            >
+
+              <span className="mr-1 whitespace-nowrap">
+                For Admissions:
+              </span>
+
+              <div
+                className="
+                  flex
+                  items-center
+                  whitespace-nowrap
+                  font-bold
+                "
+              >
+
+                <a
+                  href="tel:+919695966669"
+                  className="
+                    !text-[#173d6b]
+                    transition
+                    hover:!text-[#A3621D]
+                  "
+                >
+                  +91-9695966669
+                </a>
+
+                <span className="mx-1">
+                  ,
+                </span>
+
+                <a
+                  href="tel:+916262618035"
+                  className="
+                    !text-[#173d6b]
+                    transition
+                    hover:!text-[#A3621D]
+                  "
+                >
+                  +91-6262618035
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
         {/* =================================================
@@ -668,6 +811,7 @@ const Navbar = () => {
         ================================================= */}
 
         <div className="bg-[#07634c]">
+
           <nav
             className={`
               mx-auto
@@ -691,6 +835,7 @@ const Navbar = () => {
             <div className="flex flex-col lg:flex-row lg:items-center">
 
               {navItems.map((item) => (
+
                 <div
                   key={item.label}
                   className="
@@ -701,6 +846,7 @@ const Navbar = () => {
                     lg:border-0
                   "
                 >
+
                   <div className="flex items-center">
 
                     {/* MAIN LINK */}
@@ -730,6 +876,7 @@ const Navbar = () => {
 
                     {item.items && (
                       <>
+
                         {/* DESKTOP ARROW */}
 
                         <FaChevronDown
@@ -763,6 +910,7 @@ const Navbar = () => {
                             lg:hidden
                           "
                         >
+
                           <FaChevronDown
                             className={`
                               text-xs
@@ -775,7 +923,9 @@ const Navbar = () => {
                               }
                             `}
                           />
+
                         </button>
+
                       </>
                     )}
 
@@ -786,6 +936,7 @@ const Navbar = () => {
                   ================================================= */}
 
                   {item.items && (
+
                     <div
                       className={`
                         bg-white
@@ -802,7 +953,9 @@ const Navbar = () => {
                         }
                       `}
                     >
+
                       {item.items.map((child) => (
+
                         <Link
                           key={child.label}
                           to={child.href}
@@ -823,11 +976,15 @@ const Navbar = () => {
                         >
                           {child.label}
                         </Link>
+
                       ))}
+
                     </div>
+
                   )}
 
                 </div>
+
               ))}
 
             </div>
@@ -862,6 +1019,7 @@ const Navbar = () => {
             </button>
 
           </nav>
+
         </div>
 
       </header>
@@ -871,6 +1029,7 @@ const Navbar = () => {
       ========================================================= */}
 
       {isApplyOpen && (
+
         <div
           className="
             fixed
@@ -885,14 +1044,17 @@ const Navbar = () => {
             sm:p-5
           "
           onClick={(event) => {
+
             if (
               event.target ===
               event.currentTarget
             ) {
               closeApplyForm();
             }
+
           }}
         >
+
           <div
             className="
               relative
@@ -956,6 +1118,7 @@ const Navbar = () => {
             >
 
               {formLoading && (
+
                 <div
                   className="
                     flex
@@ -970,6 +1133,7 @@ const Navbar = () => {
                 >
                   Loading admission form...
                 </div>
+
               )}
 
               <div
@@ -984,7 +1148,9 @@ const Navbar = () => {
             </div>
 
           </div>
+
         </div>
+
       )}
 
       {/* =========================================================
@@ -992,7 +1158,7 @@ const Navbar = () => {
       ========================================================= */}
 
       <a
-        href="https://wa.me/916262618035"
+        href="https://wa.me/919695966669"
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
@@ -1034,12 +1200,14 @@ const Navbar = () => {
           sm:text-[27px]
         "
       >
+
         <FaWhatsapp
           style={{
             color: "#ffffff",
             fill: "#ffffff",
           }}
         />
+
       </a>
 
     </>

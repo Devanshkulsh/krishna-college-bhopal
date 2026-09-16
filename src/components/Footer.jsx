@@ -266,7 +266,40 @@ const Footer = () => {
                   "
                 >
 
-                  {/* Hospital Helpline */}
+                  
+
+                  {/* Admission Helpline 1 */}
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-semibold whitespace-nowrap">
+                      Admission Helpline:
+                    </span>
+
+<a
+  href="tel:+919695966669"
+  className="
+    whitespace-nowrap
+    transition
+    hover:text-[#e7a51d]
+  "
+>
+  +91-9695966669
+</a>
+
+<span>,</span>
+
+<a
+  href="tel:+916262618035"
+  className="
+    whitespace-nowrap
+    transition
+    hover:text-[#e7a51d]
+  "
+>
+  +91-6262618035
+</a>
+</div>
+
+                  {/* Admission Helpline 2 */}
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span className="font-semibold whitespace-nowrap">
                       Hospital Helpline:
@@ -281,42 +314,6 @@ const Footer = () => {
                       "
                     >
                       +91-6262618031
-                    </a>
-                  </div>
-
-                  {/* Admission Helpline 1 */}
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="font-semibold whitespace-nowrap">
-                      Admission Helpline:
-                    </span>
-
-                    <a
-                      href="tel:+916262618035"
-                      className="
-                        whitespace-nowrap
-                        transition
-                        hover:text-[#e7a51d]
-                      "
-                    >
-                      +91-6262618035
-                    </a>
-                  </div>
-
-                  {/* Admission Helpline 2 */}
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="font-semibold whitespace-nowrap">
-                      Admission Helpline:
-                    </span>
-
-                    <a
-                      href="tel:+919695966669"
-                      className="
-                        whitespace-nowrap
-                        transition
-                        hover:text-[#e7a51d]
-                      "
-                    >
-                      +91-9695966669
                     </a>
                   </div>
 
