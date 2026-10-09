@@ -8,9 +8,9 @@ import DepartmentsSection from "../components/DepartmentsSection";
 import ExcellenceSection from "../components/ExcellenceSection";
 import RecognitionsSection from "../components/RecognitionsSection";
 import CampusFacilities from "../components/CampusFacilities";
-import StudentFeedback from "../components/StudentFeedback";
 import CoursesOffered from "../components/CoursesOffered";
 import CollegeOverview from "../components/CollegeOverview";
+import VideoTestimonials from "../components/VideoTestimonials";
 
 const HomePage = () => {
   return (
@@ -36,7 +36,7 @@ const HomePage = () => {
 
       <CampusFacilities />
 
-      <StudentFeedback />
+      <VideoTestimonials />
     </>
   );
 };
